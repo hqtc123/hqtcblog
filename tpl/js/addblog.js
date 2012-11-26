@@ -53,6 +53,7 @@ $(function () {
             }
         })
     });
+
     //add boke
     $("#create-tblog-btn").click(function(){
         if($("#ctrltextblogName").val()==""){

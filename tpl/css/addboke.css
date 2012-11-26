@@ -130,19 +130,19 @@ div#content {
     width: 5px;
     height: 39px;
 }
-.skin-button-willsilver .ui-button-label {
-    background: #c5d7e2;
-    _background: #c5d7e2;
-    zoom: 1;
+#create-tblog-btn{
+    color: #666;
+    background-color: #dfdfdf;
+    text-align: center;
+    padding-top:5px ;
+    border-radius: 5px;
+    height: 26px;
+    width: 80px;
+    cursor: pointer;
 }
-.skin-button-willsilver .ui-button-label {
-    padding-right: 5px;
-    height: 39px;
-}
-#cancel-create-tblog {
-    float: right;
-    width: 58px;
-    margin-right: 10px;
+#create-tblog-btn:hover{
+    color: #fff;
+    background-color: #069;
 }
 .skin-button-willlight {
     -moz-user-select: none;
@@ -180,4 +180,31 @@ div#content {
 .skin-button-willlight .ui-button-label {
     padding-right: 5px;
     height: 39px;
+}
+#portrait{
+    margin-top: 50px;
+    padding-bottom:5px ;
+    margin-bottom: 80px;
+}
+#portraitLabel{
+    padding-bottom: 20px;
+    padding: 20px;
+    color: #444;
+    font-size: 12px;
+    width: 160px;
+    height: 24px;
+    text-align: center;
+    display: inline;
+}
+#uploadDiv{
+    margin-left: 16px;
+    display: inline;
+}
+#uploadButton{
+    color: #666;
+    height: 26px;
+    cursor: pointer;
+}
+#uploadButton:hover{
+    color: #333;
 }

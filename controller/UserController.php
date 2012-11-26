@@ -9,25 +9,31 @@
 session_start();
 header("Content-Type:text/html; charset=utf-8");
 class UserController extends spController {
+    var $user;
+    var $arr;
+    var $email, $password;
+    var $nick;
+
     function register() {
-        $user = spClass("User");
-        $email = $this->spArgs("email");
-        $conditions = array("email" => $email);
-        if ($result = $user->find($conditions)) {
+        $this->user = spClass("User");
+        $this->email = $this->spArgs("email");
+        $conditions = array("email" => $this->email);
+        if ($result = $this->user->find($conditions)) {
             $arr["success"] = 0;
             $arr["msg"] = "抱歉，您填写的邮箱已经被使用……";
             echo json_encode($arr);
         } else {
-            $password = $this->spArgs("password");
-            $nick = $this->spArgs("nick");
-            $newrow = array(
-                "email" => $email,
-                "password" => $password,
-                "nick" => $nick,
+            $this->password = $this->spArgs("password");
+            $this->nick = $this->spArgs("nick");
+            $newRow = array(
+                "email" => $this->email,
+                "password" => $this->password,
+                "nick" => $this->nick,
             );
-            $_SESSION["email"] = $email;
-            $_SESSION["nick"] = $nick;
-            $user->create($newrow);
+            $this->user->create($newRow);
+            $_SESSION["email"] = $this->email;
+            $_SESSION["nick"] = $this->nick;
+            $arr["bokeNum"] = 0;
             $arr["success"] = 1;
             $arr["msg"] = "注册成功，欢迎使用环球探测轻博客……";
             echo json_encode($arr);
@@ -35,23 +41,23 @@ class UserController extends spController {
     }
 
     function login() {
-        $user = spClass("User");
-        $email = $this->spArgs("email");
-        $password = $this->spArgs("password");
-        $conditions = array("email" => $email);
-        $result = $user->find($conditions);
+        $this->user = spClass("User");
+        $this->email = $this->spArgs("email");
+        $this->password = $this->spArgs("password");
+        $conditions = array("email" => $this->email);
+        $result = $this->user->find($conditions);
         if ($result) {
-            if ($password == $result["password"]) {
+            if ($this->password == $result["password"]) {
                 $nick = $result["nick"];
-                $boke = spClass("Boke");
-                $condition = array("email" => $email);
-                if ($resultBoke = $boke->find($condition)) {
-                    $_SESSION["bokeName"] = $resultBoke["bokename"];
+                $boKe = spClass("Boke");
+                $condition = array("email" => $this->email);
+                if ($resultBoKe = $boKe->find($condition)) {
+                    $_SESSION["bokeName"] = $resultBoKe["bokename"];
                 } else {
                     $_SESSION["bokeNum"] = 0;
                 }
                 $_SESSION["nick"] = $nick;
-                $_SESSION["email"] = $email;
+                $_SESSION["email"] = $this->email;
                 $arr["success"] = 1;
                 echo json_encode($arr);
             } else {

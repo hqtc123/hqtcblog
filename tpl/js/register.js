@@ -52,7 +52,7 @@ $(function () {
             $('<div id="msg" />').html("昵称不能为空").appendTo('#mainarea').fadeOut(2000);
             return false;
         }
-        if(nick.length>6){
+        if (nick.length > 6) {
             $('<div id="msg" />').html("昵称长度不能大于6个字符").appendTo('#mainarea').fadeOut(2000);
             return false;
         }
@@ -72,7 +72,7 @@ $(function () {
                         content:result.msg,
                         time:2
                     });
-                    setTimeout("javascript:location.href='index.php'", 1000);
+                    setTimeout("javascript:location.href='addBoke.php'", 1000);
                 } else {
                     $('<div id="msg" />').html("" + result.msg).appendTo('#mainarea').fadeOut(2000);
                     return false;

@@ -16,8 +16,6 @@
 <div id="header">
     <div id="headercontent">
         <img id="logopic" src="images/logo.png"/>
-
-        <a id="index" href="index.php" class="blog">首页</a>
         <?php
         if (isset($_SESSION["nick"])) {
             echo '<div id="hide_email">' . $_SESSION["email"] . '</div>';
@@ -42,13 +40,23 @@
     <div id="content">
         <h2 class="tblog-tilte">
             <span class="title-icon"></span>
-            创建一个博客
+            博客设置
         </h2>
 
-        <div id="tblog-container">
-            <div id="tblog-error">
 
+        <div id="tblog-container">
+
+            <div id="portrait">
+                <div id="portraitLabel">
+                    头像设置:
+                </div>
+                <img src="images/portrait.png" alt="">
+
+                <div id="uploadDiv">
+                    <input id="uploadButton" type="file">
+                </div>
             </div>
+
             <form id="create-tblog-form" method="post">
                 <input type="hidden" name="formKey" value="78a8fb7bc99a3c9cfff0a27012b1cb7f">
 
@@ -67,39 +75,23 @@
                 </div>
                 <div class="tblog-toolbar clearfix">
                     <a id="create-tblog-btn">
-                        <div class="ui-button skin-button-willsilver" cloud="" id="ctrlbutton_innerui_0"
-                             data-control="_innerui_0" style=""><span
-                                class="ui-button-bg-left skin-button-willsilver-bg-left"></span>
-
-                            <div id="ctrlbutton_innerui_0label" class="ui-button-label skin-button-willsilver-label">
-                                <span id="ctrlbutton_innerui_0text" class="ui-button-text skin-button-willsilver-text">立即创建</span>
-                            </div>
-                        </div>
-                    </a>
-                    <a id="cancel-create-tblog" href="../index.php">
-                        <div class="ui-button skin-button-willlight" cloud="" id="ctrlbutton_innerui_1"
-                             data-control="_innerui_1" style=""><span
-                                class="ui-button-bg-left skin-button-willlight-bg-left"></span>
-
-                            <div id="ctrlbutton_innerui_1label" class="ui-button-label skin-button-willlight-label">
-                                <span id="ctrlbutton_innerui_1text"
-                                      class="ui-button-text skin-button-willlight-text">取消</span></div>
-                        </div>
+                        <span>立即创建</span>
                     </a>
                 </div>
-            </form>
         </div>
+        </form>
     </div>
-    <ul id="dia_account">
-        <li class="dia_item">
-            <label class="dia_label">邮箱：</label>
-            <label id="email_label"></label>
-        </li>
-        <li class="dia_item">
-            <label class="dia_label">昵称：</label>
-            <label id="nick_label"></label>
-        </li>
-    </ul>
+</div>
+<ul id="dia_account">
+    <li class="dia_item">
+        <label class="dia_label">邮箱：</label>
+        <label id="email_label"></label>
+    </li>
+    <li class="dia_item">
+        <label class="dia_label">昵称：</label>
+        <label id="nick_label"></label>
+    </li>
+</ul>
 </div>
 </body>
 </html>
