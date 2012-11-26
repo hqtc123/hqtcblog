@@ -10,10 +10,10 @@
     <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.kwicks.min.js"></script>
     <script type="text/javascript" src="js/jquery.artDialog.js"></script>
-    <script type="text/javascript" src="js/jquery.tipTip.minified.js"></script>
     <link rel="stylesheet" type="text/css" href="css/dialog-twitter.css">
     <link rel="stylesheet" type="text/css" href="css/myblog.css">
     <script type="text/javascript" src="js/index.js"></script>
+    <script type="text/javascript" src="js/myBlog.js"></script>
     <link>
 </head>
 <body>
@@ -50,7 +50,7 @@
     <div id="mainarea">
         <div id="nav">
             <div id="headpic">
-                <img src="images/portrait.png" alt="">
+                <img src=<?php echo $_SESSION["url"]; ?> alt="">
             </div>
             <div class="speTriangle">
             </div>
@@ -91,6 +91,9 @@
                 </div>
                 <div class="feedDiv">
                     <div class="dateHolder">
+                        <div class="author" title="作者">
+                            这不是这个吧
+                        </div>
                         <div class="dateDiv">
                             2012-08-06
                         </div>
@@ -107,7 +110,8 @@
                     </div>
                     <div class="attrHolder">
                         <div class="tagsDiv">
-                            #ff #ff
+                            <span class="tagSpan"> #ff </span>
+                            <span class="tagSpan"> #ff</span>
                         </div>
                         <div class="optionsDiv">
                             <div class="optDiv">转载</div>

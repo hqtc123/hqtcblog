@@ -7,7 +7,7 @@
     <title>环球探测 | 添加博客</title>
     <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.artDialog.js"></script>
-    <script type="text/javascript" src="js/addblog.js"></script>
+    <script type="text/javascript" src="js/addboke.js"></script>
     <link rel="stylesheet" type="text/css" href="css/dialog-twitter.css">
     <link rel="stylesheet" type="text/css" href="css/layout.css"/>
     <link rel="stylesheet" type="text/css" href="css/addboke.css"/>
@@ -53,7 +53,8 @@
                 <img src="images/portrait.png" alt="">
 
                 <div id="uploadDiv">
-                    <input id="uploadButton" type="file">
+                    <!--                    <input id="uploadButton" type="file">-->
+                    <input id="chooseButton" type="button" value="换头像">
                 </div>
             </div>
 
@@ -92,6 +93,13 @@
         <label id="nick_label"></label>
     </li>
 </ul>
+<div id="portraits">
+    <img id="default" src="upload/portrait/portrait.png" alt="" title="default"/>
+    <img id="cat" src="upload/portrait/cat.jpg" alt="" title="cat"/>
+    <img id="dog" src="upload/portrait/dog.jpg" alt="" title="dog"/>
+    <img id="boy" src="upload/portrait/boy.jpg" alt="" title="boy"/>
+    <img id="girl" src="upload/portrait/girl.jpg" alt="" title="girl"/>
+</div>
 </div>
 </body>
 </html>

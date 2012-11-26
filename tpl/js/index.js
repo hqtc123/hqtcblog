@@ -15,7 +15,6 @@ function getBaseUrl() {
 }
 $(function () {
     //share part begin
-    $("#addblog").tipTip();
     $("#hidetext").hide();
     $(".kwicks").kwicks({
         size:140,

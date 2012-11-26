@@ -29,11 +29,11 @@ class UserController extends spController {
                 "email" => $this->email,
                 "password" => $this->password,
                 "nick" => $this->nick,
+                "portraiturl" => ""
             );
             $this->user->create($newRow);
             $_SESSION["email"] = $this->email;
             $_SESSION["nick"] = $this->nick;
-            $arr["bokeNum"] = 0;
             $arr["success"] = 1;
             $arr["msg"] = "注册成功，欢迎使用环球探测轻博客……";
             echo json_encode($arr);
@@ -49,6 +49,7 @@ class UserController extends spController {
         if ($result) {
             if ($this->password == $result["password"]) {
                 $nick = $result["nick"];
+                $url = $result["portraiturl"];
                 $boKe = spClass("Boke");
                 $condition = array("email" => $this->email);
                 if ($resultBoKe = $boKe->find($condition)) {
@@ -57,6 +58,7 @@ class UserController extends spController {
                     $_SESSION["bokeNum"] = 0;
                 }
                 $_SESSION["nick"] = $nick;
+                $_SESSION["url"] = $url;
                 $_SESSION["email"] = $this->email;
                 $arr["success"] = 1;
                 echo json_encode($arr);

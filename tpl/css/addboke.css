@@ -1,6 +1,7 @@
-a{
-    text-decoration:none;
+a {
+    text-decoration: none;
 }
+
 div#content {
     width: 800px;
     background-color: #dfdfdf;
@@ -41,14 +42,17 @@ div#content {
     -moz-box-shadow: 1px 2px 3px #ccc;
     box-shadow: 1px 2px 3px #CCC;
 }
+
 #create-tblog-form {
     position: relative;
 }
+
 .tblog-create {
     margin: 30px 0px;
     position: relative;
     _zoom: 1;
 }
+
 .tblog-line {
     overflow: hidden;
     height: 40px;
@@ -56,26 +60,31 @@ div#content {
     padding-bottom: 15px;
     _zoom: 1;
 }
+
 .tblog-left-column {
     float: left;
     width: 90px;
     text-align: right;
     clear: both;
 }
+
 .tblog-left-column label {
     padding-right: 20px;
     font-size: 12px;
     color: #444;
     font-weight: normal;
 }
+
 .tblog-right-column {
     float: left;
     overflow: hidden;
     _zoom: 1;
 }
+
 .tblog-form-element {
     float: left;
 }
+
 .skin-text-willwhite, .skin-textarea-willwhite {
     height: 18px;
     line-height: 18px;
@@ -92,23 +101,28 @@ div#content {
     border-bottom: 1px solid #B1B3B5;
     box-shadow: 0 1px 1px #C9CACC;
 }
+
 .tblog-form-tip {
     float: left;
     margin-left: 10px;
     color: #B8B8B8;
     font-size: 12px;
 }
+
 .tblog-toolbar {
     overflow: hidden;
     _zoom: 1;
 }
+
 .clearfix, #content {
     zoom: 1;
 }
+
 #create-tblog-btn {
     float: right;
     width: 82px;
 }
+
 .skin-button-willsilver {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -122,6 +136,7 @@ div#content {
     text-align: center;
     color: #8E8E8E;
 }
+
 .skin-button-willsilver .ui-button-bg-left {
     display: block;
     position: absolute;
@@ -130,20 +145,23 @@ div#content {
     width: 5px;
     height: 39px;
 }
-#create-tblog-btn{
+
+#create-tblog-btn {
     color: #666;
     background-color: #dfdfdf;
     text-align: center;
-    padding-top:5px ;
+    padding-top: 5px;
     border-radius: 5px;
     height: 26px;
     width: 80px;
     cursor: pointer;
 }
-#create-tblog-btn:hover{
+
+#create-tblog-btn:hover {
     color: #fff;
     background-color: #069;
 }
+
 .skin-button-willlight {
     -moz-user-select: none;
     -webkit-user-select: none;
@@ -157,10 +175,12 @@ div#content {
     text-align: center;
     color: #7C7C7C;
 }
+
 .skin-button-willlight .ui-button-bg-left {
     background: #c5d7e2;
     _background: #c5d7e2;
 }
+
 .skin-button-willlight .ui-button-bg-left {
     display: block;
     position: absolute;
@@ -169,24 +189,29 @@ div#content {
     width: 5px;
     height: 39px;
 }
+
 .skin-button-willlight-hover .ui-button-label {
     background: #c5d7e2;
     _background: #c5d7e2;
 }
+
 .skin-button-willlight .ui-button-label {
     background: #c5d7e2;
     _background: #c5d7e2;
 }
+
 .skin-button-willlight .ui-button-label {
     padding-right: 5px;
     height: 39px;
 }
-#portrait{
+
+#portrait {
     margin-top: 50px;
-    padding-bottom:5px ;
+    padding-bottom: 5px;
     margin-bottom: 80px;
 }
-#portraitLabel{
+
+#portraitLabel {
     padding-bottom: 20px;
     padding: 20px;
     color: #444;
@@ -196,15 +221,31 @@ div#content {
     text-align: center;
     display: inline;
 }
-#uploadDiv{
+
+#uploadDiv {
     margin-left: 16px;
     display: inline;
 }
-#uploadButton{
+
+#uploadButton {
     color: #666;
     height: 26px;
     cursor: pointer;
 }
-#uploadButton:hover{
+
+#uploadButton:hover {
     color: #333;
+}
+
+#portraits {
+    display: none;
+    padding: 10px;
+}
+
+#portraits img {
+    padding: 5px;
+}
+
+#portraits img:hover {
+    background-color: #069;
 }

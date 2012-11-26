@@ -10,7 +10,6 @@
     <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="js/jquery.kwicks.min.js"></script>
     <script type="text/javascript" src="js/jquery.artDialog.js"></script>
-    <script type="text/javascript" src="js/jquery.tipTip.minified.js"></script>
     <link rel="stylesheet" type="text/css" href="css/dialog-twitter.css">
     <script type="text/javascript" src="js/index.js"></script>
 </head>
@@ -48,7 +47,7 @@
     <div id="mainarea">
         <div id="nav">
             <div id="headpic">
-                <img src="images/portrait.png" alt="">
+                <img src=<?php echo $_SESSION["url"]; ?> alt="">
             </div>
             <div class="speTriangle">
             </div>
@@ -83,7 +82,7 @@
         <div id="content">
             <div class="feed">
                 <div class="headDiv">
-                    <img src="images/portrait.png" alt="">
+                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
                 </div>
                 <div class="triangle">
                 </div>
