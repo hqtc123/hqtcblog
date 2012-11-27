@@ -61,17 +61,21 @@ $(function () {
                         content:result.msg,
                         time:2
                     });
-                    setTimeout("javascript:location.href='../tpl/login.html'", 1000);
+                    setTimeout("javascript:location.href='../tpl/login.php'", 1000);
                 }
             }
         })
     });
+    $(".hideli:eq(2)").click(function(){
+        setTimeout("javascript:location.href='../tpl/addBoke.php'", 100);
+    })
     //share part end
 
     var title, link, tagStr, date, img;
     $("#cancelVideo").click(function () {
         $("#thumbDiv").hide();
         $("#pb-video-link").show();
+        $("#neirong").show();
     })
     $("#pb-video-link").blur(function () {
         link = $(this).val();
@@ -88,6 +92,7 @@ $(function () {
                         img = result.imgUrl;
                         title = result.title;
                         $("#pb-video-link").hide();
+                        $("#neirong").hide();
                         $("#thumbImg").attr("src", img);
                         $("#thumbDiv").show();
                         $("#pb-text-title").val(title);
@@ -110,13 +115,6 @@ $(function () {
         if ($("#pb-text-title").val() != "") {
             title = $("#pb-text-title").val();
         }
-        if (content == "") {
-            $.dialog({
-                title:"提示",
-                content:"您尚未填写视频链接"
-            });
-            return false;
-        }
         date = new Date().format("yyyy-mm-dd");
         tagStr = $("#tag_text").val();
         $.ajax({
@@ -124,12 +122,13 @@ $(function () {
             url:getBaseUrl() + "/index.php?c=BlogController&a=addBlog",
             dataType:"json",
             data:{
-                "type":1,
+                "type":4,
                 "tagStr":tagStr,
                 "title":title,
-                "content":content,
+                "link":link,
                 "date":date,
                 "commentNum":0,
+                "likeNum":0,
                 "email":email
             },
             success:function (result) {

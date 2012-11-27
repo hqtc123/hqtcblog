@@ -13,16 +13,17 @@ class BlogController extends spController {
 
     function addBlog() {
         $blog = spClass("Blog");
-        $picBlog = spClass("PicBlog");
-        $tagClass = spClass("tag");
+        $tagClass = spClass("Tag");
         $blogTag = spClass("BlogTag");
 //add to blog
         $type = $this->spArgs("type");
         $date = $this->spArgs("date");
         $commentNum = $this->spArgs("commentNum");
+        $likeNum = $this->spArgs("likeNum");
         $email = $this->spArgs("email");
 
-        $newRow = array("type" => $type, "email" => $email, "date" => $date, "commentnum" => $commentNum);
+        $newRow = array("type" => $type, "email" => $email, "date" => $date,
+            "commentnum" => $commentNum, "likenum" => $likeNum);
         $id = $blog->create($newRow);
 
 //deal the tag
@@ -51,8 +52,14 @@ class BlogController extends spController {
             case 2:
                 break;
             case 3:
+                $title = $this->spArgs("title");
+                $link = $this->spArgs("link");
+                $this->result = $this->addLinkBlog($id, $title, $link);
                 break;
             case 4:
+                $title = $this->spArgs("title");
+                $link = $this->spArgs("link");
+                $this->result = $this->addVideoBlog($id, $title, $link);
                 break;
             default:
 
@@ -79,6 +86,21 @@ class BlogController extends spController {
         return true;
     }
 
+    function addVideoBlog($id, $title, $link) {
+        $videoBlog = spClass("VideoBlog");
+        $newRow = array("blogid" => $id, "title" => $title, "link" => $link);
+        $videoBlog->create($newRow);
+        return true;
+    }
+
+    function addLinkBlog($id, $title, $link) {
+        $linkBlog = spClass("LinkBlog");
+        $newRow = array("blogid" => $id, "title" => $title, "link" => $link);
+        $linkBlog->create($newRow);
+        return true;
+    }
+
+    //抓取视频信息
     function getVideoInfo() {
         $url = $this->spArgs("link");
         $info = VideoUrlParser::parse($url);

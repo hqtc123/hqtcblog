@@ -38,6 +38,7 @@
             <ul id="hideul">
                 <li class="hideli">账号信息</li>
                 <li class="hideli">退出登录</li>
+                <li class="hideli">博客设置</li>
             </ul>
         </div>
     </div>
@@ -59,7 +60,6 @@
 
         <div id="neirong">
             <label id="for_neirong">视频链接</label>
-
         </div>
     </div>
     <div id="main_wrapper">

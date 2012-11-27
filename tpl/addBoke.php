@@ -32,6 +32,7 @@
             <ul id="hideul">
                 <li class="hideli">账号信息</li>
                 <li class="hideli">退出登录</li>
+                <li class="hideli">博客设置</li>
             </ul>
         </div>
     </div>
@@ -50,7 +51,11 @@
                 <div id="portraitLabel">
                     头像设置:
                 </div>
-                <img src="images/portrait.png" alt="">
+                <img src=<?php if (isset($_SESSION["url"])) {
+                    echo $_SESSION["url"];
+                } else {
+                    echo "upload/portrait/portrait.png";
+                } ?> alt="">
 
                 <div id="uploadDiv">
                     <!--                    <input id="uploadButton" type="file">-->
@@ -68,15 +73,17 @@
                         </div>
                         <div class="tblog-right-column">
                             <div class="tblog-form-element">
-                                <input type="text" class="ui-text skin-text-willwhite" cloud="" name="blogName" value=""
-                                       placeholder="" id="ctrltextblogName" data-control="blogName"></div>
+                                <input type="text" class="ui-text skin-text-willwhite" cloud="" name="blogName"
+                                       value=<?php echo $_SESSION["bokeName"]; ?>
+                                               id="ctrltextblogName" data-control="blogName">
+                            </div>
                             <div class="tblog-form-tip tblog-form-tip-name">例如:环球美食（不能长于8个字符）</div>
                         </div>
                     </div>
                 </div>
                 <div class="tblog-toolbar clearfix">
                     <a id="create-tblog-btn">
-                        <span>立即创建</span>
+                        <span>完成设置</span>
                     </a>
                 </div>
         </div>

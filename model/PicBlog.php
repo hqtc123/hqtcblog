@@ -6,7 +6,7 @@
  * Time: 下午7:56
  * To change this template use File | Settings | File Templates.
  */
-class PicBlog {
+class PicBlog extends spModel{
     var $pk="blogid";
     var $table = "picblog";
 }

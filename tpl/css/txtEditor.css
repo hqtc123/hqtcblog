@@ -155,3 +155,7 @@ input.pb-input-text {
 #clearboth {
     clear: both;
 }
+
+#thumbDiv {
+    margin-top: 20px;
+}

@@ -30,7 +30,7 @@
         } else {
             ?>
             <script language="javascript" type="text/javascript">
-                setTimeout("javascript:location.href='login.html'", 500);
+                setTimeout("javascript:location.href='login.php'", 500);
             </script>
             <?php
         }
@@ -39,6 +39,7 @@
             <ul id="hideul">
                 <li class="hideli">账号信息</li>
                 <li class="hideli">退出登录</li>
+                <li class="hideli">博客设置</li>
             </ul>
         </div>
     </div>

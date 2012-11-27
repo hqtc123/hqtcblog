@@ -3,10 +3,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>登录</title>
+    <title>注册</title>
     <script type="text/javascript" src="js/jquery-1.8.1.min.js"></script>
-    <script type="text/javascript" src="js/login.js"></script>
+    <script type="text/javascript" src="js/register.js"></script>
+    <script type="text/javascript" src="js/jquery.artDialog.js"></script>
     <link rel="stylesheet" type="text/css" href="css/login_register.css"/>
+    <link rel="stylesheet" type="text/css" href="css/dialog-twitter.css">
 </head>
 
 <body>
@@ -15,8 +17,8 @@
         <img src="images/logo.png"/>
         <img src="images/headcenter.png"/>
 
-        <div id="regisbut">
-            <a href="register.html">注 册</a>
+        <div id="loginbut">
+            <a href="login.php">登 录</a>
         </div>
     </div>
 </div>
@@ -26,10 +28,13 @@
     </div>
     <div id="main-wrapper">
         <div id="mainarea">
-            <h1>登 录</h1>
-            <input type="text" class="textcls" placeholder="  请输入您的邮箱"/>
-            <input type="password" class="textcls" placeholder="  请输入密码"/>
-            <input type="button" class="lrbutcls" value="登 录"/>
+            <h1>注 册</h1>
+            <input type="text" class="textcls_re" placeholder="  输入邮箱作为账号"/>
+            <input type="password" class="textcls_re" placeholder="  输入您的密码"/>
+            <input type="password" class="textcls_re" placeholder="  重复输入密码"/>
+            <input type="text" class="textcls_re" placeholder="  输入您的昵称"/>
+            <input type="button" class="lrbutcls" value="注 册"/>
+
         </div>
     </div>
 </div>

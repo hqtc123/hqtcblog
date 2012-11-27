@@ -23,6 +23,10 @@ class UserController extends spController {
             $arr["msg"] = "抱歉，您填写的邮箱已经被使用……";
             echo json_encode($arr);
         } else {
+            $boke = spClass("Boke");
+            $newRow = array("email" => $this->email, "bokename" => "我的博客");
+            $boke->create($newRow);
+
             $this->password = $this->spArgs("password");
             $this->nick = $this->spArgs("nick");
             $newRow = array(
@@ -34,6 +38,7 @@ class UserController extends spController {
             $this->user->create($newRow);
             $_SESSION["email"] = $this->email;
             $_SESSION["nick"] = $this->nick;
+            $_SESSION["bokeName"] = "我的博客";
             $arr["success"] = 1;
             $arr["msg"] = "注册成功，欢迎使用环球探测轻博客……";
             echo json_encode($arr);
@@ -78,9 +83,8 @@ class UserController extends spController {
         if (isset($_SESSION["nick"])) {
             unset($_SESSION["nick"]);
             unset($_SESSION["email"]);
-            if (isset($_SESSION["bokeName"])) {
-                unset($_SESSION["bokeName"]);
-            }
+            unset($_SESSION["bokeName"]);
+            unset($_SESSION["url"]);
             $arr["success"] = 1;
             $arr["msg"] = "退出成功";
             echo json_encode($arr);

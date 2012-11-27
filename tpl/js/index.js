@@ -58,28 +58,27 @@ $(function () {
                         content:result.msg,
                         time:2
                     });
-                    setTimeout("javascript:location.href='../tpl/login.html'", 1000);
+                    setTimeout("javascript:location.href='../tpl/login.htmll'", 1000);
                 }
             }
         })
     });
+    $(".hideli:eq(2)").click(function(){
+        setTimeout("javascript:location.href='../tpl/addBoke.php'", 100);
+    })
     //share part end
 
-    //add blog
-    $("#addblog").click(function () {
-        setTimeout("javascript:location.href='../tpl/addBoke.php'", 1000);
-    });
 //text  blog
     $(".kwicks li:eq(0)").click(function () {
-        setTimeout("javascript:location.href='../tpl/txtEditor.php'");
+        setTimeout("javascript:location.href='../tpl/txtEditor.php'",100);
     });
     $(".kwicks li:eq(1)").click(function () {
-        setTimeout("javascript:location.href='../tpl/picEditor.php'");
+        setTimeout("javascript:location.href='../tpl/picEditor.php'",100);
     });
     $(".kwicks li:eq(2)").click(function () {
-        setTimeout("javascript:location.href='../tpl/linkEditor.php'");
+        setTimeout("javascript:location.href='../tpl/linkEditor.php'",100);
     });
     $(".kwicks li:eq(3)").click(function () {
-        setTimeout("javascript:location.href='../tpl/videoEditor.php'");
+        setTimeout("javascript:location.href='../tpl/videoEditor.php'",100);
     });
 })

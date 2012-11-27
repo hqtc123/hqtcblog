@@ -20,75 +20,94 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="videoEditor.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/videoEditor.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="100" selection-start="2305" selection-end="2318" vertical-scroll-proportion="-5.032258">
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="videoEditor.js" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/tpl/js/videoEditor.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="55" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.5531915">
-              <folding>
-                <element signature="n#!!doc;n#getBaseUrl#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="BlogController.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/controller/BlogController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="91" column="20" selection-start="2777" selection-end="2777" vertical-scroll-proportion="-8.290322">
+            <state line="103" column="29" selection-start="3311" selection-end="3311" vertical-scroll-proportion="-9.269231">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/test.php">
+      <file leaf-file-name="LinkBlog.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/LinkBlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="4" column="58" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.8387096">
+            <state line="8" column="30" selection-start="191" selection-end="191" vertical-scroll-proportion="-5.230769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="txtEditor.css" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/css/txtEditor.css">
+      <file leaf-file-name="PicBlog.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/PicBlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="119" column="22" selection-start="1953" selection-end="1953" vertical-scroll-proportion="0.0">
+            <state line="8" column="29" selection-start="193" selection-end="193" vertical-scroll-proportion="-5.230769">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="txtEditor.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/txtEditor.php">
+      <file leaf-file-name="TxtBlog.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/TxtBlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="66" selection-start="703" selection-end="703" vertical-scroll-proportion="-7.806452">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="VideoBlog.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/VideoBlog.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="User.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/User.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Boke.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/Boke.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="BlogTag.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/BlogTag.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Blog.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/model/Blog.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.27331188">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="linkEditor.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tpl/js/linkEditor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="90" column="0" selection-start="3178" selection-end="3178" vertical-scroll-proportion="0.0">
               <folding>
-                <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
+                <element signature="n#!!doc;n#getBaseUrl#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tpl/index.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="33" selection-start="2381" selection-end="2381" vertical-scroll-proportion="-9.935484">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -103,31 +122,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/tpl/css/layout.css" />
-        <option value="$PROJECT_DIR$/tpl/VideoUrlParser.class.php" />
         <option value="$PROJECT_DIR$/tpl/myblog.php" />
-        <option value="$PROJECT_DIR$/tpl/index.php" />
-        <option value="$PROJECT_DIR$/model/LinkBlog.php" />
-        <option value="$PROJECT_DIR$/model/VideoBlog.php" />
-        <option value="$PROJECT_DIR$/tpl/css/txtEditor.css" />
-        <option value="$PROJECT_DIR$/tpl/js/allEditor.js" />
-        <option value="$PROJECT_DIR$/tpl/js/txtEditor.js" />
-        <option value="$PROJECT_DIR$/tpl/txtEditor.php" />
-        <option value="$PROJECT_DIR$/tpl/test.php" />
+        <option value="$PROJECT_DIR$/controller/UserController.php" />
+        <option value="$PROJECT_DIR$/tpl/login.php" />
+        <option value="$PROJECT_DIR$/controller/BokeController.php" />
+        <option value="$PROJECT_DIR$/tpl/addBoke.php" />
+        <option value="$PROJECT_DIR$/tpl/js/addboke.js" />
         <option value="$PROJECT_DIR$/tpl/js/index.js" />
-        <option value="$PROJECT_DIR$/controller/BlogController.php" />
-        <option value="$PROJECT_DIR$/controller/test.php" />
-        <option value="$PROJECT_DIR$/tpl/videoEditor.php" />
+        <option value="$PROJECT_DIR$/tpl/linkEditor.js" />
+        <option value="$PROJECT_DIR$/tpl/linkEditor.php" />
+        <option value="$PROJECT_DIR$/tpl/index.php" />
+        <option value="$PROJECT_DIR$/tpl/js/txtEditor.js" />
         <option value="$PROJECT_DIR$/tpl/js/videoEditor.js" />
+        <option value="$PROJECT_DIR$/tpl/js/linkEditor.js" />
+        <option value="$PROJECT_DIR$/controller/BlogController.php" />
+        <option value="$PROJECT_DIR$/model/LinkBlog.php" />
+        <option value="$PROJECT_DIR$/model/PicBlog.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="-79" />
-    <option name="y" value="9" />
-    <option name="width" value="1299" />
-    <option name="height" value="718" />
+    <option name="x" value="19" />
+    <option name="y" value="3" />
+    <option name="width" value="1370" />
+    <option name="height" value="865" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -155,6 +174,7 @@
       <sortByType />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -215,6 +235,46 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="upload" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="portrait" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hqtcblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hqtcblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="tpl" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hqtcblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="hqtcblog" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="model" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -235,7 +295,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -243,8 +302,8 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -255,11 +314,11 @@
       <recent name="H:\web\apache\hqtcblog\tpl\js" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="H:\web\apache\hqtcblog\tpl\upload\portrait" />
+      <recent name="H:\web\apache\hqtcblog\tpl\js" />
+      <recent name="H:\web\apache\hqtcblog\tpl\images" />
       <recent name="H:\myweb\hqtcblog\controller" />
       <recent name="H:\myweb\hqtcblog\tpl" />
-      <recent name="H:\myweb\hqtcblog\tpl\images" />
-      <recent name="H:\myweb\hqtcblog\tpl\upload\portrait" />
-      <recent name="H:\myweb\hqtcblog\tpl\js" />
     </key>
   </component>
   <component name="RunManager">
@@ -307,17 +366,17 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-79" y="9" width="1299" height="718" extended-state="0" />
+    <frame x="19" y="3" width="1370" height="865" extended-state="1" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3237925" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32290184" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22150365" sideWeight="0.8111511" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20814133" sideWeight="0.80227596" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22150365" sideWeight="0.176259" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.20814133" sideWeight="0.18776672" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -384,125 +443,117 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/model/LinkBlog.php">
+    <entry file="file://$PROJECT_DIR$/tpl/login.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="28" selection-start="250" selection-end="250" vertical-scroll-proportion="0.73333335">
+        <state line="21" column="42" selection-start="793" selection-end="793" vertical-scroll-proportion="-13.730769">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="346" column="4" selection-start="4991" selection-end="4995" vertical-scroll-proportion="-43.68">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/VideoUrlParser.class.php">
+    <entry file="file://$PROJECT_DIR$/index.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/css/txtEditor.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="119" column="22" selection-start="1953" selection-end="1953" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/js/txtEditor.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="28" selection-start="0" selection-end="3827" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/txtEditor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="66" selection-start="703" selection-end="703" vertical-scroll-proportion="-7.806452">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/addBoke.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="100" column="71" selection-start="3861" selection-end="3861" vertical-scroll-proportion="-0.7096774">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/main.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="0" selection-start="6" selection-end="54" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/linkEditor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/picEditor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/js/index.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="82" column="58" selection-start="2568" selection-end="2568" vertical-scroll-proportion="0.87033397">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="33" selection-start="2381" selection-end="2381" vertical-scroll-proportion="-9.935484">
+        <state line="32" column="63" selection-start="1580" selection-end="1580" vertical-scroll-proportion="-13.076923">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/BlogController.php">
+    <entry file="file://$PROJECT_DIR$/tpl/js/myBlog.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="91" column="20" selection-start="2777" selection-end="2777" vertical-scroll-proportion="-8.290322">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/test.php">
+    <entry file="file://$PROJECT_DIR$/tpl/js/txtEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="4" column="58" selection-start="155" selection-end="155" vertical-scroll-proportion="-2.8387096">
+        <state line="64" column="74" selection-start="2442" selection-end="2442" vertical-scroll-proportion="0.0">
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tpl/videoEditor.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="100" selection-start="2305" selection-end="2318" vertical-scroll-proportion="-5.032258">
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#div#1;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#span#0;n#div#2;n#div#1;n#div#1;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/tpl/js/videoEditor.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="55" selection-start="3220" selection-end="3220" vertical-scroll-proportion="0.5531915">
+        <state line="39" column="40" selection-start="1384" selection-end="1420" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tpl/js/linkEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="90" column="0" selection-start="3178" selection-end="3178" vertical-scroll-proportion="0.0">
           <folding>
             <element signature="n#!!doc;n#getBaseUrl#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="103" column="29" selection-start="3311" selection-end="3311" vertical-scroll-proportion="-9.269231">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/LinkBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="30" selection-start="191" selection-end="191" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/PicBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="8" column="29" selection-start="193" selection-end="193" vertical-scroll-proportion="-5.230769">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/TxtBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/VideoBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/User.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Boke.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/BlogTag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/Blog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="24" selection-start="238" selection-end="238" vertical-scroll-proportion="0.27331188">
+          <folding />
         </state>
       </provider>
     </entry>

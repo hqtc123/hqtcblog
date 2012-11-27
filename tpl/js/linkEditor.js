@@ -1,8 +1,8 @@
 /**
  * Created with JetBrains PhpStorm.
  * User: hqtc
- * Date: 12-11-15
- * Time: 下午8:23
+ * Date: 12-11-27
+ * Time: 下午2:48
  * To change this template use File | Settings | File Templates.
  */
 function getBaseUrl() {
@@ -20,9 +20,26 @@ Date.prototype.format = function (formatStr) {
     str = str.replace(/dd|DD/, this.getDate() > 9 ? this.getDate().toString() : '0' + this.getDate());
     return str;
 }
+function IsURL(str_url) {
+    var strRegex = '^((https|http|ftp|rtsp|mms)?://)'
+        + '?(([0-9a-z_!~*\'().&amp;=+$%-]+: )?[0-9a-z_!~*\'().&amp;=+$%-]+@)?' //ftp的user@
+        + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
+        + '|' // 允许IP和DOMAIN（域名）
+        + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
+        + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
+        + '[a-z]{2,6})' // first level domain- .com or .museum
+        + '(:[0-9]{1,4})?' // 端口- :80
+        + '((/?)|' // a slash isn't required if there is no file name
+        + '(/[0-9a-z_!~*\'().;?:@&amp;=+$,%#-]+)+/?)$';
+    var re = new RegExp(strRegex);
+    //re.test()
+    if (re.test(str_url)) {
+        return (true);
+    } else {
+        return (false);
+    }
+}
 $(function () {
-    var txtEditor = $("#txt_area").xheditor({marginTop:"20px", width:"600px", height:"320px", tools:'Fontface,Bold,Italic,Underline,FontColor,BackColor,Align,Link,Unlink,' +
-        'Img,Hr,Fullscreen,Source,Preview'});
     $("#tag_text").tagsInput({width:"500px", height:"36px", defaultText:'按Enter确定', placeholderColor:"#888"});
     //share part begin
     $("#hidetext").hide();
@@ -67,23 +84,30 @@ $(function () {
             }
         })
     });
-    $(".hideli:eq(2)").click(function(){
+    $(".hideli:eq(2)").click(function () {
         setTimeout("javascript:location.href='../tpl/addBoke.php'", 100);
     })
     //share part end
 
+    var title = "无题", link, date;
+
     $(".pb-submit").click(function () {
-        var title, content, tagStr, date;
-        title = "无题";
-        content = txtEditor.getSource();
         if ($("#pb-text-title").val() != "") {
             title = $("#pb-text-title").val();
         }
-        if (content == "") {
+        if ($("#pb-link").val() == "") {
             $.dialog({
-                title:"提示",
-                content:"大家不会接受没有内容的博文"
-            });
+                title:"错误",
+                content:"请输入链接地址"
+            })
+            return false;
+        }
+        link = $("#pb-link").val();
+        if (!IsURL(link)) {
+            $.dialog({
+                title:"错误",
+                content:"无效的链接地址"
+            })
             return false;
         }
         date = new Date().format("yyyy-mm-dd");
@@ -93,10 +117,10 @@ $(function () {
             url:getBaseUrl() + "/index.php?c=BlogController&a=addBlog",
             dataType:"json",
             data:{
-                "type":1,
+                "type":3,
                 "tagStr":tagStr,
                 "title":title,
-                "content":content,
+                "link":link,
                 "date":date,
                 "commentNum":0,
                 "likeNum":0,
@@ -110,9 +134,15 @@ $(function () {
                         time:2
                     });
                     setTimeout("javascript:location.href='../tpl/myblog.php'", 1000);
+                } else {
+                    $.dialog({
+                        title:"提示",
+                        content:result.msg,
+                        time:2
+                    });
                 }
             }
         });
-
     });
-})
+
+});

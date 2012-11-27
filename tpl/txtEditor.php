@@ -38,6 +38,7 @@
             <ul id="hideul">
                 <li class="hideli">账号信息</li>
                 <li class="hideli">退出登录</li>
+                <li class="hideli">博客设置</li>
             </ul>
         </div>
     </div>

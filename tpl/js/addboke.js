@@ -48,13 +48,16 @@ $(function () {
                         content:result.msg,
                         time:2
                     });
-                    setTimeout("javascript:location.href='../tpl/login.html'", 1000);
+                    setTimeout("javascript:location.href='../tpl/login.htmll'", 1000);
                 }
             }
         })
     });
-
-    var portraitDialog, portraitUrl;
+    $(".hideli:eq(2)").click(function () {
+        setTimeout("javascript:location.href='../tpl/addBoke.php'", 100);
+    })
+    //share end
+    var portraitDialog, portraitUrl = $("#portrait img").attr("src");
     $("#chooseButton").click(function () {
         portraitDialog = $.dialog({
             title:"选择一个头像",
