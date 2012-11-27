@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : hqtcblog
-Source Server Version : 50528
+Source Server         : localhost
+Source Server Version : 50513
 Source Host           : localhost:3306
 Source Database       : hqtcblog
 
 Target Server Type    : MYSQL
-Target Server Version : 50528
+Target Server Version : 50513
 File Encoding         : 65001
 
-Date: 2012-11-27 11:50:31
+Date: 2012-11-27 16:52:41
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -25,25 +25,47 @@ CREATE TABLE `blog` (
   `email` varchar(255) NOT NULL,
   `date` date NOT NULL,
   `commentnum` int(11) NOT NULL,
+  `likenum` int(11) NOT NULL,
   PRIMARY KEY (`blogid`)
-) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=35 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog
 -- ----------------------------
-INSERT INTO `blog` VALUES ('1', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('2', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('3', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('4', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('5', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('6', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('7', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('8', '1', 'test@a.com', '2012-11-24', '0');
-INSERT INTO `blog` VALUES ('9', '1', 'test@a.com', '2012-11-25', '0');
-INSERT INTO `blog` VALUES ('10', '1', 'test@a.com', '2012-11-25', '0');
-INSERT INTO `blog` VALUES ('11', '1', 'test@a.com', '2012-11-27', '0');
-INSERT INTO `blog` VALUES ('12', '1', 'test@a.com', '2012-11-27', '0');
-INSERT INTO `blog` VALUES ('13', '1', 'test@a.com', '2012-11-27', '0');
+INSERT INTO `blog` VALUES ('1', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('2', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('3', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('4', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('5', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('6', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('7', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('8', '1', 'test@a.com', '2012-11-24', '0', '0');
+INSERT INTO `blog` VALUES ('9', '1', 'test@a.com', '2012-11-25', '0', '0');
+INSERT INTO `blog` VALUES ('10', '1', 'test@a.com', '2012-11-25', '0', '0');
+INSERT INTO `blog` VALUES ('11', '1', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('12', '1', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('13', '1', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('14', '4', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('15', '4', '6@6.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('16', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('17', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('18', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('19', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('20', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('21', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('22', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('23', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('24', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('25', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('26', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('27', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('28', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('29', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('30', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('31', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('32', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('33', '3', 'test@a.com', '2012-11-27', '0', '0');
+INSERT INTO `blog` VALUES ('34', '3', 'test@a.com', '2012-11-27', '0', '0');
 
 -- ----------------------------
 -- Table structure for `blog_tag`
@@ -67,6 +89,7 @@ INSERT INTO `blog_tag` VALUES ('9', '奇幻');
 INSERT INTO `blog_tag` VALUES ('9', '少年');
 INSERT INTO `blog_tag` VALUES ('10', '万里');
 INSERT INTO `blog_tag` VALUES ('10', '丰厚');
+INSERT INTO `blog_tag` VALUES ('33', '咚呱');
 
 -- ----------------------------
 -- Table structure for `boke`
@@ -77,7 +100,7 @@ CREATE TABLE `boke` (
   `email` varchar(255) NOT NULL,
   `bokename` varchar(255) NOT NULL,
   PRIMARY KEY (`bokeid`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of boke
@@ -86,7 +109,11 @@ INSERT INTO `boke` VALUES ('1', 'test@a.com', '八度空间');
 INSERT INTO `boke` VALUES ('2', 'test2@a.com', 'gggd');
 INSERT INTO `boke` VALUES ('3', 'test3@a.com', '满天数星斗');
 INSERT INTO `boke` VALUES ('4', 'r@r.com', '真一般');
-INSERT INTO `boke` VALUES ('5', '6@6.com', '这是……');
+INSERT INTO `boke` VALUES ('5', '6@6.com', '这是??');
+INSERT INTO `boke` VALUES ('6', '2@2.com', '我的博客');
+INSERT INTO `boke` VALUES ('7', '8@8.com', '我的博客');
+INSERT INTO `boke` VALUES ('8', 'd@d.com', '我的博客');
+INSERT INTO `boke` VALUES ('9', 'r@q.com', '我的妞妞');
 
 -- ----------------------------
 -- Table structure for `followblog`
@@ -159,7 +186,7 @@ CREATE TABLE `like` (
 DROP TABLE IF EXISTS `linkblog`;
 CREATE TABLE `linkblog` (
   `blogid` int(11) NOT NULL,
-  `title` varchar(255) DEFAULT NULL,
+  `title` varchar(255) NOT NULL,
   `link` varchar(255) NOT NULL,
   PRIMARY KEY (`blogid`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
@@ -167,6 +194,7 @@ CREATE TABLE `linkblog` (
 -- ----------------------------
 -- Records of linkblog
 -- ----------------------------
+INSERT INTO `linkblog` VALUES ('34', '无题', 'http://localhost:8088/hqtcblog/tpl/linkEditor.php');
 
 -- ----------------------------
 -- Table structure for `picblog`
@@ -201,6 +229,7 @@ INSERT INTO `tag` VALUES ('gg');
 INSERT INTO `tag` VALUES ('IT，飞');
 INSERT INTO `tag` VALUES ('万里');
 INSERT INTO `tag` VALUES ('丰厚');
+INSERT INTO `tag` VALUES ('咚呱');
 INSERT INTO `tag` VALUES ('声明');
 INSERT INTO `tag` VALUES ('奇幻');
 INSERT INTO `tag` VALUES ('少年');
@@ -248,17 +277,19 @@ CREATE TABLE `user` (
 -- Records of user
 -- ----------------------------
 INSERT INTO `user` VALUES ('5@r.com', 'eeeeeeeeee', 'eeeeeeeeeeeeeeeeeeeeeee', 'upload/portrait/cat.jpg');
-INSERT INTO `user` VALUES ('6@6.com', 'qwerty', '肯定不去啊啊', 'upload/portrait/boy.jpg');
+INSERT INTO `user` VALUES ('6@6.com', 'qwerty', '肯定不去啊啊', 'upload/portrait/cat.jpg');
+INSERT INTO `user` VALUES ('8@8.com', 'qwerty', '超级吧吧', 'upload/portrait/dog.jpg');
 INSERT INTO `user` VALUES ('a@q.com', 'qwerty', 'errrrrrrrrrrrrrrrrrrrrrrrrrrrr', 'upload/portrait/cat.jpg');
 INSERT INTO `user` VALUES ('b@b.com', 'qwerty', 'baby', 'upload/portrait/cat.jpg');
 INSERT INTO `user` VALUES ('q@q.com', 'qwerty', 'ffffffffffffffffffffffffffffffffffffffff', 'upload/portrait/cat.jpg');
 INSERT INTO `user` VALUES ('r@ddd.com', 'qwerty', 'gggggggggggggggg', 'upload/portrait/cat.jpg');
+INSERT INTO `user` VALUES ('r@q.com', 'qwerty', 'qq小牛u', 'upload/portrait/girl.jpg');
 INSERT INTO `user` VALUES ('r@r.com', 'qwerty', 'ggmm', 'upload/portrait/cat.jpg');
 INSERT INTO `user` VALUES ('r@w.com', 'qwerty', 'ffffffffffffffffffffffffffffffffffff', 'upload/portrait/boy.jpg');
 INSERT INTO `user` VALUES ('test2@a.com', 'qwerty', '那是一条和马菲菲', 'upload/portrait/cat.jpg');
 INSERT INTO `user` VALUES ('test3@a.com', 'qwerty', '鱼儿不会飞', 'upload/portrait/boy.jpg');
 INSERT INTO `user` VALUES ('test3@qq.com', 'ddddddddd', '不是我啊啊啊啊啊啊啊啊啊', 'upload/portrait/boy.jpg');
-INSERT INTO `user` VALUES ('test@a.com', 'qwerty', 'nick', 'upload/portrait/girl.jpg');
+INSERT INTO `user` VALUES ('test@a.com', 'qwerty', 'nick', 'upload/portrait/cat.jpg');
 
 -- ----------------------------
 -- Table structure for `videoblog`
@@ -274,3 +305,5 @@ CREATE TABLE `videoblog` (
 -- ----------------------------
 -- Records of videoblog
 -- ----------------------------
+INSERT INTO `videoblog` VALUES ('14', '歼15总负责人被授“航空报国英模” [看东方]', 'http://v.youku.com/v_show/id_XNDgwNTM5NDY0.html');
+INSERT INTO `videoblog` VALUES ('15', '传歼-15S双座版试飞成功加快航母服役速度', 'http://v.youku.com/v_show/id_XNDczMDM5OTQw.html');
