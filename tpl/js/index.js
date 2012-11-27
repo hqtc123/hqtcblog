@@ -73,4 +73,13 @@ $(function () {
     $(".kwicks li:eq(0)").click(function () {
         setTimeout("javascript:location.href='../tpl/txtEditor.php'");
     });
+    $(".kwicks li:eq(1)").click(function () {
+        setTimeout("javascript:location.href='../tpl/picEditor.php'");
+    });
+    $(".kwicks li:eq(2)").click(function () {
+        setTimeout("javascript:location.href='../tpl/linkEditor.php'");
+    });
+    $(".kwicks li:eq(3)").click(function () {
+        setTimeout("javascript:location.href='../tpl/videoEditor.php'");
+    });
 })

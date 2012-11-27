@@ -6,6 +6,8 @@
  * Time: 上午10:22
  * To change this template use File | Settings | File Templates.
  */
+require_once "VideoUrlParser.class.php";
+header("Content-Type:text/html; charset=utf-8");
 class BlogController extends spController {
     var $result = false;
 
@@ -75,6 +77,21 @@ class BlogController extends spController {
         $newRow = array("blogid" => $id, "title" => $title, "content" => $content);
         $txtBlog->create($newRow);
         return true;
+    }
+
+    function getVideoInfo() {
+        $url = $this->spArgs("link");
+        $info = VideoUrlParser::parse($url);
+        if ($info == false) {
+            $arr["success"] = 0;
+            $arr["msg"] = "抱歉，我们无法识别此链接";
+            echo json_encode($arr);
+            return false;
+        }
+        $arr["title"] = $info["title"];
+        $arr["imgUrl"] = $info["img"];
+        $arr["success"] = 1;
+        echo json_encode($arr);
     }
 
     function updateBlog() {

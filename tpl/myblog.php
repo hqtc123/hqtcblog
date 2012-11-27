@@ -66,10 +66,10 @@
 
                         <div id="hidepic" class="hidecls">图片</div>
                     </li>
-                    <li id="music">
-                        <img src="images/music.png" alt="音乐">
+                    <li id="link">
+                        <img src="images/link.png" alt="链接">
 
-                        <div id="hidemusic" class="hidecls">音乐</div>
+                        <div id="hidemusic" class="hidecls">链接</div>
                     </li>
                     <li id="video">
                         <img src="images/video.png" alt="视频">
@@ -121,19 +121,56 @@
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
-    <div id="aside">
-        <div id="search-wrapper">
-            <div id="tag-search-box">
-                <button id="tag-go-search" type="submit"></button>
-                <input type="text" id="tag-search-input" placeholder="发现自己的兴趣">
+            <div class="feed">
+                <div class="headDiv">
+                    <img src="images/portrait.png" alt="">
+                </div>
+                <div class="triangle">
+                </div>
+                <div class="feedDiv">
+                    <div class="dateHolder">
+                        <div class="author" title="作者">
+                            这不是这个吧
+                        </div>
+                        <div class="dateDiv">
+                            2012-08-06
+                        </div>
+                    </div>
+                    <div class="titleDiv">
+                        一个好汉三个杀
+                    </div>
+                    <div class="videoDiv">
+                        <embed src="http://player.youku.com/player.php/sid/XMjI0MDIwNDc2/v.swf" quality="high"
+                               width="480" height="400" align="middle" allowScriptAccess="sameDomain"
+                               type="application/x-shockwave-flash"></embed>
+                    </div>
+                    <div class="attrHolder">
+                        <div class="tagsDiv">
+                            <span class="tagSpan"> #ff </span>
+                            <span class="tagSpan"> #ff</span>
+                        </div>
+                        <div class="optionsDiv">
+                            <div class="optDiv">转载</div>
+                            <div class="optDiv">回应(0)</div>
+                            <div class="optDiv">★喜欢(0)</div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
-        <div id="else">
-
+    </div>
+</div>
+<div id="aside">
+    <div id="search-wrapper">
+        <div id="tag-search-box">
+            <button id="tag-go-search" type="submit"></button>
+            <input type="text" id="tag-search-input" placeholder="发现自己的兴趣">
         </div>
     </div>
+    <div id="else">
+
+    </div>
+</div>
 </div>
 
 <ul id="dia_account">

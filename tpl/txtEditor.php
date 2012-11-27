@@ -67,6 +67,7 @@
 
         <div id="tag_div">
             <span id="tag_span">标签</span>
+
             <div id="tag_text_div">
                 <input id="tag_text" type="text" class="tags" placeholder="最多三个标签，请空格隔开"/>
             </div>

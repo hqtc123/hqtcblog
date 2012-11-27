@@ -63,10 +63,10 @@
 
                         <div id="hidepic" class="hidecls">图片</div>
                     </li>
-                    <li id="music">
-                        <img src="images/music.png" alt="音乐">
+                    <li id="link">
+                        <img src="images/link.png" alt="链接">
 
-                        <div id="hidemusic" class="hidecls">音乐</div>
+                        <div id="hidemusic" class="hidecls">链接</div>
                     </li>
                     <li id="video">
                         <img src="images/video.png" alt="视频">
