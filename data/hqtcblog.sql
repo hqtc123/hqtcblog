@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : localhost
-Source Server Version : 50513
+Source Server         : hqtcblog
+Source Server Version : 50528
 Source Host           : localhost:3306
 Source Database       : hqtcblog
 
 Target Server Type    : MYSQL
-Target Server Version : 50513
+Target Server Version : 50528
 File Encoding         : 65001
 
-Date: 2012-11-27 16:52:41
+Date: 2012-11-28 16:04:10
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -289,7 +289,7 @@ INSERT INTO `user` VALUES ('r@w.com', 'qwerty', 'fffffffffffffffffffffffffffffff
 INSERT INTO `user` VALUES ('test2@a.com', 'qwerty', '那是一条和马菲菲', 'upload/portrait/cat.jpg');
 INSERT INTO `user` VALUES ('test3@a.com', 'qwerty', '鱼儿不会飞', 'upload/portrait/boy.jpg');
 INSERT INTO `user` VALUES ('test3@qq.com', 'ddddddddd', '不是我啊啊啊啊啊啊啊啊啊', 'upload/portrait/boy.jpg');
-INSERT INTO `user` VALUES ('test@a.com', 'qwerty', 'nick', 'upload/portrait/cat.jpg');
+INSERT INTO `user` VALUES ('test@a.com', 'qwerty', 'nick', 'upload/portrait/dog.jpg');
 
 -- ----------------------------
 -- Table structure for `videoblog`

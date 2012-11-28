@@ -21,8 +21,8 @@ Date.prototype.format = function (formatStr) {
     return str;
 }
 $(function () {
-    var txtEditor = $("#txt_area").xheditor({marginTop:"20px", width:"600px", height:"320px", tools:'Fontface,Bold,Italic,Underline,FontColor,BackColor,Align,Link,Unlink,' +
-        'Img,Hr,Fullscreen,Source,Preview'});
+    var txtEditor = $("#txt_area").xheditor({marginTop:"20px", width:"600px", height:"320px", tools:'Fontface,Bold,Italic,Underline,FontColor,BackColor,Align,' +
+        'Hr,Fullscreen,Source,Preview'});
     $("#tag_text").tagsInput({width:"500px", height:"36px", defaultText:'按Enter确定', placeholderColor:"#888"});
     //share part begin
     $("#hidetext").hide();
