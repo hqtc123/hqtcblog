@@ -116,7 +116,7 @@ class Smarty extends Smarty_Internal_Data {
 	/**
 	* static variables
 	*/
-    // assigned global tpl vars
+    // assigned global view vars
     static $global_tpl_vars = array();
 
 	/**
@@ -184,7 +184,7 @@ class Smarty extends Smarty_Internal_Data {
     public $config_read_hidden = false; //Controls whether hidden config sections/vars are read from the file.
     // config vars
     public $config_vars = array();
-    // assigned tpl vars
+    // assigned view vars
     public $tpl_vars = array();
     // dummy parent object
     public $parent = null;
@@ -258,7 +258,7 @@ class Smarty extends Smarty_Internal_Data {
         $this->plugins_dir = array(SMARTY_PLUGINS_DIR);
         $this->cache_dir = '.' . DS . 'cache' . DS;
         $this->config_dir = '.' . DS . 'configs' . DS;
-        $this->debug_tpl = 'file:' . SMARTY_DIR . 'debug.tpl';
+        $this->debug_tpl = 'file:' . SMARTY_DIR . 'debug.view';
         if (isset($_SERVER['SCRIPT_NAME'])) {
             $this->assignGlobal('SCRIPT_NAME', $_SERVER['SCRIPT_NAME']);
         }
@@ -721,7 +721,7 @@ class Smarty extends Smarty_Internal_Data {
     {
     	// clear config vars
     	$this->config_vars = array();
-    	// clear assigned tpl vars
+    	// clear assigned view vars
     	$this->tpl_vars = array();
     	// clear objects for external methods
     	unset($this->register);

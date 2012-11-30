@@ -13,7 +13,6 @@ class BlogController extends spController {
 
     function addBlog() {
         $blog = spClass("Blog");
-        $tagClass = spClass("Tag");
         $blogTag = spClass("BlogTag");
 //add to blog
         $type = $this->spArgs("type");
@@ -22,49 +21,68 @@ class BlogController extends spController {
         $likeNum = $this->spArgs("likeNum");
         $email = $this->spArgs("email");
 
-        $newRow = array("type" => $type, "email" => $email, "date" => $date,
-            "commentnum" => $commentNum, "likenum" => $likeNum);
-        $id = $blog->create($newRow);
 
+//txt pic link video
+        switch ($type) {
+            case 1:
+                $title = $this->spArgs("title");
+                $content = $this->spArgs("content");
+                $feedArr = array("title" => $title, "content" => $content);
+                $feed = json_encode($feedArr);
+                break;
+            case 2:
+                $descr = $this->spArgs("descr");
+
+                $imgPath = "";
+                $path = dirname(__FILE__);
+                $path = str_replace("controller", "view/upload", $path);
+                $path = str_replace("\\", "/", $path);
+                $handler = opendir($path);
+                while (($filename = readdir($handler)) !== false) {
+                    if ($filename != "." && $filename != "..") {
+                        if (preg_match("/^temp_/", $filename, $r)) {
+                            $newName = str_replace("temp_", "", $filename);
+                            rename($path . "/" . $filename, $path . "/" . $newName);
+                            $relative = "upload" . "/" . $newName;
+                            $imgPath = $imgPath . $relative . ",";
+                        }
+                    }
+                }
+                closedir($handler);
+//                $this->result = $this->addPicBlog($id, $imgPath, $desc);
+                $feedArr = array("url" => $imgPath, "descr" => $descr);
+                $feed = json_encode($feedArr);
+                break;
+            case 3:
+                $title = $this->spArgs("title");
+                $link = $this->spArgs("link");
+                $feedArr = array("title" => $title, "url" => $link);
+                $feed = json_encode($feedArr);
+                break;
+            case 4:
+                $title = $this->spArgs("title");
+                $link = $this->spArgs("link");
+                $feedArr = array("title" => $title, "url" => $link);
+                $feed = json_encode($feedArr);
+                break;
+            default:
+
+        }
+        $newRow = array("type" => $type, "email" => $email, "date" => $date,
+            "commentnum" => $commentNum, "likenum" => $likeNum, "feed" => $feed);
+        $blogId = $blog->create($newRow);
+        $this->result = true;
 //deal the tag
         $tagStr = $this->spArgs("tagStr");
         if ($tagStr != "") {
             $tagArr = preg_split("/,/", $tagStr);
             foreach ($tagArr as $tag) {
-                $condition = array("tagname" => $tag);
-                if (!$tagClass->find($condition)) {
-                    $tagClass->create($condition);
-                }
-                $condition2 = array("blogid" => $id, "tagname" => $tag);
-                if (!$blogTag->find($condition2)) {
-                    $blogTag->create($condition2);
+                $condition = array("blogid" => $blogId, "tagname" => $tag);
+                if (!$blogTag->find($condition)) {
+                    $blogTag->create($condition);
                 }
             }
         }
-
-//txt pic music video
-        switch ($type) {
-            case 1:
-                $title = $this->spArgs("title");
-                $content = $this->spArgs("content");
-                $this->result = $this->addTxtBlog($id, $title, $content);
-                break;
-            case 2:
-                break;
-            case 3:
-                $title = $this->spArgs("title");
-                $link = $this->spArgs("link");
-                $this->result = $this->addLinkBlog($id, $title, $link);
-                break;
-            case 4:
-                $title = $this->spArgs("title");
-                $link = $this->spArgs("link");
-                $this->result = $this->addVideoBlog($id, $title, $link);
-                break;
-            default:
-
-        }
-
 
 //        if (count($tagsArr) != 0) {
 //            foreach ($tagsArr as $tag) {
@@ -75,32 +93,36 @@ class BlogController extends spController {
         if ($this->result) {
             $arr["success"] = 1;
             $arr["msg"] = "发布成功";
+        } else {
+            $arr["success"] = 0;
+            $arr["msg"] = "发布失败，请重试";
         }
         echo json_encode($arr);
     }
 
-    function addTxtBlog($id, $title, $content) {
-        $txtBlog = spClass("TxtBlog");
-        $newRow = array("blogid" => $id, "title" => $title, "content" => $content);
-        $txtBlog->create($newRow);
-        return true;
+    function cancelPic() {
+        $path = dirname(__FILE__);
+        $path = str_replace("controller", "view/upload", $path);
+        $path = str_replace("\\", "/", $path);
+        $handler = opendir($path);
+        $result = true;
+        while (($filename = readdir($handler)) !== false) {
+            if ($filename != "." && $filename != "..") {
+                if (preg_match("/^temp_/", $filename, $r)) {
+                    $result = unlink($path . "/" . $filename);
+                }
+            }
+        }
+        closedir($handler);
+        if ($result) {
+            $arr["success"] = 1;
+        } else {
+            $arr["success"] = 0;
+        }
+        echo json_encode($arr);
     }
 
-    function addVideoBlog($id, $title, $link) {
-        $videoBlog = spClass("VideoBlog");
-        $newRow = array("blogid" => $id, "title" => $title, "link" => $link);
-        $videoBlog->create($newRow);
-        return true;
-    }
-
-    function addLinkBlog($id, $title, $link) {
-        $linkBlog = spClass("LinkBlog");
-        $newRow = array("blogid" => $id, "title" => $title, "link" => $link);
-        $linkBlog->create($newRow);
-        return true;
-    }
-
-    //抓取视频信息
+//抓取视频信息
     function getVideoInfo() {
         $url = $this->spArgs("link");
         $info = VideoUrlParser::parse($url);
@@ -119,4 +141,10 @@ class BlogController extends spController {
     function updateBlog() {
 
     }
+
+
 }
+
+//$coo=new BlogController();
+//var_dump($coo->getTempArr());
+

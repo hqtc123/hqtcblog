@@ -625,7 +625,7 @@ class Smarty_Internal_Template extends Smarty_Internal_Data {
        	}
         // try absolute filepath
         if (file_exists($file)) return $file;
-        // no tpl file found
+        // no view file found
         if (!empty($this->smarty->default_template_handler_func)) {
             if (!is_callable($this->smarty->default_template_handler_func)) {
                 throw new SmartyException("Default template handler not callable");

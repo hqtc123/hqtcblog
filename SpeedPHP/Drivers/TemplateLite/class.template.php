@@ -893,7 +893,7 @@ class Template_Lite {
 
 //	function _parse_resource_link($resource_link)
 //	{
-//		$stuffing = "file:/this/is/the/time_5-23.tpl";
+//		$stuffing = "file:/this/is/the/time_5-23.view";
 //		$stuffing_data = explode(":", $stuffing);
 //		preg_match_all('/(?:([0-9a-z._-]+))/i', $stuffing, $stuff);
 //		print_r($stuff);

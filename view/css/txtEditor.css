@@ -1,0 +1,281 @@
+body {
+    font-family: "黑体";
+}
+
+#title_wrapper {
+    width: 600px;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 10px;
+    background-color: #fdfdfd;
+}
+
+#main_wrapper {
+    width: 600px;
+    height: 600px;
+    margin: 0 auto;
+    padding-left: 100px;
+    padding-right: 100px;
+    background-color: #fdfdfd;
+}
+
+#txt_area {
+    margin-left: 100px;
+    font-size: 22px;
+}
+
+h2#pb-main-title {
+    color: #056;
+    height: 18px;
+    font-size: 18px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #E1E1E1;
+    position: relative;
+}
+
+h2 span {
+    font-weight: bolder;
+}
+
+#title #for_title {
+    font-size: 18px;
+}
+
+.tail {
+    font-size: 14px;
+    color: #999999;
+}
+
+input.pb-input-text {
+    height: 30px;
+    margin-top: 10px;
+    box-shadow: 0 1px 1px #D3D1D1;
+}
+
+.pb-input-text {
+    font-size: 20px;
+    color: #333;
+    line-height: 26px;
+    padding: 7px;
+    width: 588px;
+    outline: none;
+    border: 1px solid #DDD;
+    border-top: 1px solid #EBEBEB;
+    border-bottom: 1px solid #B7B7B7;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    background: white;
+}
+
+#neirong {
+    margin-top: 18px;
+}
+
+#neirong #for_neirong {
+    font-size: 20px;
+}
+
+#pb-action-holder {
+    margin-top: 20px;
+}
+
+.skin-button-willlight {
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    cursor: pointer;
+    overflow: hidden;
+    position: relative;
+    zoom: 1;
+    height: 39px;
+    line-height: 37px;
+    padding-left: 5px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+    background-color: #cccccc;
+}
+
+.skin-button-willlight:hover {
+    background-color: #666666;
+}
+
+.skin-button-willlight .ui-button-bg-left {
+    display: block;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 5px;
+    height: 39px;
+}
+
+.pb-submit {
+    float: right;
+}
+
+.skin-button-willlight {
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 37px;
+    text-align: center;
+    color: #333;
+    font-size: 14px;
+}
+
+#ctrlbuttonpb-submit {
+    border-radius: 4px;
+    cursor: pointer;
+    line-height: 37px;
+    text-align: center;
+    color: #fff;
+    font-size: 14px;
+    background-color: #069;
+}
+
+#ctrlbuttonpb-submit:hover {
+    background-color: #056;
+}
+
+#tag_div {
+    margin-top: 30px;
+    margin-bottom: 10px;
+}
+
+#tag_text_div {
+    float: right;
+}
+
+#tag_span {
+    margin-top: 12px;
+    float: left;
+    font-size: 20px;
+}
+
+#clearboth {
+    clear: both;
+}
+
+#thumbDiv {
+    margin-top: 20px;
+}
+
+#dropbox:before {
+    display: block;
+    content: '';
+    height: 4px;
+    width: 100%;
+    background: url('../images/blue_line.jpg');
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-shadow: 0 2px 2px rgba(0, 0, 0, 0.4);
+}
+
+/*-------------------------
+	Dropbox Element
+--------------------------*/
+
+#dropbox {
+    background: url('../images/background_tile_3.jpg');
+    border-radius: 3px;
+    position: relative;
+    margin: 20px auto 30px;
+    min-height: 160px;
+    overflow: hidden;
+    padding-bottom: 10px;
+    width: 600px;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.3) inset, 0 -3px 2px rgba(0, 0, 0, 0.1);
+}
+
+#dropbox .message {
+    font-size: 18px;
+    color: #666;
+    text-align: center;
+    padding-top: 100px;
+    display: block;
+}
+
+#dropbox .message i {
+    color: #aaa;
+    font-size: 12px;
+}
+
+#dropbox:before {
+    border-radius: 3px 3px 0 0;
+}
+
+/*-------------------------
+	Image Previews
+--------------------------*/
+
+#dropbox .preview {
+    width: 245px;
+    height: 215px;
+    float: left;
+    margin: 55px 0 0 60px;
+    position: relative;
+    text-align: center;
+}
+
+#dropbox .preview img {
+    max-width: 240px;
+    max-height: 180px;
+    border: 3px solid #fff;
+    display: block;
+
+    box-shadow: 0 0 2px #000;
+}
+
+#dropbox .imageHolder {
+    display: inline-block;
+    position: relative;
+}
+
+#dropbox .uploaded {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: url('../images/done.png') no-repeat center center rgba(255, 255, 255, 0.5);
+    display: none;
+}
+
+#dropbox .preview.done .uploaded {
+    display: block;
+}
+
+/*-------------------------
+	Progress Bars
+--------------------------*/
+
+#dropbox .progressHolder {
+    position: absolute;
+    background-color: #252f38;
+    height: 12px;
+    width: 100%;
+    left: 0;
+    bottom: 0;
+
+    box-shadow: 0 0 2px #000;
+}
+
+#dropbox .progress {
+    background-color: #2586d0;
+    position: absolute;
+    height: 100%;
+    left: 0;
+    width: 0;
+
+    box-shadow: 0 0 1px rgba(255, 255, 255, 0.4) inset;
+
+    -moz-transition: 0.25s;
+    -webkit-transition: 0.25s;
+    -o-transition: 0.25s;
+    transition: 0.25s;
+}
+
+#dropbox .preview.done .progress {
+    width: 100% !important;
+}

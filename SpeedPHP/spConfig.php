@@ -65,7 +65,7 @@ return array(
 	'view' => array( // 视图配置
 		'enabled' => TRUE, // 开启视图
 		'config' =>array(
-			'template_dir' => APP_PATH.'/tpl', // 模板目录
+			'template_dir' => APP_PATH.'/view', // 模板目录
 			'compile_dir' => APP_PATH.'/tmp', // 编译目录
 			'cache_dir' => APP_PATH.'/tmp', // 缓存目录
 			'left_delimiter' => '{',  // smarty左限定符

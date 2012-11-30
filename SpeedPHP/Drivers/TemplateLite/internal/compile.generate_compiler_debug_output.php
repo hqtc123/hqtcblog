@@ -26,7 +26,7 @@ function generate_compiler_debug_output(&$object)
 	$debug_output .= "\$this->_templatelite_debug_loop = true;\n";
 	$debug_output .= "\$this->_templatelite_debug_dir = \$this->template_dir;\n";
 	$debug_output .= "\$this->template_dir = TEMPLATE_LITE_DIR . 'internal/';\n";
-	$debug_output .= "echo \$this->_fetch_compile('debug.tpl');\n";
+	$debug_output .= "echo \$this->_fetch_compile('debug.view');\n";
 	$debug_output .= "\$this->template_dir = \$this->_templatelite_debug_dir;\n";
 	$debug_output .= "\$this->_templatelite_debug_loop = false; \n";
 	return $debug_output;

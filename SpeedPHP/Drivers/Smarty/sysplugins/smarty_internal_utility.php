@@ -49,7 +49,7 @@ class Smarty_Internal_Utility {
      * @param int $max_errors 
      * @return integer number of template files recompiled
      */
-    function compileAllTemplates($extention = '.tpl', $force_compile = false, $time_limit = 0, $max_errors = null)
+    function compileAllTemplates($extention = '.view', $force_compile = false, $time_limit = 0, $max_errors = null)
     { 
         // switch off time limit
         if (function_exists('set_time_limit')) {
