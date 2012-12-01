@@ -27,12 +27,10 @@ class BlogController extends spController {
             case 1:
                 $title = $this->spArgs("title");
                 $content = $this->spArgs("content");
-                $feedArr = array("title" => $title, "content" => $content);
-                $feed = json_encode($feedArr);
+                $url = " ";
                 break;
             case 2:
-                $descr = $this->spArgs("descr");
-
+                $title = $this->spArgs("descr");
                 $imgPath = "";
                 $path = dirname(__FILE__);
                 $path = str_replace("controller", "view/upload", $path);
@@ -50,26 +48,27 @@ class BlogController extends spController {
                 }
                 closedir($handler);
 //                $this->result = $this->addPicBlog($id, $imgPath, $desc);
-                $feedArr = array("url" => $imgPath, "descr" => $descr);
-                $feed = json_encode($feedArr);
+//                $feedArr = array("url" => $imgPath, "descr" => $descr);
+//                $feed = json_encode($feedArr);
+                $url = $imgPath;
+                $content = "";
                 break;
             case 3:
                 $title = $this->spArgs("title");
-                $link = $this->spArgs("link");
-                $feedArr = array("title" => $title, "url" => $link);
-                $feed = json_encode($feedArr);
+                $url = $this->spArgs("link");
+                $content = "";
                 break;
             case 4:
                 $title = $this->spArgs("title");
-                $link = $this->spArgs("link");
-                $feedArr = array("title" => $title, "url" => $link);
-                $feed = json_encode($feedArr);
+                $url = $this->spArgs("link");
+                $content = "";
                 break;
             default:
 
         }
-        $newRow = array("type" => $type, "email" => $email, "date" => $date,
-            "commentnum" => $commentNum, "likenum" => $likeNum, "feed" => $feed);
+        $newRow = array('type' => $type, 'email' => $email, 'date' => $date,
+            'commentnum' => $commentNum, 'likenum' => $likeNum, 'title' => $title, "url" => $url, "content" => $content);
+
         $blogId = $blog->create($newRow);
         $this->result = true;
 //deal the tag

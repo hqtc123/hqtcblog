@@ -56,72 +56,8 @@
 
         </div>
         <div id="content">
-            <div class="feed">
-                <div class="eamilHide"><?php echo $_SESSION["email"]; ?></div>
-                <div class="headDiv">
-                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
-                </div>
-                <div class="triangle">
-                </div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="dateDiv">
-                            2012-08-06
-                        </div>
-                    </div>
-                    <div class="titleDiv">
-                        一个好汉三个杀
-                    </div>
-                    <div class="contentDiv">
-                        零零碎碎，暮暮朝朝。我的年华凭空逝去，仿佛望不穿的秋水一般。
-                        美好需要回忆，苦痛也应当铭记。从今日起，这篇流水
-                        将记录这苦难人生余下生活的点点滴滴。
-                        仰望星空，璀璨而又浩瀚。俯察大地，广博而又辽阔。想我一生，终不能游历山河，终不能仗剑天涯，是要错过多少奇景美事？
-                        心中的凄楚到底要持续多久？难道非要等到年介古稀，到心中泛不起一丝涟漪？若少年便如此，此生又有何意义可言。既苦痛终不能免。心境的悲哀就应当持续，直到岁月不再起涟漪波澜。
-                    </div>
-                    <div class="attrHolder">
-                        <div class="tagsDiv">
-                            #ff #ff
-                        </div>
-                        <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="feed">
-                <div class="headDiv">
-                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
-                </div>
-                <div class="triangle">
-                </div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="author">反反复复飞gddd</div>
-                        <div class="dateDiv">
-                            2012-08-06
-                        </div>
-                    </div>
-                    <div class="titleDiv">
-                        百度两下
-                    </div>
-                   <div class="linkDiv">
-                       <a href="http://www.baidu.com/">http://www.baidu.com/</a>
-                   </div>
-
-                    <div class="attrHolder">
-                        <div class="tagsDiv">
-                            #ff #ff
-                        </div>
-                        <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
-                        </div>
-                    </div>
-                </div>
+            <div id="loading">
+                <img src="images/loading.gif" alt="">
             </div>
         </div>
     </div>

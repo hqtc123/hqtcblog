@@ -30,7 +30,10 @@ $(function () {
         $("#thumbDiv").hide();
         $("#pb-video-link").show();
         $("#neirong").show();
+        $("#pb-video-link").val("");
+        valid = false;
     })
+    var valid = false;
     $("#pb-video-link").blur(function () {
         link = $(this).val();
         if (link != "") {
@@ -50,6 +53,7 @@ $(function () {
                         $("#thumbImg").attr("src", img);
                         $("#thumbDiv").show();
                         $("#pb-text-title").val(title);
+                        valid = true;
                     } else {
                         $.dialog({
                             title:"出错啦",
@@ -63,9 +67,24 @@ $(function () {
         }
     })
     $(".pb-submit").click(function () {
-
         title = "无题";
         link = $("#pb-video-link").val();
+        if (link == "") {
+            $.dialog({
+                title:"提示",
+                content:"您还没有填写链接",
+                time:2
+            });
+            return false;
+        }
+        if (!valid) {
+            $.dialog({
+                title:"提示",
+                content:"链接无效",
+                time:2
+            });
+            return false;
+        }
         if ($("#pb-text-title").val() != "") {
             title = $("#pb-text-title").val();
         }
