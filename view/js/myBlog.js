@@ -19,9 +19,13 @@ function isAtBottom() {
 
 
 function showFeed(json) {
+    $("#loading").remove();
     $.each(json, function (index, html) {
         $(html).appendTo("#content");
-    })
+    });
+    if ($(".contentDiv").css("height") == "300px") {
+        $(".contentDiv").next(".seeHolder").css("display", "block");
+    }
 }
 $(function () {
     //share part begin
@@ -83,7 +87,10 @@ $(function () {
 //    html = feedHead + createLinkDiv("gugooooouu", "http://translate.google.cn/") + feedFoot;
 //    $(html).appendTo($("#content"));
     function init(email) {
-
+        var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+        $("str").appendTo("#content");
+        setTimeout(function () {
+        }, "5000");
         $.ajax({
             url:getBaseUrl() + "/index.php?c=ShowController&a=initMyBlog",
             type:"POST",
@@ -98,9 +105,13 @@ $(function () {
             }
         })
     }
+
     $(window).scroll(function () {
         if (isAtBottom()) {
-//            init(email,pageIndex);
+            init(email, pageIndex);
         }
+    })
+    $(".feed .seeAll").live("clcick", function () {
+
     })
 });

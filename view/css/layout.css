@@ -1,7 +1,7 @@
 body {
     margin: 0;
     padding: 0;
-    background-color: #999;
+    background-color: #dfdfdf;
 }
 
 a {
@@ -11,7 +11,7 @@ a {
 #header {
     width: 100%;
     height: 80px;
-    background-color: #666;
+    background-color: #333;
 }
 
 #headercontent {
@@ -53,7 +53,7 @@ a {
 
 .blog:hover {
     color: #ffffff;
-    background-color: #069;
+    background-color: #666;
 }
 
 #addblog {
@@ -71,7 +71,7 @@ a {
     font-size: 18px;
     font-family: "微软雅黑";
     padding-top: 11px;
-    background-color: #666;
+    background-color: #000;
 }
 
 #hidemenu {
@@ -96,10 +96,11 @@ a {
     font-family: "微软雅黑";
     padding-top: 6px;
     cursor: pointer;
+    background-color: #666;
 }
 
 #hidemenu .hideli:hover {
-    background-color: #333;
+    background-color: #000;
 }
 
 #container {
@@ -149,7 +150,7 @@ a {
 }
 
 #nav #headpic:hover {
-    background-color: #aac6eb;
+    background-color: #666;
 }
 
 #nav #menubar {
@@ -157,7 +158,7 @@ a {
     float: right;
     width: 600px;
     height: 100px;
-    background-color: #dfdfdf;
+    background-color: #fff;
 }
 
 .kwicks {
@@ -170,7 +171,7 @@ a {
     width: 140px;
     height: 100px;
     cursor: pointer;
-    background-color: #dfdfdf;
+    background-color: #fff;
 }
 
 .kwicks li img {
@@ -199,7 +200,7 @@ a {
     height: 100px;
     margin-left: 10px;
     font-size: 25px;
-    color: #069;
+    color: #666;
     text-align: center;
     padding-top: 16px;
     font-family: "微软雅黑";
@@ -252,7 +253,7 @@ a {
     padding-bottom: 20px;
     padding-right: 20px;
     border-radius: 5px;
-    background-color: #dfdfdf;
+    background-color: #fff;
     margin-bottom: 20px;
 }
 
@@ -275,7 +276,7 @@ a {
     float: right;
     margin-right: 20px;
     font-size: 14px;
-    background-color: #1993e8;
+    background-color: #666;
     color: #cfcfcf;
     padding: 2px;
     border-bottom-left-radius: 5px;
@@ -313,10 +314,12 @@ a {
 }
 
 .feed .contentDiv {
+    float: left;
     text-align: justify;
     font-size: 16px;
     font-family: "微软雅黑";
-    margin-bottom: 10px;
+    max-height: 300px;
+    overflow: hidden;
 }
 
 .feed .videoDiv {
@@ -341,7 +344,7 @@ a {
     cursor: pointer;
     margin-right: 10px;
     font-size: 18px;
-    color: #069;
+    color: #666;
 }
 
 .feed .linkDiv {
@@ -350,6 +353,26 @@ a {
 }
 
 .feed .linkDiv a {
+    text-decoration: underline;
+}
+
+.feed .seeHolder {
+    float: left;
+    height: 14px;
+    width: 580px;
+    margin-bottom: 10px;
+    display: none;
+}
+
+.feed .seeAll {
+    color: #000;
+    float: right;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.feed .seeAll:hover {
+    color: #666;
     text-decoration: underline;
 }
 
@@ -393,11 +416,20 @@ a {
     color: #555;
 }
 
-#loading{
+#loading {
+    height: 50px;
+    width: 150px;
     margin-left: 300px;
 }
-#loading img{
+
+#loading img {
     margin-left: auto;
+}
+
+#loading span {
+    margin-top: 8px;
+    float: right;
+    font-size: 18px;
 }
 
 /*right side*/

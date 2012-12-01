@@ -11,6 +11,7 @@ class ShowController extends spController {
     function initMyBlog() {
         $blogClass = spClass("Blog");
         $userClass = spClass("User");
+        $blogTagClass = spClass("BlogTag");
         $email = $this->spArgs("email");
         $pageIndex = $this->spArgs("pageIndex");
         $condition = array("email" => $email);
@@ -22,12 +23,16 @@ class ShowController extends spController {
         $blogResult = $blogClass->findAll($condition, "blogid DESC", null, "$startIndex,$perCount");
         $returnArr = array();
         foreach ($blogResult as $blog) {
-            $tagsArr = array("aa", "bbb", "ddd"); //todo
+            $blogid = $blog["blogid"];
+            $tagsArr = array();
+            $blogTagResult = $blogTagClass->findAll(array("blogid" => $blogid));
+            foreach ($blogTagResult as $blogTag) {
+                $tagsArr[] = $blogTag["tagname"];
+            }
             $type = $blog["type"];
             $date = $blog["date"];
             $commentNum = $blog["commentnum"];
             $likeNum = $blog["likenum"];
-            $feedStr = $blog["feed"];
             $title = $blog["title"];
             $content = $blog["content"];
             $url = $blog["url"];

@@ -7,6 +7,6 @@
  * To change this template use File | Settings | File Templates.
  */
 class BlogTag extends spModel {
-    var $table = "blog_tag";
+    var $table = "blogtag";
     var $pk = "blogid";
 }

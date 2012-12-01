@@ -21,16 +21,7 @@ Date.prototype.format = function (formatStr) {
     return str;
 }
 function IsURL(str_url) {
-    var strRegex = '^((https|http|ftp|rtsp|mms)?://)'
-        + '?(([0-9a-z_!~*\'().&amp;=+$%-]+: )?[0-9a-z_!~*\'().&amp;=+$%-]+@)?' //ftp的user@
-        + '(([0-9]{1,3}.){3}[0-9]{1,3}' // IP形式的URL- 199.194.52.184
-        + '|' // 允许IP和DOMAIN（域名）
-        + '([0-9a-z_!~*\'()-]+.)*' // 域名- www.
-        + '([0-9a-z][0-9a-z-]{0,61})?[0-9a-z].' // 二级域名
-        + '[a-z]{2,6})' // first level domain- .com or .museum
-        + '(:[0-9]{1,4})?' // 端口- :80
-        + '((/?)|' // a slash isn't required if there is no file name
-        + '(/[0-9a-z_!~*\'().;?:@&amp;=+$,%#-]+)+/?)$';
+    var strRegex = /^http:\/\/[A-Za-z0-9]+\.[A-Za-z0-9]+[\/=\?%\-&_~`@[\]\':+!]*([^<>\"\"])*$/;
     var re = new RegExp(strRegex);
     //re.test()
     if (re.test(str_url)) {
