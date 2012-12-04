@@ -26,18 +26,21 @@ class ShowController extends spController {
     }
 
     function initIndex() {
-        $unFollow = false;
-        $followUser = spClass("FollowUser");
-        $blogClass = spClass("Blog");
-        $userClass = spClass("User");
-        $blogTagClass = spClass("BlogTag");
+        $blog = spClass("Blog");
         $email = $this->spArgs("email");
         $pageIndex = $this->spArgs("pageIndex");
+        $perCount = 5;
+        $startIndex = $perCount * $pageIndex;
+
         $condition = array("email" => $email);
         $resultArr = array();
-
-//        $followResult = array; //todo
-
+        $sql = 'select * from blog where email = "' . $email . '" OR blogid IN(select blogid FROM blogtag
+             WHERE tagname in(SELECT tagname FROM followtag WHERE email = "' . $email . '")) OR email IN(SELECT
+             useremail from followuser WHERE email = "' . $email . '") ORDER BY blogid DESC LIMIT ' . $startIndex
+            . ',' . $perCount;
+        $blogResult = $blog->findSql($sql);
+        $resultArr = $this->result2html($blogResult);
+        echo json_encode($resultArr);
     }
 
 //标签查找
@@ -50,44 +53,41 @@ class ShowController extends spController {
         echo json_encode($resultArr);
     }
 
-    //获得关注标签
-    function getFollowTag($email){
 
-    }
     function createFeedHead($blogID, $email, $nick, $portraitUrl, $date) {
-        $str = '<div class="feed"><div class="blogIDHide">' . $blogID . '</div>' .
+        $str = '<div class="feed"><div class="blogIDHide">' . $blogID . '</div >' .
             '<div class="emailHide">' . $email .
-            '</div><div class="headDiv"><img src=' . $portraitUrl .
-            '></div><div class="triangle"></div>' .
+            '</div><div class="headDiv" ><img src =' . $portraitUrl .
+            '></div><div class="triangle"></div > ' .
             '<div class="feedDiv">' .
             '<div class="dateHolder">' .
-            '<div class="author">' . $nick . '</div>' .
-            '<div class="dateDiv">' . $date . '</div></div>';
+            '<div class="author">' . $nick . '</div> ' .
+            '<div class="dateDiv">' . $date . '</div></div> ';
         return $str;
     }
 
     function createFeedFoot($blogID, $tagsArr, $commentnum, $likenum) {
-        $str = '<div class="attrHolder"><div class="tagsDiv">';
+        $str = '<div class="attrHolder"><div class="tagsDiv" > ';
         $tagsShow = 3;
         if (count($tagsArr) < $tagsShow) {
             $tagsShow = count($tagsArr);
         }
         for ($i = 0; $i < $tagsShow; $i++) {
-            $str .= '<span class="tagSpan">' . $tagsArr[$i] . '</span>';
+            $str .= '<span class="tagSpan" > ' . $tagsArr[$i] . '</span > ';
         }
         if ($commentnum != 0) {
             $comment = spClass("Comment");
             $condition = array("blogid" => $blogID);
             $commentResult = $comment->findAll($condition, "commentid DESC");
         }
-        $str .= '</div><div class="optionsDiv"><div class="optDiv removeDiv">删除</div><div class="optDiv reprintDiv">' .
-            '转载</div><div class="optDiv commentDiv">回应(' . $commentnum . ')</div><div class="optDiv likeDiv">★喜欢(' . $likenum . ')</div>' .
-            '</div></div></div> <div class="feedComment">
+        $str .= '</div><div class="optionsDiv"><div class="optDiv removeDiv">删除</div ><div class="optDiv reprintDiv"> ' .
+            '转载</div ><div class="optDiv commentDiv">回应(' . $commentnum . ')</div ><div class="optDiv likeDiv">★喜欢(' . $likenum . ') </div > ' .
+            '</div></div></div><div class="feedComment">
                     <div class="cmtArea clearFix">
-                        <textarea class="cmtText" rows="" cols=""></textarea>
+                        <textarea class="cmtText" rows = "" cols ="" ></textarea>
 
-                        <div class="cmtButton">
-                            <span class="cmtSpan">评论</span>
+                        <div class="cmtButton" >
+                            <span class="cmtSpan" >评论</span >
                         </div>
                     </div>
                     <div class="cmtList">
@@ -100,26 +100,26 @@ class ShowController extends spController {
             }
         }
 
-        $str .= '</ul>
-                    </div>
-                    <div class="shQi">
-                        <span class="shQiSpan">收起↑</span>
-                    </div>
-                </div></div>';
+        $str .= '</ul >
+                    </div >
+                    <div class="shQi" >
+                        <span class="shQiSpan" >收起↑</span >
+                    </div >
+                </div ></div > ';
         return $str;
     }
 
 
     function createTxtDiv($title, $content) {
         $str = '<div class="titleDiv">' . $title . '</div>' .
-            '<div class="contentDiv">' . $content . '</div>';
+            '<div class="contentDiv" >' . $content . '</div>';
         $str .= '<div class="seeHolder"><div class="seeAll">查看原文→</div></div>';
         return $str;
     }
 
     function createPicDiv($imgUrlArr, $descr) {
 
-        $str = '<div class="picDiv">';
+        $str = '<div class="picDiv" > ';
 //            <img src="http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg">
 //                <img src="http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg">
 //
@@ -127,26 +127,26 @@ class ShowController extends spController {
         $picsShow = count($imgUrlArr);
 
         for ($i = 0; $i < $picsShow; $i++) {
-            $str .= '<img src=' . $imgUrlArr[$i] . '>';
+            $str .= '<img src = ' . $imgUrlArr[$i] . ' > ';
         }
-        $str .= '<div class="clear"></div><div class="descDiv">&nbsp;&nbsp;' . $descr . '</div></div>';
-        $str .= '<div class="seeHolder"><div class="seeAll">查看原文→</div></div>';
+        $str .= '<div class="clear"></di ><div class="descDiv">&nbsp;&nbsp;' . $descr . ' </div></div> ';
+        $str .= '<div class="seeHolder" ><div class="seeAll" >查看原文→</div ></div > ';
         return $str;
     }
 
     function createVideoDiv($title, $imgUrl, $videoUrl) {
 
-        $str = '<div class="titleDiv">' . $title . '</div>' .
-            '<div class="videoDiv"><img src="' . $imgUrl . '" alt="">' .
-            '<embed src=' . $videoUrl . ' align="middle" allowScriptAccess="sameDomain "type="application/x-shockwave-flash"></embed>' .
-            '<div class="stopVideo">收起↑</div><div class="clear"></div></div>';
+        $str = '<div class="titleDiv"> ' . $title . '</div>' .
+            '<div class="videoDiv"><img src = "' . $imgUrl . '" alt = "">' .
+            '<embed src = ' . $videoUrl . ' align = "middle" allowScriptAccess = "sameDomain "type ="application/x-shockwave-flash" ></embed > ' .
+            '<div class="stopVideo" >收起↑</div><div class="clear"></div></div> ';
         return $str;
     }
 
     function createLinkDiv($title, $url) {
 
-        $str = '<div class="titleDiv">' . $title . '</div>' .
-            '<div class="linkDiv"><a href="' . $url . '">' . $url . '</a></div>';
+        $str = '<div class="titleDiv">' . $title . '</div> ' .
+            '<div class="linkDiv"><a href = "' . $url . '"> ' . $url . '</a></div> ';
         return $str;
     }
 
@@ -156,10 +156,10 @@ class ShowController extends spController {
         $userResult = $userClass->find($condition);
         $portraitUrl = $userResult["portraiturl"];
         $nick = $userResult["nick"];
-        $str = '<li class="cmtLi"><div class="emailDiv">' . $email . '</div>' .
-            '<img class="cmtPor" width="32" height="32" src="' . $portraitUrl . '"/>' .
-            '<div class="cmtMain"><div class="cmtNick">' . $nick . ' </div>' .
-            '<span class="cmtContent">' . $comment . '</span></div> </li>';
+        $str = '<li class="cmtLi"><div class="emailDiv"> ' . $email . '</div>' .
+            '<img class="cmtPor" width = "32" height = "32" src = "' . $portraitUrl . '"/>' .
+            '<div class="cmtMain"><div class="cmtNick"> ' . $nick . ' </div>' .
+            '<span class="cmtContent"> ' . $comment . '</span></div></li>';
         return $str;
     }
 

@@ -84,59 +84,76 @@
 
         </div>
         <div id="content">
+            <div id="user">
+                <div id="infoDiv">
+                    <div id="hisEmail"><?php echo $_SESSION["hisEmail"]; ?></div>
+                    <div id="userPic">
+                        <img src=<?php echo $_SESSION["hisUrl"]; ?> alt="">
+                    </div>
+                    <div class="nickDiv">
+                        <span class="nickSpan"><?php echo $_SESSION["hisNick"]; ?></span>
+                    </div>
+                </div>
+                <div id="followBtn">
+                    <span id="followSpan">关注博客</span>
+                </div>
+                <div id="unBtn">
+                    <span id="unSpan">取消关注</span>
+                </div>
+            </div>
             <!--            <div id="loading">-->
             <!--                <img src="images/loading.gif" alt="">-->
             <!--                <span>载入更多……</span>-->
             <!--            </div>-->
-            <div class="feed">
-                <div class="blogIDHide">39</div>
-                <div class="emailHide">1@1.com</div>
-                <div class="headDiv"><img src="upload/portrait/portrait.png"></div>
-                <div class="triangle"></div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="author">1</div>
-                        <div class="dateDiv">2012-12-03</div>
-                    </div>
-                    <div class="titleDiv">无题</div>
-                    <div class="contentDiv">朝鲜半岛核危机</div>
-                    <div class="seeHolder">
-                        <div class="seeAll">查看原文→</div>
-                    </div>
-                    <div class="attrHolder">
-                        <div class="tagsDiv"><span class="tagSpan">朝鲜</span></div>
-                        <div class="optionsDiv">
-                            <div class="optDiv removeDiv">删除</div>
-                            <div class="optDiv reprintDiv">转载</div>
-                            <div class="optDiv commentDiv">回应(0)</div>
-                            <div class="optDiv likeDiv">★喜欢(0)</div>
-                        </div>
-                    </div>
-                </div>
-                <div class="feedComment">
-                    <div class="cmtArea clearFix">
-                        <textarea class="cmtText" rows="" cols=""></textarea>
-
-                        <div class="cmtButton">
-                            <span class="cmtSpan">回应</span>
-                        </div>
-                    </div>
-                    <div class="cmtList">
-                        <ul class="cmtUl">
-                            <li class="cmtLi">
-                                <div class="emailDiv">1@1.com</div>
-                                <img class="cmtPor" width="32" height="32" src="upload/portrait/portrait.png">
-
-                                <div class="cmtMain"><a class="cmtNick" href="#">1 </a><span
-                                        class="cmtContent">d都顶顶顶顶顶顶顶顶顶水水水水水水水水水水d</span></div>
-                            </li>
-                        </ul>
-                    </div>
-                    <div class="shQi">
-                        <span class="shQiSpan">收起↑</span>
-                    </div>
-                </div>
-            </div>
+            <!--            <div class="feed">-->
+            <!--                <div class="blogIDHide">39</div>-->
+            <!--                <div class="emailHide">1@1.com</div>-->
+            <!--                <div class="headDiv"><img src="upload/portrait/portrait.png"></div>-->
+            <!--                <div class="triangle"></div>-->
+            <!--                <div class="feedDiv">-->
+            <!--                    <div class="dateHolder">-->
+            <!--                        <div class="author">1</div>-->
+            <!--                        <div class="dateDiv">2012-12-03</div>-->
+            <!--                    </div>-->
+            <!--                    <div class="titleDiv">无题</div>-->
+            <!--                    <div class="contentDiv">朝鲜半岛核危机</div>-->
+            <!--                    <div class="seeHolder">-->
+            <!--                        <div class="seeAll">查看原文→</div>-->
+            <!--                    </div>-->
+            <!--                    <div class="attrHolder">-->
+            <!--                        <div class="tagsDiv"><span class="tagSpan">朝鲜</span></div>-->
+            <!--                        <div class="optionsDiv">-->
+            <!--                            <div class="optDiv removeDiv">删除</div>-->
+            <!--                            <div class="optDiv reprintDiv">转载</div>-->
+            <!--                            <div class="optDiv commentDiv">回应(0)</div>-->
+            <!--                            <div class="optDiv likeDiv">★喜欢(0)</div>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--                <div class="feedComment">-->
+            <!--                    <div class="cmtArea clearFix">-->
+            <!--                        <textarea class="cmtText" rows="" cols=""></textarea>-->
+            <!---->
+            <!--                        <div class="cmtButton">-->
+            <!--                            <span class="cmtSpan">回应</span>-->
+            <!--                        </div>-->
+            <!--                    </div>-->
+            <!--                    <div class="cmtList">-->
+            <!--                        <ul class="cmtUl">-->
+            <!--                            <li class="cmtLi">-->
+            <!--                                <div class="emailDiv">1@1.com</div>-->
+            <!--                                <img class="cmtPor" width="32" height="32" src="upload/portrait/portrait.png">-->
+            <!---->
+            <!--                                <div class="cmtMain"><a class="cmtNick" href="#">1 </a><span-->
+            <!--                                        class="cmtContent">d都顶顶顶顶顶顶顶顶顶水水水水水水水水水水d</span></div>-->
+            <!--                            </li>-->
+            <!--                        </ul>-->
+            <!--                    </div>-->
+            <!--                    <div class="shQi">-->
+            <!--                        <span class="shQiSpan">收起↑</span>-->
+            <!--                    </div>-->
+            <!--                </div>-->
+            <!--            </div>-->
         </div>
     </div>
     <div id="aside">
@@ -156,8 +173,6 @@
                         <span>我关注了0个标签</span>
                     </div>
                     <div class="liuBai"></div>
-                    <div class="tagItem">XX</div>
-                    <div class="tagItem">XX</div>
                 </div>
             </div>
         </div>

@@ -520,6 +520,7 @@ ul {
 #noMore {
     float: left;
     margin-left: 250px;
+    height: 200px;
 }
 
 #loading img {
@@ -737,7 +738,7 @@ ul {
     margin-right: 30px;
 }
 
-#followTag {
+#unTag, #followTag {
     float: left;
     margin-left: 20px;
     width: 66px;
@@ -747,11 +748,15 @@ ul {
     border-radius: 4px;
 }
 
-#followTag:hover {
+#unTag:hover, #followTag:hover {
     background-color: #333;
 }
 
-#followTag span {
+#unTag span, #followTag span {
     color: #fff;
     font-size: 14px;
+}
+
+#userPic {
+    margin-right: 20px;
 }

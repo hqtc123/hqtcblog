@@ -64,7 +64,47 @@ class FollowController extends spController {
     }
 
     function removeFollowTag() {
+        $followTag = spClass("FollowTag");
+        $email = $this->spArgs("email");
+        $tag = $this->spArgs("tag");
+        if ($followTag->find(array("email" => $email, "tagname" => $tag))) {
+            $followTag->delete(array("email" => $email, "tagname" => $tag));
+        }
+        $arr["success"] = 1;
+        echo json_encode($arr);
+    }
 
+//获得关注标签
+    function getFollowTag() {
+        $email = $this->spArgs("email");
+        $followTag = spClass("FollowTag");
+        $arr = array();
+        $result = $followTag->findAll(array("email" => $email));
+        foreach ($result as $foo) {
+            $arr[] = $foo["tagname"];
+        }
+        echo json_encode($arr);
+    }
+
+    function getFollowUserCount() {
+        $email = $this->spArgs("email");
+        $followUser = spClass("FollowUser");
+        $result = $followUser->findAll(array("email" => $email));
+        $arr["num"] = count($result);
+        echo json_encode($arr);
+    }
+
+    function findFollow() {
+        $email = $this->spArgs("email");
+        $tag = $this->spArgs("tag");
+        $followTag = spClass("FollowTag");
+        $result = $followTag->findAll(array("email" => $email, "tagname" => $tag));
+        if ($result) {
+            $arr["follow"] = 1;
+        } else {
+            $arr["follow"] = 0;
+        }
+        echo json_encode($arr);
     }
 
 }

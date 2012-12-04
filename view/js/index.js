@@ -47,7 +47,6 @@ function showFeed(json) {
 }
 
 function followTag(email, tag) {
-
     $.ajax({
         url:getBaseUrl() + "/index.php?c=FollowController&a=addFollowTag",
         type:"POST",
@@ -59,13 +58,15 @@ function followTag(email, tag) {
         success:function (result) {
             if (result.success == 1) {
                 $("#followTag").children("span").html("已关注");
+                var str = '<div class="tagItem">' + tag + '</div>';
+                $(str).appendTo(".followTags");
             }
         }
     })
 }
-function getFollow(email) {
+function unFollowTag(email, tag) {
     $.ajax({
-        url:getBaseUrl() + "/index.php?c=FollowController&a=getFollows",
+        url:getBaseUrl() + "/index.php?c=FollowController&a=removeFollowTag",
         type:"POST",
         dataType:"json",
         data:{
@@ -74,11 +75,91 @@ function getFollow(email) {
         },
         success:function (result) {
             if (result.success == 1) {
-                $("#followTag").children("span").html("已关注");
+                $("#unTag").children("span").html("已取消");
+                setTimeout("javascript:location.href='../view/index.php'");
             }
         }
     })
 }
+
+//获得关注的标签
+function getFollowTag(email) {
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=FollowController&a=getFollowTag",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "email":email
+        },
+        success:function (result) {
+            var num = 0;
+            $.each(result, function (index, tag) {
+                var str = '<div class="tagItem">' + tag + '</div>';
+                $(str).appendTo(".followTags");
+                num++;
+            });
+            $(".tags-Div span").html("我关注了" + num + "个标签");
+        }
+    })
+}
+//获得关注的博客数目
+function getFollowUserNum(email) {
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=FollowController&a=getFollowUserCount",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "email":email
+        },
+        success:function (result) {
+            var num = result.num;
+            $(".followUsers span").html("我关注了" + num + "个博客");
+        }
+    })
+}
+
+function searchTag(email, tag) {
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=FollowController&a=findFollow",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "email":email,
+            "tag":tag
+        },
+        success:function (result) {
+            if (result.follow == 0) {
+                var str = '<div id="tagName"><span>' + tag + '</span><div id="followTag"><span>关注标签</span></div> </div>';
+                $(str).appendTo("#content");
+            } else {
+                var str = '<div id="tagName"><span>' + tag + '</span><div id="unTag"><span>取消关注</span></div> </div>';
+                $(str).appendTo("#content");
+            }
+        }
+    })
+
+    str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+    $(str).appendTo("#content");
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=ShowController&a=showTag",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "tag":tag
+        },
+        success:function (result) {
+            if (result != "") {
+                showFeed(result);
+                refresh();
+            } else {
+                $("#loading").remove();
+                var str = '<div id="noMore"><span>没有找到相关内容</span></div>';
+                $(str).appendTo("#content");
+            }
+        }
+    })
+}
+
 $(function () {
     //share part begin
     $("#hidetext").hide();
@@ -112,6 +193,17 @@ $(function () {
     $(".kwicks li:eq(3)").click(function () {
         setTimeout("javascript:location.href='../view/videoEditor.php'", 100);
     });
+    //展示后刷新
+    function refresh() {
+        $(".removeDiv").each(function () {
+            var feed = $(this).parent().parent().parent().parent();
+            if (feed.children(".emailHide").html() != email) {
+                $(this).hide();
+            }
+        })
+
+    }
+
 //
 //视频播放
     $(".feed .videoDiv img").live("click", function () {
@@ -131,21 +223,14 @@ $(function () {
     var email = $("#hide_email").html();
     var nick = $("#account").html();
 
-    function refresh() {
-        $(".removeDiv").each(function () {
-            var feed = $(this).parent().parent().parent().parent();
-            if (feed.children(".emailHide").html() != email) {
-                $(this).hide();
-            }
-        })
-
-    }
-
-    getFollow(email);
-
-    init(email);
+//    init(email);
 
 
+    getFollowTag(email);
+    getFollowUserNum(email);
+
+
+//
     function init(email) {
         finished = false;
         $.ajax({
@@ -157,25 +242,37 @@ $(function () {
                 "pageIndex":pageIndex
             },
             success:function (result) {
-                showFeed(result);
-                ++pageIndex;
-                finished = true;
+                if (result == "") {
+                    $("#loading").remove();
+                    var str = '<div id="noMore"><span>没有更多内容了</span></div>';
+                    $(str).appendTo("#content");
+                    finished = false;
+                } else {
+                    showFeed(result);
+                    refresh();
+                    ++pageIndex;
+                    finished = true;
+                }
             }
         })
     }
 
     //窗口滚动
-    $(window).scroll(function () {
-        if (isAtBottom() && finished) {
-            var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
-            $(str).appendTo("#content");
-            init(email);
-        }
-    })
+//    $(window).scroll(function () {
+//        if (isAtBottom() && finished) {
+//            var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+//            $(str).appendTo("#content");
+//            init(email);
+//        }
+//    })
     //关注标签
     $("#followTag").live("click", function () {
         var tag = $(this).prev("span").html();
         followTag(email, tag);
+    });
+    $("#unTag").live("click", function () {
+        var tag = $(this).prev("span").html();
+        unFollowTag(email, tag);
     });
     //标签搜索
     $("#tag-go-search").live("click", function () {
@@ -184,29 +281,15 @@ $(function () {
             return false;
         }
         $("#content").empty();
-        var str = '<div id="tagName"><span>' + tag + '</span><div id="followTag"><span>关注标签</span></div> </div>';
-        $(str).appendTo("#content");
-        str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
-        $(str).appendTo("#content");
-        $.ajax({
-            url:getBaseUrl() + "/index.php?c=ShowController&a=showTag",
-            type:"POST",
-            dataType:"json",
-            data:{
-                "tag":tag
-            },
-            success:function (result) {
-                if (result != "") {
-                    showFeed(result);
-                    refresh();
-                } else {
-                    $("#loading").remove();
-                    var str = '<div id="noMore"><span>没有找到相关内容</span></div>';
-                    $(str).appendTo("#content");
-                }
-            }
-        })
+        searchTag(email, tag);
+
     })
+    $(".tagItem").live("click", function () {
+        var tag = $(this).html();
+        $("#content").empty();
+        searchTag(email, tag);
+    })
+    //查看全文
     $(".feed .seeAll").live("click", function () {
 
     })
