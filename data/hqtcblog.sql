@@ -1,16 +1,16 @@
 /*
 Navicat MySQL Data Transfer
 
-Source Server         : hqtcblog
-Source Server Version : 50528
+Source Server         : localhost
+Source Server Version : 50513
 Source Host           : localhost:3306
 Source Database       : hqtcblog
 
 Target Server Type    : MYSQL
-Target Server Version : 50528
+Target Server Version : 50513
 File Encoding         : 65001
 
-Date: 2012-12-04 09:42:31
+Date: 2012-12-04 18:17:51
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `blog` (
   `url` text,
   `fromid` int(11) DEFAULT NULL,
   PRIMARY KEY (`blogid`)
-) ENGINE=InnoDB AUTO_INCREMENT=44 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog
@@ -69,6 +69,10 @@ INSERT INTO `blog` VALUES ('40', '1', '2@2.com', '2012-12-03', '1', '0', '2', 't
 INSERT INTO `blog` VALUES ('41', '4', '2@2.com', '2012-12-03', '4', '1', '【拍客】吉林珲春再次拍到野生东北虎豹影像', '', 'http://v.youku.com/v_show/id_XNDgzMTUxNTI4.html', null);
 INSERT INTO `blog` VALUES ('42', '3', '3@3.com', '2012-12-03', '2', '2', '2', '', 'http://www.w3school.com.cn/jquery/traversing_each.asp', null);
 INSERT INTO `blog` VALUES ('43', '1', 'test@a.com', '2012-12-04', '0', '0', '无题', '<p align=\"justify\" style=\"margin: 0px 3px 15px; padding: 0px; font-family: 宋体; font-size: 16px; line-height: 26px; text-align: justify; text-indent: 30px;\">南京市民老罗最近快崩溃了，因为妻子蒋某的异常举动，好好的一个家被搅得天翻地覆。蒋某背着家人，偷偷拿着房产证到中介抵押了100多万元。面对家人的质问，蒋某居然振振有词：2012世界末日马上就来了，要赶紧把钱捐掉。</p><p align=\"justify\" style=\"margin: 0px 3px 15px; padding: 0px; font-family: 宋体; font-size: 16px; line-height: 26px; text-align: justify; text-indent: 30px;\">随着电影《2012》的热映，“2012世界末日论”引起了不少人的恐慌。其实，各国专家都已经对此进行驳斥，所谓的“末日”根本就是子虚乌有。大家还是不要恐慌，好好地过日子吧。</p>', ' ', null);
+INSERT INTO `blog` VALUES ('44', '2', '2@2.com', '2012-12-04', '0', '0', '我的网站上', '', 'upload/hySuBz8Z9jpT.jpg,upload/QJIigLLu96gK.png,', null);
+INSERT INTO `blog` VALUES ('48', '4', '3@3.com', '2012-12-04', '0', '0', '星闻速递 20121203  贺岁档pk盛宴  《少年派》完胜', '', 'http://www.56.com/u18/v_ODA4NTE1OTE.html', null);
+INSERT INTO `blog` VALUES ('49', '2', '3@3.com', '2012-12-04', '0', '0', '', '', 'upload/3vp780YYUoKd.jpg,upload/Ma2ymQ3YeCal.jpg,', null);
+INSERT INTO `blog` VALUES ('50', '1', 'test@a.com', '2012-12-04', '0', '0', '韩立宝花', '<span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">韩立眉头一皱，目光飞快向那头螟虫之母被击杀的地方扫了一眼，忽却然单手虚空一抓。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“嗖”的一声！</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　那片看似空无一物的虚空，波动一起，一块拇指大小的漆黑晶珠竟凭空浮现，再一个闪动后，就没入到韩立手掌中。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“咦，这如……”宝花见此一愣，刚憩再说些什么时，整个深渊就一下天翻地覆般的崩溃开来，无数淡白色裂痕凭空在四狂涌而现，并以肉囘眼可见速度飞快粗大起来。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　宝花脸色大变，单手一扬，手中一块赤红阵盘一亮而出，但方一嗡鸣声响起，一股诡异波动忽然从手上一扫而过。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　滴溜溜转动的阵盘，顿时光芒一敛，重新变得静止不动起来。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“不行。那人果然使了手段，你我现在无法轻易离开此地的。”宝花玉容阴沉的说道。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“很正常。那人既然敢如此说，自然是有十足的把握留下你我的。”韩立却平静的说道。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　宝花哼了一声，再想说些什么的时候，忽然二者四周灰蒙蒙光霞一卷，一个模糊光阵直接冲二人一罩而下。</span>', ' ', null);
 
 -- ----------------------------
 -- Table structure for `blogtag`
@@ -99,6 +103,11 @@ INSERT INTO `blogtag` VALUES ('41', 'er');
 INSERT INTO `blogtag` VALUES ('42', '2');
 INSERT INTO `blogtag` VALUES ('42', '3c');
 INSERT INTO `blogtag` VALUES ('43', '囧');
+INSERT INTO `blogtag` VALUES ('44', 'IT');
+INSERT INTO `blogtag` VALUES ('48', 'it');
+INSERT INTO `blogtag` VALUES ('49', 'it');
+INSERT INTO `blogtag` VALUES ('50', 'it');
+INSERT INTO `blogtag` VALUES ('50', '坑');
 
 -- ----------------------------
 -- Table structure for `boke`
@@ -119,7 +128,7 @@ INSERT INTO `boke` VALUES ('2', 'test2@a.com', 'gggd');
 INSERT INTO `boke` VALUES ('3', 'test3@a.com', '满天数星斗');
 INSERT INTO `boke` VALUES ('4', 'r@r.com', '真一般');
 INSERT INTO `boke` VALUES ('5', '6@6.com', '这是??');
-INSERT INTO `boke` VALUES ('6', '2@2.com', '我的博客');
+INSERT INTO `boke` VALUES ('6', '2@2.com', '我的风格');
 INSERT INTO `boke` VALUES ('7', '8@8.com', '我的博客');
 INSERT INTO `boke` VALUES ('8', 'd@d.com', '我的博客');
 INSERT INTO `boke` VALUES ('9', 'r@q.com', '我的妞妞');
@@ -127,8 +136,8 @@ INSERT INTO `boke` VALUES ('10', 'a@b.cd', '我的博客');
 INSERT INTO `boke` VALUES ('11', 'a@b.cn', '我的博客');
 INSERT INTO `boke` VALUES ('12', 'a@c.com', '我的博客');
 INSERT INTO `boke` VALUES ('13', '1@1.com', '我的博客');
-INSERT INTO `boke` VALUES ('14', '2@2.com', '我的博客');
-INSERT INTO `boke` VALUES ('15', '3@3.com', '我的博客');
+INSERT INTO `boke` VALUES ('14', '2@2.com', '我的风格');
+INSERT INTO `boke` VALUES ('15', '3@3.com', '万山红遍');
 
 -- ----------------------------
 -- Table structure for `childblog`
@@ -181,6 +190,7 @@ CREATE TABLE `followtag` (
 -- ----------------------------
 -- Records of followtag
 -- ----------------------------
+INSERT INTO `followtag` VALUES ('test@a.com', '2');
 
 -- ----------------------------
 -- Table structure for `followuser`
@@ -195,6 +205,11 @@ CREATE TABLE `followuser` (
 -- ----------------------------
 -- Records of followuser
 -- ----------------------------
+INSERT INTO `followuser` VALUES ('3@3.com', '1@1.com');
+INSERT INTO `followuser` VALUES ('3@3.com', '2@2.com');
+INSERT INTO `followuser` VALUES ('test@a.com', '1@1.com');
+INSERT INTO `followuser` VALUES ('test@a.com', '2@2.com');
+INSERT INTO `followuser` VALUES ('test@a.com', '3@3.com');
 
 -- ----------------------------
 -- Table structure for `likes`

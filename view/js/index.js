@@ -45,6 +45,40 @@ function showFeed(json) {
         $(html).appendTo("#content");
     });
 }
+
+function followTag(email, tag) {
+
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=FollowController&a=addFollowTag",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "email":email,
+            "tag":tag
+        },
+        success:function (result) {
+            if (result.success == 1) {
+                $("#followTag").children("span").html("已关注");
+            }
+        }
+    })
+}
+function getFollow(email) {
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=FollowController&a=getFollows",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "email":email,
+            "tag":tag
+        },
+        success:function (result) {
+            if (result.success == 1) {
+                $("#followTag").children("span").html("已关注");
+            }
+        }
+    })
+}
 $(function () {
     //share part begin
     $("#hidetext").hide();
@@ -107,8 +141,9 @@ $(function () {
 
     }
 
+    getFollow(email);
 
-//    init(email);
+    init(email);
 
 
     function init(email) {
@@ -129,15 +164,19 @@ $(function () {
         })
     }
 
-//窗口滚动
-//    $(window).scroll(function () {
-//        var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
-//        $("str").appendTo("#content");
-//        if (isAtBottom() && finished) {
-//            init(email);
-//        }
-//    })
-
+    //窗口滚动
+    $(window).scroll(function () {
+        if (isAtBottom() && finished) {
+            var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+            $(str).appendTo("#content");
+            init(email);
+        }
+    })
+    //关注标签
+    $("#followTag").live("click", function () {
+        var tag = $(this).prev("span").html();
+        followTag(email, tag);
+    });
     //标签搜索
     $("#tag-go-search").live("click", function () {
         var tag = $("#tag-search-input").val();
@@ -145,6 +184,10 @@ $(function () {
             return false;
         }
         $("#content").empty();
+        var str = '<div id="tagName"><span>' + tag + '</span><div id="followTag"><span>关注标签</span></div> </div>';
+        $(str).appendTo("#content");
+        str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+        $(str).appendTo("#content");
         $.ajax({
             url:getBaseUrl() + "/index.php?c=ShowController&a=showTag",
             type:"POST",
@@ -157,6 +200,7 @@ $(function () {
                     showFeed(result);
                     refresh();
                 } else {
+                    $("#loading").remove();
                     var str = '<div id="noMore"><span>没有找到相关内容</span></div>';
                     $(str).appendTo("#content");
                 }
@@ -283,7 +327,7 @@ $(function () {
     //转载博客
     $(".reprintDiv").live("click", function () {
         var feed = $(this).parent().parent().parent().parent();
-        var fromID = feed.children(".blogIDHide");
+        var fromID = feed.children(".blogIDHide").html();
         var date = new Date().format("yyyy-mm-dd");
         $.ajax({
             url:getBaseUrl() + "/index.php?c=CLPController&a=addReprint",
@@ -297,7 +341,12 @@ $(function () {
             },
             success:function (result) {
                 if (result.success == 1) {
-                    setTimeout("javascript:location.href='../view/hisBlog.php'", 10);
+                    $.dialog({
+                        title:"提示",
+                        lock:"true",
+                        content:result.msg,
+                        time:1
+                    })
                 }
             }
         })

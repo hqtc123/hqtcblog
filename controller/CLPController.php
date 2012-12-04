@@ -55,7 +55,16 @@ class CLPController extends spController {
         $email = $this->spArgs("email");
         $date = $this->spArgs("date");
         $type = $this->spArgs("type");
-
+        $fromID = $this->spArgs("fromID");
+        $result = $blog->find(array("blogid" => fromID));
+        if ($result["fromid"] != "") {
+            $fromID = $result["fromid"];
+        }
+        $newRow = array("email" => $email, "date" => $date, "commentnum" => 0, "likenum" => 0, "type" => $type, "fromid" => $fromID);
+        $blog->create($newRow);
+        $arr["success"] = 1;
+        $arr["msg"] = "转载成功，内容已经发布在您的博客中";
+        echo json_encode($arr);
     }
 
     function createCommentLi($email, $comment) {

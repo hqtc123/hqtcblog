@@ -6,7 +6,7 @@
  * Time: 下午6:10
  * To change this template use File | Settings | File Templates.
  */
-class FollowTag extends spController {
+class FollowTag extends spModel {
     var $pk = "email";
     var $table = "followtag";
 }

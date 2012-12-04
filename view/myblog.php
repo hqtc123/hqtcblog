@@ -68,7 +68,7 @@
         <div id="search-wrapper">
             <div id="tag-search-box">
                 <button id="tag-go-search" type="submit"></button>
-                <input type="text" id="tag-search-input" placeholder="发现自己的兴趣">
+                <input type="text" id="tag-search-input" placeholder="搜索标签">
             </div>
         </div>
         <div id="else">

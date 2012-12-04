@@ -31,7 +31,14 @@ class BokeController extends spController {
     }
 
     function toHisBo() {
+        $userClass = spClass("User");
         $hisEmail = $this->spArgs("hisEmail");
+        $boClass = spClass("Boke");
+        $boResult = $boClass->find(array("email" => $hisEmail));
+        $_SESSION["hisName"] = $boResult["bokename"];
+        $result = $userClass->find(array("email" => $hisEmail));
+        $_SESSION["hisNick"] = $result["nick"];
+        $_SESSION["hisUrl"] = $result["portraiturl"];
         $_SESSION["hisEmail"] = $hisEmail;
         $arr["success"] = 1;
         echo json_encode($arr);

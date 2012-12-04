@@ -82,6 +82,7 @@ $(function () {
                     $("#loading").remove();
                     var str = '<div id="noMore"><span>没有更多内容了</span></div>';
                     $(str).appendTo("#content");
+                    finished = false;
                 } else {
                     showFeed(result);
                     ++pageIndex;
@@ -92,9 +93,9 @@ $(function () {
     }
 
     $(window).scroll(function () {
-        var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
-        $("str").appendTo("#content");
         if (isAtBottom() && finished) {
+            var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+            $(str).appendTo("#content");
             init(email);
         }
     })

@@ -50,6 +50,10 @@ class ShowController extends spController {
         echo json_encode($resultArr);
     }
 
+    //获得关注标签
+    function getFollowTag($email){
+
+    }
     function createFeedHead($blogID, $email, $nick, $portraitUrl, $date) {
         $str = '<div class="feed"><div class="blogIDHide">' . $blogID . '</div>' .
             '<div class="emailHide">' . $email .
@@ -162,6 +166,7 @@ class ShowController extends spController {
     function result2html($blogResult) {
         $returnArr = array();
         $blogTagClass = spClass("BlogTag");
+        $blogClass = spClass("Blog");
         foreach ($blogResult as $blog) {
             $blogID = $blog["blogid"];
             $tagsArr = array();
@@ -183,6 +188,20 @@ class ShowController extends spController {
             $portraitUrl = $userResult["portraiturl"];
             $divHead = $this->createFeedHead($blogID, $email, $nick, $portraitUrl, $date);
             $divFoot = $this->createFeedFoot($blogID, $tagsArr, $commentNum, $likeNum);
+            //处理转载
+            if ($type == 5) {
+                $fromId = $blog["fromid"];
+                $result = $blogClass->find(array("blogid" => $fromId));
+                $type = $result["type"];
+                $title = $result["title"];
+                $url = $result["url"];
+                $email = $result["email"];
+                $content = $result["content"];
+                $fromEmail = $result["email"];
+                $fromUser = $userClass->find(array("email" => $fromEmail));
+                $fromNick = $fromUser["nick"];
+                $divHead = $this->createFeedHead($blogID, $email, "转载自 " . $fromNick, $portraitUrl, $date);
+            }
             switch ($type) {
                 case 1:
                     $html = $divHead . $this->createTxtDiv($title, $content) . $divFoot;

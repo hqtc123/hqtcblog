@@ -147,7 +147,19 @@
             </div>
         </div>
         <div id="else">
-
+            <div class="follows">
+                <div class="followUsers">
+                    <span>我关注了0个博客</span>
+                </div>
+                <div class="followTags">
+                    <div class="tags-Div">
+                        <span>我关注了0个标签</span>
+                    </div>
+                    <div class="liuBai"></div>
+                    <div class="tagItem">XX</div>
+                    <div class="tagItem">XX</div>
+                </div>
+            </div>
         </div>
     </div>
     <ul id="dia_account">

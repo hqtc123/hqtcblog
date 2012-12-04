@@ -1,0 +1,50 @@
+#infoDiv {
+    float: left;
+    height: 80px;
+    width: 180px;
+}
+
+#hisEmail {
+    display: none;
+}
+
+#followBtn, #unBtn {
+    float: left;
+    margin: 20px 0 0 80px;
+    width: 66px;
+    height: 20px;
+    padding: 10px 20px;
+    background-color: #666;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+#followBtn:hover, #unBtn:hover {
+    background-color: #333;
+}
+
+#followBtn, #unBtn span {
+    color: #fff;
+}
+
+#unBtn {
+    display: none;
+}
+
+#headpic {
+    margin-right: 20px;
+}
+
+.nickDiv {
+    padding-top: 50px;
+    margin-left: 20px;
+}
+
+.nickDiv .nickSpan {
+    font-size: 22px;
+    color: #333;
+}
+
+#container {
+    width: 800px;
+}

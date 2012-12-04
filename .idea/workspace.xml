@@ -20,31 +20,13 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/index.php">
+      <file leaf-file-name="hisBlog.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/hisBlog.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="129" column="54" selection-start="5650" selection-end="5651" vertical-scroll-proportion="0.0">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ShowController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/ShowController.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="123" column="0" selection-start="4710" selection-end="4710" vertical-scroll-proportion="-5.677419">
+            <state line="75" column="26" selection-start="3218" selection-end="3218" vertical-scroll-proportion="-18.038462">
               <folding>
-                <marker date="1354585492343" expanded="true" signature="3934:4019" placeholder="..." />
+                <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
               </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="layout.css" pinned="false" current="true" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/view/css/layout.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="18" selection-start="4170" selection-end="4170" vertical-scroll-proportion="-0.2761506">
-              <folding />
             </state>
           </provider>
         </entry>
@@ -52,61 +34,87 @@
       <file leaf-file-name="index.js" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="295" column="27" selection-start="9636" selection-end="9636" vertical-scroll-proportion="0.0">
+            <state line="67" column="70" selection-start="2081" selection-end="2091" vertical-scroll-proportion="0.0">
+              <folding>
+                <element signature="e#5313#6333#0" expanded="false" />
+                <element signature="e#6451#7563#0" expanded="false" />
+                <element signature="e#7621#8438#0" expanded="false" />
+                <element signature="e#8838#10004#0" expanded="false" />
+                <element signature="e#10495#11301#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="videoEditor.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/js/editors/videoEditor.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="9" column="30" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="linkEditor.js" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/js/editors/linkEditor.js">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="60" column="47" selection-start="1980" selection-end="2020" vertical-scroll-proportion="0.0">
+            <state line="22" column="8" selection-start="764" selection-end="764" vertical-scroll-proportion="-14.384615">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="UserController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/UserController.php">
+      <file leaf-file-name="index.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/index.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+            <state line="157" column="40" selection-start="6700" selection-end="6700" vertical-scroll-proportion="-9.192307">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="hisBlog.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/view/hisBlog.php">
+      <file leaf-file-name="myBlog.js" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/view/js/myBlog.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="11" column="41" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
+            <state line="95" column="39" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="CLPController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/CLPController.php">
+      <file leaf-file-name="FollowController.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/controller/FollowController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="59" column="0" selection-start="1985" selection-end="1985" vertical-scroll-proportion="-21.516129">
+            <state line="68" column="0" selection-start="2020" selection-end="2020" vertical-scroll-proportion="-18.692308">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="BokeController.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/controller/BokeController.php">
+      <file leaf-file-name="ShowController.php" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/controller/ShowController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="8" column="16" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+            <state line="54" column="0" selection-start="1769" selection-end="1769" vertical-scroll-proportion="1.3399014">
+              <folding>
+                <marker date="1354616237340" expanded="true" signature="3989:4074" placeholder="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="FollowTag.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/FollowTag.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="10" column="29" selection-start="249" selection-end="249" vertical-scroll-proportion="-6.5384617">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Comment.php" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/model/Comment.php">
+      <file leaf-file-name="FollowUser.php" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/model/FollowUser.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="10" column="27" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="-0.0">
               <folding />
             </state>
           </provider>
@@ -125,31 +133,31 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/view/js/header.js" />
-        <option value="$PROJECT_DIR$/model/FollowUser.php" />
-        <option value="$PROJECT_DIR$/view/myblog.php" />
-        <option value="$PROJECT_DIR$/controller/BlogController.php" />
-        <option value="$PROJECT_DIR$/controller/FollowController.php" />
-        <option value="$PROJECT_DIR$/view/js/myBlog.js" />
-        <option value="$PROJECT_DIR$/view/css/index.css" />
         <option value="$PROJECT_DIR$/model/Likes.php" />
         <option value="$PROJECT_DIR$/model/Comment.php" />
-        <option value="$PROJECT_DIR$/view/index.php" />
-        <option value="$PROJECT_DIR$/view/hisBlog.php" />
-        <option value="$PROJECT_DIR$/controller/BokeController.php" />
-        <option value="$PROJECT_DIR$/view/js/index.js" />
         <option value="$PROJECT_DIR$/controller/CLPController.php" />
-        <option value="$PROJECT_DIR$/controller/ShowController.php" />
+        <option value="$PROJECT_DIR$/controller/BokeController.php" />
+        <option value="$PROJECT_DIR$/controller/UserController.php" />
+        <option value="$PROJECT_DIR$/view/css/hisblog.css" />
+        <option value="$PROJECT_DIR$/view/myblog.php" />
+        <option value="$PROJECT_DIR$/view/hisBlog.php" />
+        <option value="$PROJECT_DIR$/view/js/myBlog.js" />
+        <option value="$PROJECT_DIR$/view/js/hisBlog.js" />
+        <option value="$PROJECT_DIR$/model/FollowTag.php" />
+        <option value="$PROJECT_DIR$/view/index.php" />
         <option value="$PROJECT_DIR$/view/css/layout.css" />
+        <option value="$PROJECT_DIR$/view/js/index.js" />
+        <option value="$PROJECT_DIR$/controller/FollowController.php" />
+        <option value="$PROJECT_DIR$/controller/ShowController.php" />
       </list>
     </option>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="113" />
-    <option name="y" value="32" />
-    <option name="width" value="1150" />
-    <option name="height" value="687" />
+    <option name="x" value="-19" />
+    <option name="y" value="22" />
+    <option name="width" value="1396" />
+    <option name="height" value="865" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -306,8 +314,8 @@
     <property name="options.lastSelected" value="editor.preferences.appearance" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ypgc" />
     <property name="DefaultHtmlFileTemplate" value="Html5" />
-    <property name="options.searchVisible" value="true" />
     <property name="options.splitter.details.proportions" value="0.2" />
+    <property name="options.searchVisible" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
@@ -370,16 +378,16 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="113" y="32" width="1150" height="687" extended-state="1" />
+    <frame x="-19" y="22" width="1396" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26102942" sideWeight="0.7771429" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17771085" sideWeight="0.76813656" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26102942" sideWeight="0.20952381" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.17771085" sideWeight="0.22190611" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -447,105 +455,129 @@
     </breakpoint-manager>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/view/myblog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="62" column="18" selection-start="2458" selection-end="2585" vertical-scroll-proportion="-2.8387096" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Likes.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="27" selection-start="190" selection-end="190" vertical-scroll-proportion="-5.677419" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/js/myBlog.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="133" column="6" selection-start="4372" selection-end="4372" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/view/css/myblog.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/css/index.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="1" column="18" selection-start="39" selection-end="39" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/FollowController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="0" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/model/Comment.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="10" column="27" selection-start="250" selection-end="250" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/hisBlog.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="41" selection-start="228" selection-end="228" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/controller/UserController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/BokeController.php">
+    <entry file="file://$PROJECT_DIR$/view/css/hisblog.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="16" selection-start="180" selection-end="180" vertical-scroll-proportion="0.0">
+        <state line="13" column="13" selection-start="179" selection-end="179" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/view/js/editors/linkEditor.js">
+    <entry file="file://$PROJECT_DIR$/view/myblog.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="47" selection-start="1980" selection-end="2020" vertical-scroll-proportion="0.0">
+        <state line="70" column="74" selection-start="2847" selection-end="2847" vertical-scroll-proportion="-30.076923">
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/js/myBlog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="95" column="39" selection-start="3056" selection-end="3056" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/FollowUser.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/js/hisBlog.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="141" column="0" selection-start="4270" selection-end="4270" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="n#!!doc;n#getBaseUrl#0" expanded="false" />
+            <element signature="n#!!block;n#checkFollow#0" expanded="false" />
+            <element signature="n#!!block;n#toFollow#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="129" column="54" selection-start="5650" selection-end="5651" vertical-scroll-proportion="0.0">
+        <state line="157" column="40" selection-start="6700" selection-end="6700" vertical-scroll-proportion="-9.192307">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/controller/BlogController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="136" column="18" selection-start="4684" selection-end="4684" vertical-scroll-proportion="-55.96154">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/js/editors/videoEditor.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="30" selection-start="263" selection-end="263" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/index.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="22" column="8" selection-start="764" selection-end="764" vertical-scroll-proportion="-14.384615">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/css/layout.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="746" column="23" selection-start="11033" selection-end="11033" vertical-scroll-proportion="0.8901454">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/view/hisBlog.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="75" column="26" selection-start="3218" selection-end="3218" vertical-scroll-proportion="-18.038462">
+          <folding>
+            <element signature="tag#div#0;tag#body#0;tag#html#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/model/FollowTag.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="10" column="29" selection-start="249" selection-end="249" vertical-scroll-proportion="-6.5384617">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="27" selection-start="9636" selection-end="9636" vertical-scroll-proportion="0.0">
-          <folding />
+        <state line="67" column="70" selection-start="2081" selection-end="2091" vertical-scroll-proportion="0.0">
+          <folding>
+            <element signature="e#5313#6333#0" expanded="false" />
+            <element signature="e#6451#7563#0" expanded="false" />
+            <element signature="e#7621#8438#0" expanded="false" />
+            <element signature="e#8838#10004#0" expanded="false" />
+            <element signature="e#10495#11301#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/controller/CLPController.php">
+    <entry file="file://$PROJECT_DIR$/controller/FollowController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="59" column="0" selection-start="1985" selection-end="1985" vertical-scroll-proportion="-21.516129">
+        <state line="68" column="0" selection-start="2020" selection-end="2020" vertical-scroll-proportion="-18.692308">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/controller/ShowController.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="123" column="0" selection-start="4710" selection-end="4710" vertical-scroll-proportion="-5.677419">
+        <state line="54" column="0" selection-start="1769" selection-end="1769" vertical-scroll-proportion="1.3399014">
           <folding>
-            <marker date="1354585492343" expanded="true" signature="3934:4019" placeholder="..." />
+            <marker date="1354616237340" expanded="true" signature="3989:4074" placeholder="..." />
           </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/view/css/layout.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="295" column="18" selection-start="4170" selection-end="4170" vertical-scroll-proportion="-0.2761506">
-          <folding />
         </state>
       </provider>
     </entry>

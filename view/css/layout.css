@@ -518,6 +518,7 @@ ul {
 }
 
 #noMore {
+    float: left;
     margin-left: 250px;
 }
 
@@ -525,9 +526,16 @@ ul {
     margin-left: auto;
 }
 
-#loading span {
+#tagName {
+    float: left;
+    height: 50px;
+    width: 300px;
+    margin-left: 100px;
+}
+
+#loading, #tagName span {
     margin-top: 8px;
-    float: right;
+    float: left;
     font-size: 18px;
 }
 
@@ -659,9 +667,67 @@ ul {
     width: 250px;
     height: 500px;
     margin-top: 20px;
-    background-color: #cccccc;
 }
 
+#else .follows {
+    width: 220px;
+    margin: 0 auto;
+    background-color: #ccc;
+    border-radius: 4px;
+}
+
+.follows .followUsers {
+    width: 220px;
+    height: 26px;
+    text-align: center;
+    padding-top: 8px;
+    border-bottom: 1px #aaa solid;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.followUsers:hover {
+    background-color: #dfdfdf;
+    border: 1px #aaa solid;
+    width: 218px;
+    height: 25px;
+}
+
+.liuBai {
+    width: 220px;
+    height: 26px;
+    background-color: #dfdfdf;
+}
+
+.followUsers, .followTags span {
+    font-size: 14px;
+    color: #444;
+}
+
+.follows .followTags .tags-Div {
+    width: 220px;
+    height: 26px;
+    text-align: center;
+    padding-top: 8px;
+    border-bottom: 1px #aaa solid;
+    border-radius: 4px;
+}
+
+.follows .followTags .tagItem {
+    width: 220px;
+    height: 26px;
+    text-align: center;
+    padding-top: 8px;
+    border-bottom: 1px #aaa solid;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.follows .followTags .tagItem:hover {
+    background-color: #f0f1f2;
+}
+
+/*其他*/
 #dia_account, #hide_email, #hide_nick {
     display: none;
 }
@@ -669,4 +735,23 @@ ul {
 .dia_label {
     font-family: "隶书";
     margin-right: 30px;
+}
+
+#followTag {
+    float: left;
+    margin-left: 20px;
+    width: 66px;
+    height: 30px;
+    background-color: #666;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+#followTag:hover {
+    background-color: #333;
+}
+
+#followTag span {
+    color: #fff;
+    font-size: 14px;
 }
