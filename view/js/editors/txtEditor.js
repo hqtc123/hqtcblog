@@ -47,6 +47,7 @@ $(function () {
         $("#email_label").html(email);
         $("#nick_label").html(nick);
         var dialog = $.dialog({
+            lock:"true",
             title:"账号信息",
             content:document.getElementById("dia_account")
         });
@@ -61,6 +62,7 @@ $(function () {
                 if (result.success == 1) {
                     var dialog = $.dialog({
                         title:"提示",
+                        lock:"true",
                         content:result.msg,
                         time:2
                     });
@@ -69,7 +71,7 @@ $(function () {
             }
         })
     });
-    $(".hideli:eq(2)").click(function(){
+    $(".hideli:eq(2)").click(function () {
         setTimeout("javascript:location.href='../view/addBoke.php'", 100);
     })
     //share part end
@@ -84,6 +86,7 @@ $(function () {
         if (content == "") {
             $.dialog({
                 title:"提示",
+                lock:"true",
                 content:"大家不会接受没有内容的博文"
             });
             return false;
@@ -107,6 +110,7 @@ $(function () {
             success:function (result) {
                 if (result.success == 1) {
                     $.dialog({
+                        lock:"true",
                         title:"提示",
                         content:result.msg,
                         time:2

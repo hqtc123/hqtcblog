@@ -31,6 +31,7 @@ $(function () {
         $("#email_label").html(email);
         $("#nick_label").html(nick);
         var dialog = $.dialog({
+            lock:"true",
             title:"账号信息",
             content:document.getElementById("dia_account")
         });
@@ -44,6 +45,7 @@ $(function () {
             success:function (result) {
                 if (result.success == 1) {
                     var dialog = $.dialog({
+                        lock:"true",
                         title:"提示",
                         content:result.msg,
                         time:2
@@ -60,6 +62,7 @@ $(function () {
     var portraitDialog, portraitUrl = $("#portrait img").attr("src");
     $("#chooseButton").click(function () {
         portraitDialog = $.dialog({
+            lock:"true",
             title:"选择一个头像",
             content:document.getElementById("portraits")
         })
@@ -89,6 +92,7 @@ $(function () {
     $("#create-tblog-btn").click(function () {
         if ($("#ctrltextblogName").val() == "") {
             var dialog = $.dialog({
+                lock:"true",
                 title:"错误",
                 content:"请输入您的博客名字",
                 time:1
@@ -97,6 +101,7 @@ $(function () {
         }
         if ($("#ctrltextblogName").val().length > 8) {
             var dialog = $.dialog({
+                lock:"true",
                 title:"错误",
                 content:"博客名字不能长于8个字符",
                 time:1
@@ -123,6 +128,7 @@ $(function () {
                     setTimeout("javascript:location.href='../index.php',1000");
                 } else {
                     var dialog = $.dialog({
+                        lock:"true",
                         title:"提示",
                         content:result.msg,
                         ok:function () {

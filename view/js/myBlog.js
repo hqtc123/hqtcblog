@@ -17,15 +17,11 @@ function isAtBottom() {
     return ((($(document).height() - $(window).height()) - $(window).scrollTop()) <= 50) ? true : false;
 };
 
-
 function showFeed(json) {
     $("#loading").remove();
     $.each(json, function (index, html) {
         $(html).appendTo("#content");
     });
-    if ($(".contentDiv").css("height") == "300px") {
-        $(".contentDiv").next(".seeHolder").css("display", "block");
-    }
 }
 $(function () {
     //share part begin
@@ -65,32 +61,14 @@ $(function () {
         $(this).css("display", "none");
     })
 
+    var finished = true;
     var pageIndex = 0;
-    var portraitUrl = $("#headpic img").attr("src");
     var email = $("#hide_email").html();
     var nick = $("#account").html();
+    init(email);
 
-    init(email, pageIndex);
-//    var feedHead = createFeedHead(email, nick, portraitUrl, "2012-ffff");
-//    var feedFoot = createFeedFoot(tagsArr, 0, 0);
-//
-//    var html = feedHead + createTxtDiv("shi ba", "ffffffddddddddddd") + feedFoot;
-//    $(html).appendTo($("#content"));
-//
-//    var imgUrlArr = new Array("http://www.baidu.com/img/baidu_sylogo1.gif", "http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg",
-//        "http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg");
-//    html = feedHead + createPicDiv(imgUrlArr, "ffffffg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT2012113ddddddddddd") + feedFoot;
-//    $(html).appendTo($("#content"));
-//    html = feedHead + createVideoDiv("dddd video ddd", "http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg", "http://player.youku.com/player.php/sid/XMjAzOTk4NjI4/v.swf")
-//        + feedFoot;
-//    $(html).appendTo($("#content"));
-//    html = feedHead + createLinkDiv("gugooooouu", "http://translate.google.cn/") + feedFoot;
-//    $(html).appendTo($("#content"));
     function init(email) {
-        var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
-        $("str").appendTo("#content");
-        setTimeout(function () {
-        }, "5000");
+        finished = false;
         $.ajax({
             url:getBaseUrl() + "/index.php?c=ShowController&a=initMyBlog",
             type:"POST",
@@ -100,18 +78,61 @@ $(function () {
                 "pageIndex":pageIndex
             },
             success:function (result) {
-                pageIndex++;
-                showFeed(result);
+                if (result == "") {
+                    $("#loading").remove();
+                    var str = '<div id="noMore"><span>没有更多内容了</span></div>';
+                    $(str).appendTo("#content");
+                } else {
+                    showFeed(result);
+                    ++pageIndex;
+                    finished = true;
+                }
             }
         })
     }
 
     $(window).scroll(function () {
-        if (isAtBottom()) {
-            init(email, pageIndex);
+        var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+        $("str").appendTo("#content");
+        if (isAtBottom() && finished) {
+            init(email);
         }
     })
-    $(".feed .seeAll").live("clcick", function () {
+    //删除博客
+    $(".removeDiv").live("click", function () {
+        var feed = $(this).parent().parent().parent().parent();
+        var blogID = feed.children(".blogIDHide").html();
+        var dia = $.dialog({
+            title:"提示",
+            lock:"true",
+            content:"确定删除这篇博客？",
+            ok:function () {
+                $.ajax({
+                    url:getBaseUrl() + "/index.php?c=BlogController&a=removeBlog",
+                    type:"POST",
+                    dataType:"json",
+                    data:{
+                        "blogID":blogID
+                    },
+                    success:function (result) {
+                        if (result.success == 1) {
+                            $.dialog({
+                                lock:"true",
+                                title:"提示",
+                                content:result.msg,
+                                time:1
+                            })
+                            feed.css("display", "none");
+                        }
+                    }
+                })
+            },
+            cancel:function () {
+                dia.close();
+            }
+        })
+    })
+    $(".feed .seeAll").live("click", function () {
 
     })
 });

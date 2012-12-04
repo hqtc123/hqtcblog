@@ -7,6 +7,7 @@
     <title>环球探测</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.kwicks.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="css/index.css"/>
     <script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.kwicks.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.artDialog.js"></script>
@@ -27,7 +28,7 @@
         if (isset($_SESSION["nick"])) {
             echo '<a href="myblog.php" class="blog">' . $_SESSION["bokeName"] . '</a>';
             echo '<div id="hide_email">' . $_SESSION["email"] . '</div>';
-            echo '<div id="account">' . $_SESSION["nick"] . '</div>';
+            echo '<div id="hide_nick">' . $_SESSION["nick"] . '</div>';
         } else {
             ?>
             <script language="javascript" type="text/javascript">
@@ -36,11 +37,11 @@
             <?php
         }
         ?>
-        <div id="hidemenu">
-            <ul id="hideul">
-                <li class="hideli">账号信息</li>
-                <li class="hideli">退出登录</li>
-                <li class="hideli">博客设置</li>
+        <div id="J_HeaderMiscAction" class="misc-action">
+            <ul class="action-list">
+                <li class="action-item"><a class="hideli" id="accountId" title="账户"></a></li>
+                <li class="action-item"><a class="hideli" id="setId" title="设置"></a></li>
+                <li class="action-item"><a class="hideli" id="logoutId" title="退出"></a></li>
             </ul>
         </div>
     </div>
@@ -83,139 +84,56 @@
 
         </div>
         <div id="content">
+            <!--            <div id="loading">-->
+            <!--                <img src="images/loading.gif" alt="">-->
+            <!--                <span>载入更多……</span>-->
+            <!--            </div>-->
             <div class="feed">
-                <div class="headDiv">
-                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
-                </div>
-                <div class="triangle">
-                </div>
+                <div class="blogIDHide">39</div>
+                <div class="emailHide">1@1.com</div>
+                <div class="headDiv"><img src="upload/portrait/portrait.png"></div>
+                <div class="triangle"></div>
                 <div class="feedDiv">
                     <div class="dateHolder">
-                        <div class="dateDiv">
-                            2012-08-06
-                        </div>
+                        <div class="author">1</div>
+                        <div class="dateDiv">2012-12-03</div>
                     </div>
-                    <div class="titleDiv">
-                        一个好汉三个杀
-                    </div>
-                    <div class="contentDiv">
-                        零零碎碎，暮暮朝朝。我的年华凭空逝去，仿佛望不穿的秋水一般。
-                        美好需要回忆，苦痛也应当铭记。从今日起，这篇流水
-                        将记录这苦难人生余下生活的点点滴滴。
-                        仰望星空，璀璨而又浩瀚。俯察大地，广博而又辽阔。想我一生，终不能游历山河，终不能仗剑天涯，是要错过多少奇景美事？
-                        心中的凄楚到底要持续多久？难道非要等到年介古稀，到心中泛不起一丝涟漪？若少年便如此，此生又有何意义可言。既苦痛终不能免。心境的悲哀就应当持续，直到岁月不再起涟漪波澜。
+                    <div class="titleDiv">无题</div>
+                    <div class="contentDiv">朝鲜半岛核危机</div>
+                    <div class="seeHolder">
+                        <div class="seeAll">查看原文→</div>
                     </div>
                     <div class="attrHolder">
-                        <div class="tagsDiv">
-                            #ff #ff
-                        </div>
+                        <div class="tagsDiv"><span class="tagSpan">朝鲜</span></div>
                         <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
+                            <div class="optDiv removeDiv">删除</div>
+                            <div class="optDiv reprintDiv">转载</div>
+                            <div class="optDiv commentDiv">回应(0)</div>
+                            <div class="optDiv likeDiv">★喜欢(0)</div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="feed">
-                <div class="headDiv">
-                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
-                </div>
-                <div class="triangle">
-                </div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="dateDiv">
-                            2012-08-06
+                <div class="feedComment">
+                    <div class="cmtArea clearFix">
+                        <textarea class="cmtText" rows="" cols=""></textarea>
+
+                        <div class="cmtButton">
+                            <span class="cmtSpan">回应</span>
                         </div>
                     </div>
-                    <div class="titleDiv">
-                        一个好汉三个杀
+                    <div class="cmtList">
+                        <ul class="cmtUl">
+                            <li class="cmtLi">
+                                <div class="emailDiv">1@1.com</div>
+                                <img class="cmtPor" width="32" height="32" src="upload/portrait/portrait.png">
+
+                                <div class="cmtMain"><a class="cmtNick" href="#">1 </a><span
+                                        class="cmtContent">d都顶顶顶顶顶顶顶顶顶水水水水水水水水水水d</span></div>
+                            </li>
+                        </ul>
                     </div>
-                    <div class="contentDiv">
-                        零零碎碎，暮暮朝朝。我的年华凭空逝去，仿佛望不穿的秋水一般。
-                        美好需要回忆，苦痛也应当铭记。从今日起，这篇流水
-                        将记录这苦难人生余下生活的点点滴滴。
-                        仰望星空，璀璨而又浩瀚。俯察大地，广博而又辽阔。想我一生，终不能游历山河，终不能仗剑天涯，是要错过多少奇景美事？
-                        心中的凄楚到底要持续多久？难道非要等到年介古稀，到心中泛不起一丝涟漪？若少年便如此，此生又有何意义可言。既苦痛终不能免。心境的悲哀就应当持续，直到岁月不再起涟漪波澜。
-                    </div>
-                    <div class="attrHolder">
-                        <div class="tagsDiv">
-                            #ff #ff
-                        </div>
-                        <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="feed">
-                <div class="headDiv">
-                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
-                </div>
-                <div class="triangle">
-                </div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="dateDiv">
-                            2012-08-06
-                        </div>
-                    </div>
-                    <div class="titleDiv">
-                        一个好汉三个杀
-                    </div>
-                    <div class="contentDiv">
-                        零零碎碎，暮暮朝朝。我的年华凭空逝去，仿佛望不穿的秋水一般。
-                        美好需要回忆，苦痛也应当铭记。从今日起，这篇流水
-                        将记录这苦难人生余下生活的点点滴滴。
-                        仰望星空，璀璨而又浩瀚。俯察大地，广博而又辽阔。想我一生，终不能游历山河，终不能仗剑天涯，是要错过多少奇景美事？
-                        心中的凄楚到底要持续多久？难道非要等到年介古稀，到心中泛不起一丝涟漪？若少年便如此，此生又有何意义可言。既苦痛终不能免。心境的悲哀就应当持续，直到岁月不再起涟漪波澜。
-                    </div>
-                    <div class="attrHolder">
-                        <div class="tagsDiv">
-                            #ff #ff
-                        </div>
-                        <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="feed">
-                <div class="headDiv">
-                    <img src=<?php echo $_SESSION["url"]; ?> alt="">
-                </div>
-                <div class="triangle">
-                </div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="dateDiv">
-                            2012-08-06
-                        </div>
-                    </div>
-                    <div class="titleDiv">
-                        一个好汉三个杀
-                    </div>
-                    <div class="contentDiv">
-                        零零碎碎，暮暮朝朝。我的年华凭空逝去，仿佛望不穿的秋水一般。
-                        美好需要回忆，苦痛也应当铭记。从今日起，这篇流水
-                        将记录这苦难人生余下生活的点点滴滴。
-                        仰望星空，璀璨而又浩瀚。俯察大地，广博而又辽阔。想我一生，终不能游历山河，终不能仗剑天涯，是要错过多少奇景美事？
-                        心中的凄楚到底要持续多久？难道非要等到年介古稀，到心中泛不起一丝涟漪？若少年便如此，此生又有何意义可言。既苦痛终不能免。心境的悲哀就应当持续，直到岁月不再起涟漪波澜。
-                    </div>
-                    <div class="attrHolder">
-                        <div class="tagsDiv">
-                            #ff #ff
-                        </div>
-                        <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
-                        </div>
+                    <div class="shQi">
+                        <span class="shQiSpan">收起↑</span>
                     </div>
                 </div>
             </div>
@@ -225,7 +143,7 @@
         <div id="search-wrapper">
             <div id="tag-search-box">
                 <button id="tag-go-search" type="submit"></button>
-                <input type="text" id="tag-search-input" placeholder="发现自己的兴趣">
+                <input type="text" id="tag-search-input" placeholder="搜索标签">
             </div>
         </div>
         <div id="else">

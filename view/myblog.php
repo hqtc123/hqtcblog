@@ -7,6 +7,7 @@
     <title>环球探测</title>
     <link rel="stylesheet" type="text/css" href="css/jquery.kwicks.min.css"/>
     <link rel="stylesheet" type="text/css" href="css/layout.css"/>
+    <link rel="stylesheet" type="text/css" href="css/myblog.css"/>
     <script type="text/javascript" src="js/lib/jquery-1.8.1.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.kwicks.min.js"></script>
     <script type="text/javascript" src="js/lib/jquery.artDialog.js"></script>
@@ -56,65 +57,6 @@
 
         </div>
         <div id="content">
-            <div class="feed">
-                <div class="emailHide">test@a.com</div>
-                <div class="headDiv"><img src="upload/portrait/girl.jpg"></div>
-                <div class="triangle"></div>
-                <div class="feedDiv">
-                    <div class="dateHolder">
-                        <div class="author">nick</div>
-                        <div class="dateDiv">2012-12-01</div>
-                    </div>
-                    <div class="titleDiv">招聘</div>
-                    <div class="contentDiv"><span style="font-family:宋体;font-size: 14px; line-height: 24px; ">网络创业不是梦，起点从这里开始。。。</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">招聘条件：</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">1.有上网条件–兼职/专职均可(在家中、办公室、网吧等地)。</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">2.时间自由，只要你有空就可赚钱。（具体时间由您自己掌握）。&nbsp;</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">3.有简单网络知识和淘宝网站应用的基础，会使用支付宝，语音YY。（如：下载都不会勿扰）</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">4、岗位薪资：800元/月——2000/月&nbsp;</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">5、本团队采取的是能多劳者多得。</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">6、有意者请与我联系，本团队并非一些所谓的诈骗集团，可供考证。</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">7. ，时间自由，没有限制。一边赚钱，一边交友，轻松，简单。支付宝转账。可以联系我咨询咨询。</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">还在为你的淘宝店没有信誉和好评担心么？ 也可以找我们。详细Q上聊</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">适合者：想兼职，又不想影响正职！</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">扣扣</span><br
-                            style="font-family: 宋体; font-size: 14px; line-height: 24px; "><span
-                            style="font-family:宋体;font-size: 14px; line-height: 24px; ">在下面</span></div>
-                    <div class="seeHolder">
-                        <div class="seeAll">未完，继续阅读→</div>
-                    </div>
-
-                    <div class="attrHolder">
-                        <div class="tagsDiv"><span class="tagSpan">招聘</span><span class="tagSpan">求职</span></div>
-                        <div class="optionsDiv">
-                            <div class="optDiv">转载</div>
-                            <div class="optDiv">回应(0)</div>
-                            <div class="optDiv">★喜欢(0)</div>
-                        </div>
-                    </div>
-                </div>
-            </div>
             <div id="loading">
                 <img src="images/loading.gif" alt="">
                 <span>载入更多……</span>

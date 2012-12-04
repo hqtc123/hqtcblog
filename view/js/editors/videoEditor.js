@@ -56,6 +56,7 @@ $(function () {
                         valid = true;
                     } else {
                         $.dialog({
+                            lock:"true",
                             title:"出错啦",
                             content:result.msg,
                             time:1
@@ -79,6 +80,7 @@ $(function () {
         }
         if (!valid) {
             $.dialog({
+                lock:"true",
                 title:"提示",
                 content:"链接无效",
                 time:2
@@ -108,6 +110,7 @@ $(function () {
                 if (result.success == 1) {
                     $.dialog({
                         title:"提示",
+                        lock:"true",
                         content:result.msg,
                         time:2
                     });

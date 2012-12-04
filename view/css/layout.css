@@ -26,81 +26,63 @@ a {
 
 .blog {
     float: left;
-    color: #dfcfcf;
-    margin-left: 25px;
-    font-size: 18px;
-    margin-top: 25px;
-    font-family: "微软雅黑";
-    cursor: pointer;
-    padding: 5px;
+    height: 60px;
+    line-height: 62px;
+    padding: 10px 13px;
+    color: #666;
+    text-shadow: 1px 1px 2px #0B2C45;
+    font-size: 16px;
 }
 
 .current {
     float: left;
-    color: #dfcfcf;
-    margin-left: 25px;
-    font-size: 18px;
-    margin-top: 25px;
-    font-family: "微软雅黑";
-    cursor: pointer;
-    padding: 3px;
-    padding-bottom: 8px;
-    background-color: #cccccc;
-    border-top-left-radius: 8px;
-    border-bottom-right-radius: 8px;
-    color: #333;
+    height: 60px;
+    line-height: 62px;
+    padding: 10px 13px;
+    color: #ccc;
+    text-shadow: 1px 1px 2px #0B2C45;
+    font-size: 16px;
 }
 
 .blog:hover {
     color: #ffffff;
-    background-color: #666;
 }
 
-#addblog {
-    font-size: 20px;
-}
-
-#account {
-    border-radius: 5px;
-    height: 40px;
-    width: 120px;
-    text-align: center;
-    margin-top: 15px;
+.misc-action {
     float: right;
-    color: #CCC;
-    font-size: 18px;
-    font-family: "微软雅黑";
-    padding-top: 11px;
-    background-color: #000;
-}
-
-#hidemenu {
-    height: 40px;
+    padding-top: 12px;
+    height: 33px;
     width: 120px;
-    display: none;
-    float: right;
-    z-index: 999;
-    position: absolute;
-    margin-left: 836px;
 }
 
-#hidemenu .hideli {
+ul {
     list-style: none;
-    border-radius: 2px;
-    margin-top: 2px;
-    height: 25px;
-    width: 120px;
-    text-align: center;
-    color: #CCC;
-    font-size: 16px;
-    font-family: "微软雅黑";
-    padding-top: 6px;
-    cursor: pointer;
-    background-color: #666;
 }
 
-#hidemenu .hideli:hover {
-    background-color: #000;
+.hideli {
+    width: 20px;
+    height: 20px;
+    display: block;
+    text-indent: -999px;
+    background-image: url('../images/headers.png');
+    _background-image: url('/img/icon/header-ie.$5765.png');
+    background-repeat: no-repeat;
+}
+
+#setId {
+    float: left;
+    margin-left: 10px;
+    background-position: -72px -98px;
+}
+
+#accountId {
+    float: left;
+    background-position: 0 -98px;
+}
+
+#logoutId {
+    float: right;
+    background-position: -109px -98px;
 }
 
 #container {
@@ -220,9 +202,15 @@ a {
     width: 720px;
     height: auto;
     float: left;
+    color: #333;
+    margin-bottom: 20px;
 }
 
-.emailHide {
+.feed .blogIDHide {
+    display: none;
+}
+
+.feed .emailHide {
     display: none;
 }
 
@@ -254,7 +242,6 @@ a {
     padding-right: 20px;
     border-radius: 5px;
     background-color: #fff;
-    margin-bottom: 20px;
 }
 
 .dateHolder {
@@ -270,6 +257,10 @@ a {
     font-size: 14px;
     color: #666;
     cursor: pointer;
+}
+
+.author:hover {
+    color: #333;
 }
 
 .dateDiv {
@@ -302,8 +293,7 @@ a {
     display: inline;
     border: none;
     float: left;
-    width: 266px;
-    height: 200px;
+    max-width: 500px;
     margin: 10px;
 }
 
@@ -361,7 +351,6 @@ a {
     height: 14px;
     width: 580px;
     margin-bottom: 10px;
-    display: none;
 }
 
 .feed .seeAll {
@@ -374,6 +363,112 @@ a {
 .feed .seeAll:hover {
     color: #666;
     text-decoration: underline;
+}
+
+.feed .feedComment {
+    display: none;
+    padding: 0 20px;
+    float: right;
+    width: 560px;
+    background-color: #ccc;
+    border-radius: 5px;
+    margin-right: 10px;
+}
+
+.feedComment .cmtArea {
+    width: 600px;
+}
+
+.cmtArea .cmtText {
+    float: left;
+    width: 480px;
+    height: 24px;
+    resize: none;
+    padding-top: 8px;
+    font-size: 16px;
+    margin-top: 10px;
+    border-radius: 4px;
+    border: 1px #999 solid;
+}
+
+.cmtArea .cmtButton {
+    float: right;
+    background-color: #666;
+    margin-right: 40px;
+    width: 40px;
+    height: 23px;
+    padding-top: 5px;
+    margin-top: 12px;
+    padding-left: 10px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.cmtArea .cmtButton:hover {
+    background-color: #333;
+}
+
+.cmtButton .cmtSpan {
+    color: #fff;
+}
+
+.feedComment .cmtList {
+    float: left;
+    width: 550px;
+    margin-top: 10px;
+    display: inline;
+}
+
+.feedComment .cmtUl {
+    padding: 0;
+    margin: 0;
+    display: inline;
+    width: 550px;
+    float: left;
+    list-style: none;
+}
+
+.cmtUl .emailDiv {
+    display: none;
+}
+
+.cmtUl .cmtLi {
+    padding: 5px 0;
+    float: left;
+    width: 560px;
+    display: inline;
+    border-bottom: 1px #999 solid;
+}
+
+.cmtUl .cmtLi img {
+    float: left;
+    margin-right: 10px;
+}
+
+.cmtli .cmtMain {
+    float: right;
+    margin-left: 80px;
+    height: 50px;
+    width: 500px;
+}
+
+.cmtMain .cmtNick {
+    display: inline;
+    cursor: pointer;
+}
+
+.cmtMain .cmtContent {
+    font-size: 14px;
+    width: 500px;
+}
+
+.feedComment .shQi {
+    float: left;
+    cursor: pointer;
+}
+
+.feedComment .shQi:hover {
+    color: #000;
 }
 
 .attrHolder {
@@ -422,6 +517,10 @@ a {
     margin-left: 300px;
 }
 
+#noMore {
+    margin-left: 250px;
+}
+
 #loading img {
     margin-left: auto;
 }
@@ -429,6 +528,85 @@ a {
 #loading span {
     margin-top: 8px;
     float: right;
+    font-size: 18px;
+}
+
+#content .noFollow {
+    width: 620px;
+    height: 35px;
+    padding-top: 15px;
+    margin-bottom: 36px;
+    background-color: #ccc;
+    margin-left: 100px;
+    border-radius: 4px;
+}
+
+#content .noFollow span {
+    margin-left: 20px;
+    color: #666;
+}
+
+#content .boKeDiv {
+    width: 620px;
+    height: 100px;
+    margin-left: 100px;
+    background-color: #fff;
+    margin-top: 20px;
+    border-radius: 4px;
+}
+
+.boKeDiv .infoDiv {
+    float: left;
+    padding-top: 16px;
+    padding-left: 10px;
+}
+
+.infoDiv .portraitDiv {
+    float: left;
+}
+
+.infoDiv .boKeName {
+    margin-left: 10px;
+    margin-top: 5px;
+    font-size: 25px;
+    font-family: "黑体";
+    color: #333;
+    display: inline;
+    cursor: pointer;
+}
+
+.infoDiv .boKeName:hover {
+    color: #666;
+    text-decoration: underline;
+}
+
+.infoDiv .nickDiv {
+    float: left;
+    color: #333;
+    margin-left: 10px;
+    margin-top: 8px;
+}
+
+.boKeDiv .followDiv {
+    float: right;
+    margin-right: 20px;
+    margin-top: 30px;
+    width: 100px;
+    height: 30px;
+    background-color: #666;
+    color: #fff;
+    text-align: center;
+    cursor: pointer;
+    padding-top: 12px;
+    border-radius: 4px;
+}
+
+.boKeDiv .followDiv:hover {
+    background-color: #333;
+}
+
+.followDiv span {
+    color: #fff;
     font-size: 18px;
 }
 
@@ -484,7 +662,7 @@ a {
     background-color: #cccccc;
 }
 
-#dia_account, #hide_email {
+#dia_account, #hide_email, #hide_nick {
     display: none;
 }
 

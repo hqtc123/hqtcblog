@@ -127,6 +127,7 @@ $(function () {
     $(".pb-submit").click(function () {
         if (!uploaded) {
             $.dialog({
+                lock:"true",
                 title:"错误",
                 content:"您还未上传图片"
             });
@@ -150,6 +151,7 @@ $(function () {
             },
             success:function (result) {
                 $.dialog({
+                    lock:"true",
                     title:"提示",
                     content:result.msg
                 });

@@ -6,6 +6,7 @@
  * Time: 下午7:49
  * To change this template use File | Settings | File Templates.
  */
+session_start();
 class BokeController extends spController {
     function addBoke() {
         $boke = spClass("Boke");
@@ -29,11 +30,10 @@ class BokeController extends spController {
         echo json_encode($arr);
     }
 
-    function updateBoke() {
-
-    }
-
-    function deleteBoke() {
-
+    function toHisBo() {
+        $hisEmail = $this->spArgs("hisEmail");
+        $_SESSION["hisEmail"] = $hisEmail;
+        $arr["success"] = 1;
+        echo json_encode($arr);
     }
 }

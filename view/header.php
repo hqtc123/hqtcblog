@@ -7,7 +7,7 @@
         if (isset($_SESSION["nick"])) {
             echo '<div class="current">' . $_SESSION["bokeName"] . '</div>';
             echo '<div id="hide_email">' . $_SESSION["email"] . '</div>';
-            echo '<div id="account">' . $_SESSION["nick"] . '</div>';
+            echo '<div id="hide_nick">' . $_SESSION["nick"] . '</div>';
         } else {
             ?>
             <script language="javascript" type="text/javascript">
@@ -16,11 +16,11 @@
             <?php
         }
         ?>
-        <div id="hidemenu">
-            <ul id="hideul">
-                <li class="hideli">账号信息</li>
-                <li class="hideli">退出登录</li>
-                <li class="hideli">博客设置</li>
+        <div id="J_HeaderMiscAction" class="misc-action">
+            <ul class="action-list">
+                <li class="action-item"><a class="hideli" id="accountId" title="账户"></a></li>
+                <li class="action-item"><a class="hideli" id="setId" title="设置"></a></li>
+                <li class="action-item"><a class="hideli" id="logoutId" title="退出"></a></li>
             </ul>
         </div>
     </div>

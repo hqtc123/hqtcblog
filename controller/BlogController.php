@@ -137,8 +137,18 @@ class BlogController extends spController {
         echo json_encode($arr);
     }
 
-    function updateBlog() {
-
+    function removeBlog() {
+        $blogClass = spClass("Blog");
+        $blogID = $this->spArgs("blogID");
+        $condition = array("blogid" => $blogID);
+        $result = $blogClass->delete($condition);
+        if ($result) {
+            $arr["success"] = 1;
+            $arr["msg"] = "删除成功";
+        } else {
+            $arr["success"] = 0;
+        }
+        echo json_encode($arr);
     }
 
 

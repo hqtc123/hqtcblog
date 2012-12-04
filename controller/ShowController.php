@@ -11,7 +11,7 @@ class ShowController extends spController {
     function initMyBlog() {
         $blogClass = spClass("Blog");
         $userClass = spClass("User");
-        $blogTagClass = spClass("BlogTag");
+
         $email = $this->spArgs("email");
         $pageIndex = $this->spArgs("pageIndex");
         $condition = array("email" => $email);
@@ -21,11 +21,151 @@ class ShowController extends spController {
         $perCount = 5;
         $startIndex = $perCount * $pageIndex;
         $blogResult = $blogClass->findAll($condition, "blogid DESC", null, "$startIndex,$perCount");
+        $returnArr = $this->result2html($blogResult);
+        echo json_encode($returnArr);
+    }
+
+    function initIndex() {
+        $unFollow = false;
+        $followUser = spClass("FollowUser");
+        $blogClass = spClass("Blog");
+        $userClass = spClass("User");
+        $blogTagClass = spClass("BlogTag");
+        $email = $this->spArgs("email");
+        $pageIndex = $this->spArgs("pageIndex");
+        $condition = array("email" => $email);
+        $resultArr = array();
+
+//        $followResult = array; //todo
+
+    }
+
+//标签查找
+    function showTag() {
+        $blogTag = spClass("BlogTag");
+        $tagName = $this->spArgs("tag");
+        $sql = "SELECT * FROM blog WHERE blogid IN (SELECT blogid FROM blogtag WHERE tagname='$tagName') order by blogid desc";
+        $blogResult = $blogTag->findSql($sql);
+        $resultArr = $this->result2html($blogResult);
+        echo json_encode($resultArr);
+    }
+
+    function createFeedHead($blogID, $email, $nick, $portraitUrl, $date) {
+        $str = '<div class="feed"><div class="blogIDHide">' . $blogID . '</div>' .
+            '<div class="emailHide">' . $email .
+            '</div><div class="headDiv"><img src=' . $portraitUrl .
+            '></div><div class="triangle"></div>' .
+            '<div class="feedDiv">' .
+            '<div class="dateHolder">' .
+            '<div class="author">' . $nick . '</div>' .
+            '<div class="dateDiv">' . $date . '</div></div>';
+        return $str;
+    }
+
+    function createFeedFoot($blogID, $tagsArr, $commentnum, $likenum) {
+        $str = '<div class="attrHolder"><div class="tagsDiv">';
+        $tagsShow = 3;
+        if (count($tagsArr) < $tagsShow) {
+            $tagsShow = count($tagsArr);
+        }
+        for ($i = 0; $i < $tagsShow; $i++) {
+            $str .= '<span class="tagSpan">' . $tagsArr[$i] . '</span>';
+        }
+        if ($commentnum != 0) {
+            $comment = spClass("Comment");
+            $condition = array("blogid" => $blogID);
+            $commentResult = $comment->findAll($condition, "commentid DESC");
+        }
+        $str .= '</div><div class="optionsDiv"><div class="optDiv removeDiv">删除</div><div class="optDiv reprintDiv">' .
+            '转载</div><div class="optDiv commentDiv">回应(' . $commentnum . ')</div><div class="optDiv likeDiv">★喜欢(' . $likenum . ')</div>' .
+            '</div></div></div> <div class="feedComment">
+                    <div class="cmtArea clearFix">
+                        <textarea class="cmtText" rows="" cols=""></textarea>
+
+                        <div class="cmtButton">
+                            <span class="cmtSpan">评论</span>
+                        </div>
+                    </div>
+                    <div class="cmtList">
+                        <ul class="cmtUl">';
+        if ($commentResult) {
+            foreach ($commentResult as $commentItem) {
+                $email = $commentItem["email"];
+                $content = $commentItem["content"];
+                $str .= $this->createCommentLi($email, $content);
+            }
+        }
+
+        $str .= '</ul>
+                    </div>
+                    <div class="shQi">
+                        <span class="shQiSpan">收起↑</span>
+                    </div>
+                </div></div>';
+        return $str;
+    }
+
+
+    function createTxtDiv($title, $content) {
+        $str = '<div class="titleDiv">' . $title . '</div>' .
+            '<div class="contentDiv">' . $content . '</div>';
+        $str .= '<div class="seeHolder"><div class="seeAll">查看原文→</div></div>';
+        return $str;
+    }
+
+    function createPicDiv($imgUrlArr, $descr) {
+
+        $str = '<div class="picDiv">';
+//            <img src="http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg">
+//                <img src="http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg">
+//
+
+        $picsShow = count($imgUrlArr);
+
+        for ($i = 0; $i < $picsShow; $i++) {
+            $str .= '<img src=' . $imgUrlArr[$i] . '>';
+        }
+        $str .= '<div class="clear"></div><div class="descDiv">&nbsp;&nbsp;' . $descr . '</div></div>';
+        $str .= '<div class="seeHolder"><div class="seeAll">查看原文→</div></div>';
+        return $str;
+    }
+
+    function createVideoDiv($title, $imgUrl, $videoUrl) {
+
+        $str = '<div class="titleDiv">' . $title . '</div>' .
+            '<div class="videoDiv"><img src="' . $imgUrl . '" alt="">' .
+            '<embed src=' . $videoUrl . ' align="middle" allowScriptAccess="sameDomain "type="application/x-shockwave-flash"></embed>' .
+            '<div class="stopVideo">收起↑</div><div class="clear"></div></div>';
+        return $str;
+    }
+
+    function createLinkDiv($title, $url) {
+
+        $str = '<div class="titleDiv">' . $title . '</div>' .
+            '<div class="linkDiv"><a href="' . $url . '">' . $url . '</a></div>';
+        return $str;
+    }
+
+    function createCommentLi($email, $comment) {
+        $userClass = spClass("User");
+        $condition = array("email" => $email);
+        $userResult = $userClass->find($condition);
+        $portraitUrl = $userResult["portraiturl"];
+        $nick = $userResult["nick"];
+        $str = '<li class="cmtLi"><div class="emailDiv">' . $email . '</div>' .
+            '<img class="cmtPor" width="32" height="32" src="' . $portraitUrl . '"/>' .
+            '<div class="cmtMain"><div class="cmtNick">' . $nick . ' </div>' .
+            '<span class="cmtContent">' . $comment . '</span></div> </li>';
+        return $str;
+    }
+
+    function result2html($blogResult) {
         $returnArr = array();
+        $blogTagClass = spClass("BlogTag");
         foreach ($blogResult as $blog) {
-            $blogid = $blog["blogid"];
+            $blogID = $blog["blogid"];
             $tagsArr = array();
-            $blogTagResult = $blogTagClass->findAll(array("blogid" => $blogid));
+            $blogTagResult = $blogTagClass->findAll(array("blogid" => $blogID));
             foreach ($blogTagResult as $blogTag) {
                 $tagsArr[] = $blogTag["tagname"];
             }
@@ -36,8 +176,13 @@ class ShowController extends spController {
             $title = $blog["title"];
             $content = $blog["content"];
             $url = $blog["url"];
-            $divHead = $this->createFeedHead($email, $nick, $portraitUrl, $date);
-            $divFoot = $this->createFeedFoot($tagsArr, $commentNum, $likeNum);
+            $email = $blog["email"];
+            $userClass = spClass("User");
+            $userResult = $userClass->find(array("email" => $email));
+            $nick = $userResult["nick"];
+            $portraitUrl = $userResult["portraiturl"];
+            $divHead = $this->createFeedHead($blogID, $email, $nick, $portraitUrl, $date);
+            $divFoot = $this->createFeedFoot($blogID, $tagsArr, $commentNum, $likeNum);
             switch ($type) {
                 case 1:
                     $html = $divHead . $this->createTxtDiv($title, $content) . $divFoot;
@@ -61,72 +206,7 @@ class ShowController extends spController {
                     break;
             }
         }
-        echo json_encode($returnArr);
-    }
-
-    function createFeedHead($email, $nick, $portraitUrl, $date) {
-        $str = '<div class="feed"><div class="emailHide">' . $email .
-            '</div><div class="headDiv"><img src=' . $portraitUrl .
-            '></div><div class="triangle"></div>' .
-            '<div class="feedDiv">' .
-            '<div class="dateHolder">' .
-            '<div class="author">' . $nick . '</div>' .
-            '<div class="dateDiv">' . $date . '</div></div>';
-        return $str;
-    }
-
-    function createFeedFoot($tagsArr, $commentnum, $likenum) {
-        $str = '<div class="attrHolder"><div class="tagsDiv">';
-        $tagsShow = 3;
-        if (count($tagsArr) < $tagsShow) {
-            $tagsShow = count($tagsArr);
-        }
-        for ($i = 0; $i < $tagsShow; $i++) {
-            $str .= '<span class="tagSpan">' . $tagsArr[$i] . '</span>';
-        }
-        $str .= '</div><div class="optionsDiv"><div class="optDiv">' .
-            '转载</div><div class="optDiv">回应(' . $commentnum . ')</div><div class="optDiv">★喜欢(' . $likenum . ')</div>' .
-            '</div></div></div></div>';
-        return $str;
-    }
-
-    function createTxtDiv($title, $content) {
-        $str = '<div class="titleDiv">' . $title . '</div>' .
-            '<div class="contentDiv">' . $content . '</div>';
-        return $str;
-    }
-
-    function createPicDiv($imgUrlArr, $descr) {
-
-        $str = '<div class="picDiv">';
-//            <img src="http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg">
-//                <img src="http://i0.sinaimg.cn/ty/nba/idx/2012/1130/U1614P6T950D1F28796DT20121130105228.jpg">
-//
-        $picsShow = 2;
-        if (count($imgUrlArr) < 2) {
-            $picsShow = count($imgUrlArr);
-        }
-        for ($i = 0; $i < $picsShow; $i++) {
-            $str .= '<img src=' . $imgUrlArr[$i] . '>';
-        }
-        $str .= '<div class="clear"></div><div class="descDiv">&nbsp;&nbsp;' . $descr . '</div></div>';
-        return $str;
-    }
-
-    function createVideoDiv($title, $imgUrl, $videoUrl) {
-
-        $str = '<div class="titleDiv">' . $title . '</div>' .
-            '<div class="videoDiv"><img src="' . $imgUrl . '" alt="">' .
-            '<embed src=' . $videoUrl . ' align="middle" allowScriptAccess="sameDomain "type="application/x-shockwave-flash"></embed>' .
-            '<div class="stopVideo">收起↑</div><div class="clear"></div></div>';
-        return $str;
-    }
-
-    function createLinkDiv($title, $url) {
-
-        $str = '<div class="titleDiv">' . $title . '</div>' .
-            '<div class="linkDiv"><a href="' . $url . '">' . $url . '</a></div>';
-        return $str;
+        return $returnArr;
     }
 
     //抓取视频信息

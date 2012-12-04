@@ -5,6 +5,14 @@
  * Time: 下午4:35
  * To change this template use File | Settings | File Templates.
  */
+function getBaseUrl() {
+    var curWwwPath = window.document.location.href;
+    var pathName = window.document.location.pathname;
+    var pos = curWwwPath.indexOf(pathName);
+    var localhostPaht = curWwwPath.substring(0, pos);
+    var projectName = pathName.substring(0, pathName.substr(1).indexOf('/') + 1);
+    return (localhostPaht + projectName);
+}
 $(function () {
     //share part begin
     $("#hidetext").hide();
@@ -27,18 +35,22 @@ $(function () {
     });
 
     var email = $("#hide_email").html();
-    var nick = $("#account").html();
+    var nick = $("#hide_nick").html();
 
     $(".hideli:eq(0)").click(function () {
         $("#email_label").html(email);
         $("#nick_label").html(nick);
         var dialog = $.dialog({
             title:"账号信息",
+            lock:"true",
             content:document.getElementById("dia_account")
         });
     })
+    $(".hideli:eq(1)").live("click", function () {
+        setTimeout("javascript:location.href='../view/addBoke.php'", 1);
+    })
     //log out
-    $(".hideli:eq(1)").click(function () {
+    $(".hideli:eq(2)").click(function () {
         $.ajax({
             type:"POST",
             dataType:"json",
@@ -55,8 +67,5 @@ $(function () {
             }
         })
     });
-    $(".hideli:eq(2)").click(function () {
-        setTimeout("javascript:location.href='../view/addBoke.php'", 100);
-    })
 //share part end
 });

@@ -43,6 +43,7 @@ $(function () {
         }
         if ($("#pb-link").val() == "") {
             $.dialog({
+                lock:"true",
                 title:"错误",
                 content:"请输入链接地址"
             })
@@ -51,6 +52,7 @@ $(function () {
         link = $("#pb-link").val();
         if (!IsURL(link)) {
             $.dialog({
+                lock:"true",
                 title:"错误",
                 content:"无效的链接地址"
             })
@@ -74,6 +76,7 @@ $(function () {
             },
             success:function (result) {
                 $.dialog({
+                    lock:"true",
                     title:"提示",
                     content:result.msg,
                     time:2
