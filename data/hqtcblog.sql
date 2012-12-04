@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50513
 File Encoding         : 65001
 
-Date: 2012-12-04 18:17:51
+Date: 2012-12-04 21:44:20
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -31,7 +31,7 @@ CREATE TABLE `blog` (
   `url` text,
   `fromid` int(11) DEFAULT NULL,
   PRIMARY KEY (`blogid`)
-) ENGINE=InnoDB AUTO_INCREMENT=51 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=55 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of blog
@@ -64,8 +64,7 @@ INSERT INTO `blog` VALUES ('35', '4', '2@2.com', '2012-12-03', '0', '0', '鸟叔
 INSERT INTO `blog` VALUES ('36', '1', '3@3.com', '2012-12-03', '0', '0', '先朝鲜', '<span style=\"font-family:SimSun, Helvetica, sans-serif;color:#333333;font-size: 14px; line-height: 24px;\">朝鲜在上周末表示，计划于本月再次发射卫星，这一计划立即遭到了韩国和美国方面的谴责，朝鲜卫星发射计划被外界普遍视为对其远程弹道导弹技术的测试。4月份朝鲜曾发射了一枚据称携带卫星的运载火箭，但火箭升空后不久发生爆炸解体。朝鲜国家通讯社称，科学家及工程技术人员已经对上一次发射的错误进行了分析，并改进了运载火箭的可靠性，下一次试射日期定于12月10日至22日。对此美国国务院发布声明称，朝鲜再次发射卫星属于“极具挑衅性的行为”，将危及地区和平和安全。韩国外交部发布声明称，若执意进行发射，朝鲜将面临来自国际社会的强烈反应。日本方面，首相野田佳彦于</span>', ' ', null);
 INSERT INTO `blog` VALUES ('37', '4', '3@3.com', '2012-12-03', '0', '0', '习近平强调“空谈误国  实干兴邦”  王岐山：开会不准念稿[超级新闻场]', '', 'http://v.youku.com/v_show/id_XNDgzMTUyOTUy.html', null);
 INSERT INTO `blog` VALUES ('38', '2', '3@3.com', '2012-12-03', '0', '0', '', '', 'upload/20vHdQuqF1Qc.jpg,upload/O9ze5884JX6v.jpg,', null);
-INSERT INTO `blog` VALUES ('39', '1', '1@1.com', '2012-12-03', '0', '0', '无题', '朝鲜半岛核危机', ' ', null);
-INSERT INTO `blog` VALUES ('40', '1', '2@2.com', '2012-12-03', '1', '0', '2', 'this is 2', ' ', null);
+INSERT INTO `blog` VALUES ('40', '1', '2@2.com', '2012-12-03', '1', '1', '2', 'this is 2', ' ', null);
 INSERT INTO `blog` VALUES ('41', '4', '2@2.com', '2012-12-03', '4', '1', '【拍客】吉林珲春再次拍到野生东北虎豹影像', '', 'http://v.youku.com/v_show/id_XNDgzMTUxNTI4.html', null);
 INSERT INTO `blog` VALUES ('42', '3', '3@3.com', '2012-12-03', '2', '2', '2', '', 'http://www.w3school.com.cn/jquery/traversing_each.asp', null);
 INSERT INTO `blog` VALUES ('43', '1', 'test@a.com', '2012-12-04', '0', '0', '无题', '<p align=\"justify\" style=\"margin: 0px 3px 15px; padding: 0px; font-family: 宋体; font-size: 16px; line-height: 26px; text-align: justify; text-indent: 30px;\">南京市民老罗最近快崩溃了，因为妻子蒋某的异常举动，好好的一个家被搅得天翻地覆。蒋某背着家人，偷偷拿着房产证到中介抵押了100多万元。面对家人的质问，蒋某居然振振有词：2012世界末日马上就来了，要赶紧把钱捐掉。</p><p align=\"justify\" style=\"margin: 0px 3px 15px; padding: 0px; font-family: 宋体; font-size: 16px; line-height: 26px; text-align: justify; text-indent: 30px;\">随着电影《2012》的热映，“2012世界末日论”引起了不少人的恐慌。其实，各国专家都已经对此进行驳斥，所谓的“末日”根本就是子虚乌有。大家还是不要恐慌，好好地过日子吧。</p>', ' ', null);
@@ -73,6 +72,10 @@ INSERT INTO `blog` VALUES ('44', '2', '2@2.com', '2012-12-04', '0', '0', '我的
 INSERT INTO `blog` VALUES ('48', '4', '3@3.com', '2012-12-04', '0', '0', '星闻速递 20121203  贺岁档pk盛宴  《少年派》完胜', '', 'http://www.56.com/u18/v_ODA4NTE1OTE.html', null);
 INSERT INTO `blog` VALUES ('49', '2', '3@3.com', '2012-12-04', '0', '0', '', '', 'upload/3vp780YYUoKd.jpg,upload/Ma2ymQ3YeCal.jpg,', null);
 INSERT INTO `blog` VALUES ('50', '1', 'test@a.com', '2012-12-04', '0', '0', '韩立宝花', '<span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">韩立眉头一皱，目光飞快向那头螟虫之母被击杀的地方扫了一眼，忽却然单手虚空一抓。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“嗖”的一声！</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　那片看似空无一物的虚空，波动一起，一块拇指大小的漆黑晶珠竟凭空浮现，再一个闪动后，就没入到韩立手掌中。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“咦，这如……”宝花见此一愣，刚憩再说些什么时，整个深渊就一下天翻地覆般的崩溃开来，无数淡白色裂痕凭空在四狂涌而现，并以肉囘眼可见速度飞快粗大起来。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　宝花脸色大变，单手一扬，手中一块赤红阵盘一亮而出，但方一嗡鸣声响起，一股诡异波动忽然从手上一扫而过。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　滴溜溜转动的阵盘，顿时光芒一敛，重新变得静止不动起来。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“不行。那人果然使了手段，你我现在无法轻易离开此地的。”宝花玉容阴沉的说道。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　“很正常。那人既然敢如此说，自然是有十足的把握留下你我的。”韩立却平静的说道。</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　</span><br style=\"font-family: 宋体; font-size: 14px; line-height: 24px; \" /><span style=\"font-family:宋体;font-size: 14px; line-height: 24px; \">　　宝花哼了一声，再想说些什么的时候，忽然二者四周灰蒙蒙光霞一卷，一个模糊光阵直接冲二人一罩而下。</span>', ' ', null);
+INSERT INTO `blog` VALUES ('51', '5', 'test@a.com', '2012-12-04', '0', '0', null, null, null, '39');
+INSERT INTO `blog` VALUES ('52', '5', 'test@a.com', '2012-12-04', '0', '0', null, null, null, '39');
+INSERT INTO `blog` VALUES ('53', '4', '2@2.com', '2012-12-04', '0', '0', '朝鲜卫星计划牵动各方神经  韩联社', '', 'http://v.youku.com/v_show/id_XNDgzODY2NTg4.html', null);
+INSERT INTO `blog` VALUES ('54', '3', '2@2.com', '2012-12-04', '0', '0', '我的blog', '', 'http://www.baidu.com/', null);
 
 -- ----------------------------
 -- Table structure for `blogtag`
@@ -108,6 +111,10 @@ INSERT INTO `blogtag` VALUES ('48', 'it');
 INSERT INTO `blogtag` VALUES ('49', 'it');
 INSERT INTO `blogtag` VALUES ('50', 'it');
 INSERT INTO `blogtag` VALUES ('50', '坑');
+INSERT INTO `blogtag` VALUES ('53', 'it');
+INSERT INTO `blogtag` VALUES ('54', '2');
+INSERT INTO `blogtag` VALUES ('54', 'it');
+INSERT INTO `blogtag` VALUES ('54', '朝鲜');
 
 -- ----------------------------
 -- Table structure for `boke`
@@ -164,7 +171,7 @@ CREATE TABLE `comment` (
   `blogid` int(11) NOT NULL,
   `content` text NOT NULL,
   PRIMARY KEY (`commentid`)
-) ENGINE=InnoDB AUTO_INCREMENT=8 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=9 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of comment
@@ -176,6 +183,7 @@ INSERT INTO `comment` VALUES ('4', '1@1.com', '41', '闪客，有用插件');
 INSERT INTO `comment` VALUES ('5', '1@1.com', '41', '闪客，有用插件');
 INSERT INTO `comment` VALUES ('6', 'test@a.com', '41', '东北虎？');
 INSERT INTO `comment` VALUES ('7', 'test@a.com', '40', 'zhen 2 a');
+INSERT INTO `comment` VALUES ('8', 'test@a.com', '39', 'jkhgfvl\n\n\n');
 
 -- ----------------------------
 -- Table structure for `followtag`
@@ -190,7 +198,11 @@ CREATE TABLE `followtag` (
 -- ----------------------------
 -- Records of followtag
 -- ----------------------------
+INSERT INTO `followtag` VALUES ('2@2.com', '2');
+INSERT INTO `followtag` VALUES ('2@2.com', 'it');
 INSERT INTO `followtag` VALUES ('test@a.com', '2');
+INSERT INTO `followtag` VALUES ('test@a.com', 'it');
+INSERT INTO `followtag` VALUES ('test@a.com', '朝鲜');
 
 -- ----------------------------
 -- Table structure for `followuser`
@@ -205,6 +217,8 @@ CREATE TABLE `followuser` (
 -- ----------------------------
 -- Records of followuser
 -- ----------------------------
+INSERT INTO `followuser` VALUES ('2@2.com', '3@3.com');
+INSERT INTO `followuser` VALUES ('2@2.com', 'test@a.com');
 INSERT INTO `followuser` VALUES ('3@3.com', '1@1.com');
 INSERT INTO `followuser` VALUES ('3@3.com', '2@2.com');
 INSERT INTO `followuser` VALUES ('test@a.com', '1@1.com');
@@ -225,6 +239,7 @@ CREATE TABLE `likes` (
 -- Records of likes
 -- ----------------------------
 INSERT INTO `likes` VALUES ('1@1.com', '42');
+INSERT INTO `likes` VALUES ('test@a.com', '40');
 INSERT INTO `likes` VALUES ('test@a.com', '41');
 INSERT INTO `likes` VALUES ('test@a.com', '42');
 
