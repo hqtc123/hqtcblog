@@ -16,12 +16,17 @@ function getBaseUrl() {
 function isAtBottom() {
     return ((($(document).height() - $(window).height()) - $(window).scrollTop()) <= 50) ? true : false;
 };
-
+function refresh() {
+    $(".reprintDiv").each(function () {
+        $(this).hide();
+    })
+}
 function showFeed(json) {
     $("#loading").remove();
     $.each(json, function (index, html) {
         $(html).appendTo("#content");
     });
+    refresh();
 }
 $(function () {
     //share part begin
@@ -66,7 +71,6 @@ $(function () {
     var email = $("#hide_email").html();
     var nick = $("#account").html();
     init(email);
-
     function init(email) {
         finished = false;
         $.ajax({
@@ -133,6 +137,39 @@ $(function () {
             }
         })
     })
+    //喜欢博客
+    $(".likeDiv").live("click", function () {
+        var like = $(this);
+        var blogID = $(this).parent().parent().parent().parent().children(".blogIDHide").html();
+        $.ajax({
+            url:getBaseUrl() + "/index.php?c=CLPController&a=addLike",
+            type:"POST",
+            dataType:"json",
+            data:{
+                "email":email,
+                "blogID":blogID
+            },
+            success:function (result) {
+                if (result.success == 1) {
+                    var num = result.num;
+                    like.html("★喜欢(" + num + ")");
+                } else {
+                    $.dialog({
+                        title:"提示",
+                        lock:"true",
+                        content:result.msg,
+                        time:1
+                    })
+                }
+            }
+        })
+    });
+    //回应博客
+    $(".commentDiv").live("click", function () {
+        var feed = $(this).parent().parent().parent().parent();
+        feed.children(".feedComment").slideDown();
+    });
+
     $(".feed .seeAll").live("click", function () {
 
     })

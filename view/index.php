@@ -84,27 +84,10 @@
 
         </div>
         <div id="content">
-            <div id="user">
-                <div id="infoDiv">
-                    <div id="hisEmail"><?php echo $_SESSION["hisEmail"]; ?></div>
-                    <div id="userPic">
-                        <img src=<?php echo $_SESSION["hisUrl"]; ?> alt="">
-                    </div>
-                    <div class="nickDiv">
-                        <span class="nickSpan"><?php echo $_SESSION["hisNick"]; ?></span>
-                    </div>
-                </div>
-                <div id="followBtn">
-                    <span id="followSpan">关注博客</span>
-                </div>
-                <div id="unBtn">
-                    <span id="unSpan">取消关注</span>
-                </div>
+            <div id="loading">
+                <img src="images/loading.gif" alt="">
+                <span>载入更多……</span>
             </div>
-            <!--            <div id="loading">-->
-            <!--                <img src="images/loading.gif" alt="">-->
-            <!--                <span>载入更多……</span>-->
-            <!--            </div>-->
             <!--            <div class="feed">-->
             <!--                <div class="blogIDHide">39</div>-->
             <!--                <div class="emailHide">1@1.com</div>-->

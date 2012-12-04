@@ -74,6 +74,35 @@ class FollowController extends spController {
         echo json_encode($arr);
     }
 
+    function showFollowBo() {
+        $followUser = spClass("FollowUser");
+        $bo = spClass("Boke");
+        $user = spClass("User");
+        $email = $this->spArgs("email");
+        $result = $followUser->findAll(array("email" => $email));
+        $arr = array();
+        foreach ($result as $fu) {
+            $boMail = $fu["useremail"];
+            $rr = $bo->find(array("email" => $boMail));
+            $boName = $rr["bokename"];
+            $rr2 = $user->find(array("email" => $boMail));
+            $poUrl = $rr2["portraiturl"];
+            $str = '<div id="user">
+                <div id="infoDiv">
+                    <div id="userPic">
+                        <img src="' . $poUrl . '" alt="">
+                    </div>
+                    <div class="boDiv">
+                        <span class="boSpan">' . $boName . '</span>
+                        <span class="emHide">' . $boMail . '</span>
+                    </div>
+                </div>
+            </div>';
+            $arr[] = $str;
+        }
+        echo json_encode($arr);
+    }
+
 //获得关注标签
     function getFollowTag() {
         $email = $this->spArgs("email");

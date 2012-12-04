@@ -81,7 +81,23 @@ function unFollowTag(email, tag) {
         }
     })
 }
-
+//展示关注列表
+function showFollowBo(email) {
+    $("#content").empty();
+    $.ajax({
+        url:getBaseUrl() + "/index.php?c=FollowController&a=showFollowBo",
+        type:"POST",
+        dataType:"json",
+        data:{
+            "email":email
+        },
+        success:function (result) {
+            $.each(result, function (index, divStr) {
+                $(divStr).appendTo("#content");
+            });
+        }
+    })
+}
 //获得关注的标签
 function getFollowTag(email) {
     $.ajax({
@@ -223,7 +239,7 @@ $(function () {
     var email = $("#hide_email").html();
     var nick = $("#account").html();
 
-//    init(email);
+    init(email);
 
 
     getFollowTag(email);
@@ -257,14 +273,19 @@ $(function () {
         })
     }
 
+    $(".followUsers").live("click", function () {
+        showFollowBo(email);
+        finished = false;
+    })
+
     //窗口滚动
-//    $(window).scroll(function () {
-//        if (isAtBottom() && finished) {
-//            var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
-//            $(str).appendTo("#content");
-//            init(email);
-//        }
-//    })
+    $(window).scroll(function () {
+        if (isAtBottom() && finished) {
+            var str = '<div id="loading"><img src="images/loading.gif" alt=""><span>载入更多……</span></div>';
+            $(str).appendTo("#content");
+            init(email);
+        }
+    })
     //关注标签
     $("#followTag").live("click", function () {
         var tag = $(this).prev("span").html();
@@ -395,11 +416,16 @@ $(function () {
             })
         }
     })
+
     //访问他人博客
     $(".author").live("click", function () {
         var feed = $(this).parent().parent().parent();
         var emailHide = feed.children(".emailHide");
         var hisEmail = emailHide.html();
+        goHisBlog(hisEmail);
+    })
+    $(".boSpan").live("click", function () {
+        var hisEmail = $(this).next(".emHide").html();
         goHisBlog(hisEmail);
     })
     $(".cmtNick").live("click", function () {

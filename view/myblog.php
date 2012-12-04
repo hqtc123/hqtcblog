@@ -64,18 +64,6 @@
         </div>
     </div>
 
-    <div id="aside">
-        <div id="search-wrapper">
-            <div id="tag-search-box">
-                <button id="tag-go-search" type="submit"></button>
-                <input type="text" id="tag-search-input" placeholder="搜索标签">
-            </div>
-        </div>
-        <div id="else">
-
-        </div>
-    </div>
-
     <ul id="dia_account">
         <li class="dia_item">
             <label class="dia_label">邮箱：</label>
