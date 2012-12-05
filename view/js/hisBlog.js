@@ -83,6 +83,12 @@ function showFeed(json) {
     $.each(json, function (index, html) {
         $(html).appendTo("#content");
     });
+    refresh();
+}
+function refresh() {
+    $(".removeDiv").each(function () {
+        $(this).hide();
+    })
 }
 $(function () {
     var hisEmail = $("#hisEmail").html();
@@ -145,4 +151,97 @@ $(function () {
             init(hisEmail);
         }
     })
+
+    //回应博客
+    $(".commentDiv").live("click", function () {
+        var feed = $(this).parent().parent().parent().parent();
+        feed.children(".feedComment").slideDown();
+    });
+
+    $(".shQi").live("click", function () {
+        var feed = $(this).parent().parent();
+        feed.children(".feedComment").slideUp();
+    })
+    $(".cmtButton").live("click", function () {
+        var feed = $(this).parent().parent().parent();
+        var cmtUl = $(this).parent().next(".cmtList").children(".cmtUl");
+        var commentDiv = feed.children(".feedDiv").children(".attrHolder").children(".optionsDiv").children(".commentDiv");
+        if ($(this).prev(".cmtText").val() == "") {
+
+        } else {
+            var comment = $(this).prev(".cmtText").val();
+            var blogID = feed.children(".blogIDHide").html();
+            $.ajax({
+                url:getBaseUrl() + "/index.php?c=CLPController&a=addComment",
+                type:"POST",
+                dataType:"json",
+                data:{
+                    "email":email,
+                    "blogID":blogID,
+                    "comment":comment
+                },
+                success:function (result) {
+                    if (result.success == 1) {
+                        var divStr = result.divStr;
+                        $(divStr).prependTo(cmtUl);
+                        commentDiv.html("回应(" + result.commentNum + ")");
+                    } else {
+                        alert("error");
+                    }
+                }
+            })
+        }
+    })
+    $(".reprintDiv").live("click", function () {
+        var feed = $(this).parent().parent().parent().parent();
+        var fromID = feed.children(".blogIDHide").html();
+        var date = new Date().format("yyyy-mm-dd");
+        $.ajax({
+            url:getBaseUrl() + "/index.php?c=CLPController&a=addReprint",
+            type:"POST",
+            dataType:"json",
+            data:{
+                "email":email,
+                "fromID":fromID,
+                "type":5,
+                "date":date
+            },
+            success:function (result) {
+                if (result.success == 1) {
+                    $.dialog({
+                        title:"提示",
+                        lock:"true",
+                        content:result.msg,
+                        time:1
+                    })
+                }
+            }
+        })
+    })
+    $(".likeDiv").live("click", function () {
+        var like = $(this);
+        var blogID = $(this).parent().parent().parent().parent().children(".blogIDHide").html();
+        $.ajax({
+            url:getBaseUrl() + "/index.php?c=CLPController&a=addLike",
+            type:"POST",
+            dataType:"json",
+            data:{
+                "email":email,
+                "blogID":blogID
+            },
+            success:function (result) {
+                if (result.success == 1) {
+                    var num = result.num;
+                    like.html("★喜欢(" + num + ")");
+                } else {
+                    $.dialog({
+                        title:"提示",
+                        lock:"true",
+                        content:result.msg,
+                        time:1
+                    })
+                }
+            }
+        })
+    });
 })

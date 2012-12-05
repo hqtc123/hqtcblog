@@ -1,11 +1,10 @@
 <div id="header">
     <div id="headercontent">
         <img id="logopic" src="images/logo.png"/>
-
         <a id="index" href="index.php" class="blog">首页</a>
         <?php
         if (isset($_SESSION["nick"])) {
-            echo '<div class="current">' . $_SESSION["bokeName"] . '</div>';
+            echo '<a href="myblog.php" class="current">' . $_SESSION["bokeName"] . '</a>';
             echo '<div id="hide_email">' . $_SESSION["email"] . '</div>';
             echo '<div id="hide_nick">' . $_SESSION["nick"] . '</div>';
         } else {

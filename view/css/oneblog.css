@@ -1,0 +1,28 @@
+.seeHolder {
+    display: none;
+}
+
+#hideHID {
+    display: none;
+}
+
+#content {
+    width: 800px;
+}
+
+.attrHolder {
+    display: none;
+}
+
+.feed .contentDiv {
+    float: left;
+    text-align: justify;
+    font-size: 16px;
+    font-family: "微软雅黑";
+    max-height: none;
+    overflow: hidden;
+}
+
+.feed .picDiv {
+    max-height: none;
+}

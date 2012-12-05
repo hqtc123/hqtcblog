@@ -30,7 +30,7 @@ if ($_SESSION["email"] == $_SESSION["hisEmail"]) {
         <a id="index" href="index.php" class="blog">首页</a>
         <?php
         if (isset($_SESSION["nick"])) {
-            echo '<div class="blog">' . $_SESSION["bokeName"] . '</div>';
+            echo '<a class="blog" href="myblog.php">' . $_SESSION["bokeName"] . '</a>';
             echo '<div class="current">' . $_SESSION["hisName"] . '</div>';
             echo '<div id="hide_email">' . $_SESSION["email"] . '</div>';
             echo '<div id="hide_nick">' . $_SESSION["nick"] . '</div>';

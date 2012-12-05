@@ -55,9 +55,9 @@ class ShowController extends spController {
 
 
     function createFeedHead($blogID, $email, $nick, $portraitUrl, $date) {
-        $str = '<div class="feed"><div class="blogIDHide">' . $blogID . '</div >' .
+        $str = '<div class="feed"><div class="blogIDHide">' . $blogID . '</div>' .
             '<div class="emailHide">' . $email .
-            '</div><div class="headDiv" ><img src =' . $portraitUrl .
+            '</div><div class="headDiv"><img src =' . $portraitUrl .
             '></div><div class="triangle"></div > ' .
             '<div class="feedDiv">' .
             '<div class="dateHolder">' .
@@ -67,13 +67,13 @@ class ShowController extends spController {
     }
 
     function createFeedFoot($blogID, $tagsArr, $commentnum, $likenum) {
-        $str = '<div class="attrHolder"><div class="tagsDiv" > ';
+        $str = '<div class="attrHolder"><div class="tagsDiv">';
         $tagsShow = 3;
         if (count($tagsArr) < $tagsShow) {
             $tagsShow = count($tagsArr);
         }
         for ($i = 0; $i < $tagsShow; $i++) {
-            $str .= '<span class="tagSpan" > ' . $tagsArr[$i] . '</span > ';
+            $str .= '<span class="tagSpan">' . $tagsArr[$i] . '</span>';
         }
         if ($commentnum != 0) {
             $comment = spClass("Comment");
@@ -109,6 +109,16 @@ class ShowController extends spController {
         return $str;
     }
 
+    function seeOne() {
+        $hisEmail = $this->spArgs("hisEmail");
+        $hisBlogID = $this->spArgs("hisBlogID");
+        $boClass = spClass("Boke");
+        $boResult = $boClass->find(array("email" => $hisEmail));
+        $_SESSION["hisName"] = $boResult["bokename"];
+        $_SESSION["hisBlogID"] = $hisBlogID;
+        $arr["success"] = 1;
+        echo json_encode($arr);
+    }
 
     function createTxtDiv($title, $content) {
         $str = '<div class="titleDiv">' . $title . '</div>' .
@@ -129,8 +139,8 @@ class ShowController extends spController {
         for ($i = 0; $i < $picsShow; $i++) {
             $str .= '<img src = ' . $imgUrlArr[$i] . ' > ';
         }
-        $str .= '<div class="clear"></di ><div class="descDiv">&nbsp;&nbsp;' . $descr . ' </div></div> ';
-        $str .= '<div class="seeHolder" ><div class="seeAll" >查看原文→</div ></div > ';
+        $str .= '<div class="clear"></di ><div class="descDiv">&nbsp;&nbsp;' . $descr . ' </div></div></div> ';
+        $str .= '<div class="seeHolder" ><div class="seeAll" >查看原文→</div > ';
         return $str;
     }
 
@@ -161,6 +171,71 @@ class ShowController extends spController {
             '<div class="cmtMain"><div class="cmtNick"> ' . $nick . ' </div>' .
             '<span class="cmtContent"> ' . $comment . '</span></div></li>';
         return $str;
+    }
+
+    function getOne() {
+        $blogTagClass = spClass("BlogTag");
+        $blogID = $this->spArgs("blogID");
+        $bo = spClass("Blog");
+        $blog = $bo->find(array("blogid" => $blogID));
+        $blogID = $blog["blogid"];
+        $tagsArr = array();
+        $blogTagResult = $blogTagClass->findAll(array("blogid" => $blogID));
+        foreach ($blogTagResult as $blogTag) {
+            $tagsArr[] = $blogTag["tagname"];
+        }
+        $type = $blog["type"];
+        $date = $blog["date"];
+        $commentNum = $blog["commentnum"];
+        $likeNum = $blog["likenum"];
+        $title = $blog["title"];
+        $content = $blog["content"];
+        $url = $blog["url"];
+        $email = $blog["email"];
+        $userClass = spClass("User");
+        $userResult = $userClass->find(array("email" => $email));
+        $nick = $userResult["nick"];
+        $portraitUrl = $userResult["portraiturl"];
+        $divHead = $this->createFeedHead($blogID, $email, $nick, $portraitUrl, $date);
+        $divFoot = $this->createFeedFoot($blogID, $tagsArr, $commentNum, $likeNum);
+        //处理转载
+        if ($type == 5) {
+            $fromId = $blog["fromid"];
+            $result = $bo->find(array("blogid" => $fromId));
+            $type = $result["type"];
+            $title = $result["title"];
+            $url = $result["url"];
+            $email = $result["email"];
+            $content = $result["content"];
+            $fromEmail = $result["email"];
+            $fromUser = $userClass->find(array("email" => $fromEmail));
+            $fromNick = $fromUser["nick"];
+            $divHead = $this->createFeedHead($blogID, $email, "转载自 " . $fromNick, $portraitUrl, $date);
+        }
+        switch ($type) {
+            case 1:
+                $html = $divHead . $this->createTxtDiv($title, $content) . $divFoot;
+                $returnArr["html"] = $html;
+                break;
+            case 2:
+                $imgUrlArr = preg_split("/,/", $url);
+                $html = $divHead . $this->createPicDiv($imgUrlArr, $title) . $divFoot;
+                $returnArr["html"] = $html;
+                break;
+            case 3:
+                $html = $divHead . $this->createLinkDiv($title, $url) . $divFoot;
+                $returnArr["html"] = $html;
+                break;
+            case 4:
+                $videoArr = $this->getVideoInfo($url);
+                $imgUrl = $videoArr["imgUrl"];
+                $swfUrl = $videoArr["swf"];
+                $html = $divHead . $this->createVideoDiv($title, $imgUrl, $swfUrl) . $divFoot;
+                $returnArr["html"] = $html;
+                break;
+        }
+
+        echo json_encode($returnArr);
     }
 
     function result2html($blogResult) {

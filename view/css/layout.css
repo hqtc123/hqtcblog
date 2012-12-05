@@ -14,6 +14,10 @@ a {
     background-color: #333;
 }
 
+.blog {
+    cursor: pointer;
+}
+
 #headercontent {
     width: 1000px;
     margin-left: auto;
@@ -283,6 +287,8 @@ ul {
 .feed .picDiv {
     display: inline;
     float: left;
+    max-height: 500px;
+    overflow: hidden;
 }
 
 .clear {
@@ -478,13 +484,16 @@ ul {
 
 .tagsDiv {
     float: left;
+    min-width: 40px;
     font-size: 14px;
     color: #999;
 }
 
 .tagSpan {
+    float: left;
     margin-right: 10px;
     cursor: pointer;
+    height: 10px;
 }
 
 .tagSpan:hover {
@@ -532,10 +541,13 @@ ul {
     height: 50px;
     width: 300px;
     margin-left: 100px;
+    background-image: url(../images/tag.png);
+    background-repeat: no-repeat;
 }
 
 #loading, #tagName span {
     margin-top: 8px;
+    margin-left: 20px;
     float: left;
     font-size: 18px;
 }
@@ -740,8 +752,8 @@ ul {
 
 #unTag, #followTag {
     float: left;
-    margin-left: 20px;
-    width: 66px;
+    margin-left: 30px;
+    width: 96px;
     height: 30px;
     background-color: #666;
     cursor: pointer;

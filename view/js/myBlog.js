@@ -170,6 +170,41 @@ $(function () {
         feed.children(".feedComment").slideDown();
     });
 
+    $(".shQi").live("click", function () {
+        var feed = $(this).parent().parent();
+        feed.children(".feedComment").slideUp();
+    })
+    $(".cmtButton").live("click", function () {
+        var feed = $(this).parent().parent().parent();
+        var cmtUl = $(this).parent().next(".cmtList").children(".cmtUl");
+        var commentDiv = feed.children(".feedDiv").children(".attrHolder").children(".optionsDiv").children(".commentDiv");
+        if ($(this).prev(".cmtText").val() == "") {
+
+        } else {
+            var comment = $(this).prev(".cmtText").val();
+            var blogID = feed.children(".blogIDHide").html();
+            $.ajax({
+                url:getBaseUrl() + "/index.php?c=CLPController&a=addComment",
+                type:"POST",
+                dataType:"json",
+                data:{
+                    "email":email,
+                    "blogID":blogID,
+                    "comment":comment
+                },
+                success:function (result) {
+                    if (result.success == 1) {
+                        var divStr = result.divStr;
+                        $(divStr).prependTo(cmtUl);
+                        commentDiv.html("回应(" + result.commentNum + ")");
+                    } else {
+                        alert("error");
+                    }
+                }
+            })
+        }
+    })
+
     $(".feed .seeAll").live("click", function () {
 
     })

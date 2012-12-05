@@ -1,7 +1,7 @@
 #infoDiv {
     float: left;
     height: 80px;
-    width: 180px;
+    width: 280px;
 }
 
 #hisEmail {
@@ -10,7 +10,7 @@
 
 #followBtn, #unBtn {
     float: left;
-    margin: 20px 0 0 80px;
+    margin: 20px 0 0 250px;
     width: 66px;
     height: 20px;
     padding: 10px 20px;
@@ -41,7 +41,7 @@
 }
 
 .nickDiv .nickSpan {
-    font-size: 22px;
+    font-size: 18px;
     color: #333;
 }
 
