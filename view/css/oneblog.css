@@ -6,8 +6,8 @@
     display: none;
 }
 
-#content {
-    width: 800px;
+#container {
+    width: 900px;
 }
 
 .attrHolder {

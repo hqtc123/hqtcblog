@@ -1,0 +1,17 @@
+#container {
+    width: 900px;
+}
+
+.noChild span {
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.noChild span:hover {
+    text-decoration: underline;
+}
+
+#makeDiv {
+    display: inline;
+    display: none;
+}

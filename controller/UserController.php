@@ -65,6 +65,13 @@ class UserController extends spController {
                 $_SESSION["nick"] = $nick;
                 $_SESSION["url"] = $url;
                 $_SESSION["email"] = $this->email;
+
+                $child = spClass("ChildBlog");
+                $result = $child->find($condition);
+                if ($result) {
+                    $_SESSION["childName"] = $result["name"];
+                    $_SESSION["childID"] = $result["childid"];
+                }
                 $arr["success"] = 1;
                 echo json_encode($arr);
             } else {
@@ -88,6 +95,10 @@ class UserController extends spController {
             $arr["success"] = 1;
             $arr["msg"] = "退出成功";
             echo json_encode($arr);
+        }
+        if (isset($_SESSION["childName"])) {
+            unset($_SESSION["childName"]);
+            unset($_SESSION["childID"]);
         }
     }
 }

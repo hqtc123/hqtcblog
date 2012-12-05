@@ -10,7 +10,7 @@ Target Server Type    : MYSQL
 Target Server Version : 50513
 File Encoding         : 65001
 
-Date: 2012-12-05 10:17:19
+Date: 2012-12-05 11:41:39
 */
 
 SET FOREIGN_KEY_CHECKS=0;
@@ -79,10 +79,10 @@ INSERT INTO `blog` VALUES ('55', '5', '2@2.com', '2012-12-05', '0', '0', null, n
 INSERT INTO `blog` VALUES ('56', '2', '2@2.com', '2012-12-05', '0', '0', '测试中', '', 'upload/jy7qtBSZNXkD.png,upload/NzrYyRU41Ovl.jpg,upload/qzUgedDRdh7s.jpg,', null);
 
 -- ----------------------------
--- Table structure for `blogchild`
+-- Table structure for `blogch`
 -- ----------------------------
-DROP TABLE IF EXISTS `blogchild`;
-CREATE TABLE `blogchild` (
+DROP TABLE IF EXISTS `blogch`;
+CREATE TABLE `blogch` (
   `blogid` int(11) NOT NULL,
   `childid` int(11) NOT NULL,
   `post` int(11) DEFAULT '0',
@@ -90,7 +90,7 @@ CREATE TABLE `blogchild` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- ----------------------------
--- Records of blogchild
+-- Records of blogch
 -- ----------------------------
 
 -- ----------------------------
@@ -169,12 +169,15 @@ DROP TABLE IF EXISTS `childblog`;
 CREATE TABLE `childblog` (
   `childid` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
+  `email` varchar(255) NOT NULL,
   PRIMARY KEY (`childid`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=3 DEFAULT CHARSET=utf8;
 
 -- ----------------------------
 -- Records of childblog
 -- ----------------------------
+INSERT INTO `childblog` VALUES ('1', '心中的事', '2@2.com');
+INSERT INTO `childblog` VALUES ('2', '小博客欢迎投稿', 'test@a.com');
 
 -- ----------------------------
 -- Table structure for `comment`

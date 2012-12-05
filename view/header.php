@@ -15,6 +15,7 @@
             <?php
         }
         ?>
+        <a id="child" href="child.php" class="blog">子博</a>
         <div id="J_HeaderMiscAction" class="misc-action">
             <ul class="action-list">
                 <li class="action-item"><a class="hideli" id="accountId" title="账户"></a></li>

@@ -103,6 +103,26 @@ $(function () {
             init(email);
         }
     })
+    //查看全文
+    $(".feed .seeAll").live("click", function () {
+        var feed = $(this).parent().parent().parent();
+        var hisBlogID = feed.children(".blogIDHide").html();
+        var hisEmail = feed.children(".emailHide").html();
+        $.ajax({
+            url:getBaseUrl() + "/index.php?c=ShowController&a=seeOne",
+            type:"POST",
+            dataType:"json",
+            data:{
+                "hisEmail":hisEmail,
+                "hisBlogID":hisBlogID
+            },
+            success:function (result) {
+                if (result.success == 1) {
+                    setTimeout("javascript:location.href='../view/oneblog.php?id=" + hisBlogID + " '", 10);
+                }
+            }
+        })
+    })
     //删除博客
     $(".removeDiv").live("click", function () {
         var feed = $(this).parent().parent().parent().parent();
