@@ -207,7 +207,7 @@ ul {
     height: auto;
     float: left;
     color: #333;
-    margin-bottom: 20px;
+    margin-bottom: 30px;
 }
 
 .feed .blogIDHide {
@@ -246,6 +246,7 @@ ul {
     padding-right: 20px;
     border-radius: 5px;
     background-color: #fff;
+    box-shadow:1px 1px 1px 1px #999;
 }
 
 .dateHolder {
