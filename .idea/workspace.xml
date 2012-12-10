@@ -24,11 +24,7 @@
         <entry file="file://$PROJECT_DIR$/view/child.php">
           <provider selected="true" editor-type-id="text-editor">
             <state line="68" column="30" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.0">
-              <folding>
-                <marker date="1354677495435" expanded="true" signature="2478:2695" placeholder="..." />
-                <marker date="1354677495435" expanded="true" signature="2541:2684" placeholder="..." />
-                <marker date="1354677495435" expanded="true" signature="2724:3113" placeholder="..." />
-              </folding>
+              <folding />
             </state>
           </provider>
         </entry>
@@ -99,7 +95,7 @@
       <file leaf-file-name="hischild.php" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/view/hischild.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="3" column="13" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.9615384">
+            <state line="3" column="13" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -108,7 +104,7 @@
       <file leaf-file-name="layout.css" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/view/css/layout.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="209" column="20" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.25040388">
+            <state line="227" column="1" selection-start="3078" selection-end="3078" vertical-scroll-proportion="0.41975307">
               <folding />
             </state>
           </provider>
@@ -148,7 +144,8 @@
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
   <component name="ProjectFrameBounds">
-    <option name="x" value="58" />
+    <option name="x" value="82" />
+    <option name="y" value="67" />
     <option name="width" value="1396" />
     <option name="height" value="865" />
   </component>
@@ -277,6 +274,7 @@
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../chrome" />
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
@@ -303,14 +301,14 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="58" y="0" width="1396" height="865" extended-state="0" />
+    <frame x="82" y="67" width="1396" height="865" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.25451806" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.26355422" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
@@ -400,9 +398,7 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/index.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="172" column="9" selection-start="7692" selection-end="7999" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="172" column="9" selection-start="7692" selection-end="7999" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/js/header.js">
@@ -415,11 +411,7 @@
     <entry file="file://$PROJECT_DIR$/view/child.php">
       <provider selected="true" editor-type-id="text-editor">
         <state line="68" column="30" selection-start="2780" selection-end="2780" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1354677495435" expanded="true" signature="2478:2695" placeholder="..." />
-            <marker date="1354677495435" expanded="true" signature="2541:2684" placeholder="..." />
-            <marker date="1354677495435" expanded="true" signature="2724:3113" placeholder="..." />
-          </folding>
+          <folding />
         </state>
       </provider>
     </entry>
@@ -472,14 +464,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/view/hischild.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="3" column="13" selection-start="57" selection-end="57" vertical-scroll-proportion="-1.9615384">
+        <state line="3" column="13" selection-start="57" selection-end="57" vertical-scroll-proportion="0.0">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/view/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="209" column="20" selection-start="2858" selection-end="2858" vertical-scroll-proportion="0.25040388">
+        <state line="227" column="1" selection-start="3078" selection-end="3078" vertical-scroll-proportion="0.41975307">
           <folding />
         </state>
       </provider>
